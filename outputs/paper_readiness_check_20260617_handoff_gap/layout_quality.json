@@ -1,0 +1,123 @@
+{
+  "status": "pass",
+  "pass_count": 23,
+  "warn_count": 0,
+  "fail_count": 0,
+  "checks": [
+    {
+      "name": "page_count",
+      "status": "pass",
+      "detail": "8 page(s)."
+    },
+    {
+      "name": "page_size",
+      "status": "pass",
+      "detail": "612 x 792 pts (letter)"
+    },
+    {
+      "name": "pdf_freshness",
+      "status": "pass",
+      "detail": "PDF is not older than main TeX or included figure files."
+    },
+    {
+      "name": "main_pdf_type1_fonts",
+      "status": "pass",
+      "detail": "18 font row(s); TrueType=0, Type3=0, Other=0."
+    },
+    {
+      "name": "pdf_figures_exist",
+      "status": "pass",
+      "detail": "3 PDF figure(s) found."
+    },
+    {
+      "name": "pdf_figure_type1_fonts",
+      "status": "pass",
+      "detail": "All PDF figures use Type 1/core fonts."
+    },
+    {
+      "name": "pdf_figure_vector_only",
+      "status": "pass",
+      "detail": "No raster image rows detected in PDF figures."
+    },
+    {
+      "name": "latex_errors",
+      "status": "pass",
+      "detail": "0 issue(s)."
+    },
+    {
+      "name": "undefined_references",
+      "status": "pass",
+      "detail": "0 issue(s)."
+    },
+    {
+      "name": "overfull_boxes",
+      "status": "pass",
+      "detail": "0 issue(s)."
+    },
+    {
+      "name": "underfull_boxes",
+      "status": "pass",
+      "detail": "0 issue(s)."
+    },
+    {
+      "name": "caption_length",
+      "status": "pass",
+      "detail": "No caption exceeds 18 words."
+    },
+    {
+      "name": "tables_present",
+      "status": "pass",
+      "detail": "14 table environment(s) found."
+    },
+    {
+      "name": "table_captions",
+      "status": "pass",
+      "detail": "Every table has a caption."
+    },
+    {
+      "name": "table_labels",
+      "status": "pass",
+      "detail": "Every table has a label."
+    },
+    {
+      "name": "table_font_size",
+      "status": "pass",
+      "detail": "No \\scriptsize or \\tiny table fonts detected."
+    },
+    {
+      "name": "table_vertical_rules",
+      "status": "pass",
+      "detail": "No vertical table rules detected."
+    },
+    {
+      "name": "figures_present",
+      "status": "pass",
+      "detail": "1 figure environment(s) found."
+    },
+    {
+      "name": "figure_captions",
+      "status": "pass",
+      "detail": "Every figure has a caption."
+    },
+    {
+      "name": "figure_labels",
+      "status": "pass",
+      "detail": "Every figure has a label."
+    },
+    {
+      "name": "figure_includegraphics",
+      "status": "pass",
+      "detail": "Every figure includes graphics."
+    },
+    {
+      "name": "figure_raster_sources",
+      "status": "pass",
+      "detail": "No PNG/JPG graphics are included directly by main TeX."
+    },
+    {
+      "name": "figure_files_exist",
+      "status": "pass",
+      "detail": "Every included figure file exists."
+    }
+  ]
+}

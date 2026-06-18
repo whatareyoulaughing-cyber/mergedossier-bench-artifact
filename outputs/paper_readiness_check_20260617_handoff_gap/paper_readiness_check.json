@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-06-17T15:59:17.580717+00:00",
+  "status": "pass",
+  "annotation_state": "completed_annotation_csv",
+  "require_completed_annotations": false,
+  "records": [
+    {
+      "name": "python scripts/check_icse_format.py --tex paper/main.tex --pdf paper/main.pdf --log paper/build.log --out outputs\\paper_readiness_check_20260617_handoff_gap\\icse_format_check.json --markdown outputs\\paper_readiness_check_20260617_handoff_gap\\icse_format_check.md",
+      "command": [
+        "python",
+        "scripts/check_icse_format.py",
+        "--tex",
+        "paper/main.tex",
+        "--pdf",
+        "paper/main.pdf",
+        "--log",
+        "paper/build.log",
+        "--out",
+        "outputs\\paper_readiness_check_20260617_handoff_gap\\icse_format_check.json",
+        "--markdown",
+        "outputs\\paper_readiness_check_20260617_handoff_gap\\icse_format_check.md"
+      ],
+      "returncode": 0,
+      "status": "pass",
+      "stdout_tail": "ICSE format check: pass (0 fail, 0 warn)\n",
+      "stderr_tail": "",
+      "gate": "icse_format"
+    },
+    {
+      "name": "python scripts/check_layout_quality.py --tex paper/main.tex --pdf paper/main.pdf --log paper/build.log --figures-dir paper/figures --out-json outputs\\paper_readiness_check_20260617_handoff_gap\\layout_quality.json --out-md outputs\\paper_readiness_check_20260617_handoff_gap\\layout_quality.md",
+      "command": [
+        "python",
+        "scripts/check_layout_quality.py",
+        "--tex",
+        "paper/main.tex",
+        "--pdf",
+        "paper/main.pdf",
+        "--log",
+        "paper/build.log",
+        "--figures-dir",
+        "paper/figures",
+        "--out-json",
+        "outputs\\paper_readiness_check_20260617_handoff_gap\\layout_quality.json",
+        "--out-md",
+        "outputs\\paper_readiness_check_20260617_handoff_gap\\layout_quality.md"
+      ],
+      "returncode": 0,
+      "status": "pass",
+      "stdout_tail": "Layout quality check: pass (0 fail, 0 warn)\n",
+      "stderr_tail": "",
+      "gate": "layout_quality"
+    },
+    {
+      "name": "python scripts/check_final_pdf_proofread.py --pdf paper/main.pdf --out outputs\\paper_readiness_check_20260617_handoff_gap\\final_pdf_proofread",
+      "command": [
+        "python",
+        "scripts/check_final_pdf_proofread.py",
+        "--pdf",
+        "paper/main.pdf",
+        "--out",
+        "outputs\\paper_readiness_check_20260617_handoff_gap\\final_pdf_proofread"
+      ],
+      "returncode": 0,
+      "status": "pass",
+      "stdout_tail": "Final PDF proofread: pass (0 fail, 0 warn)\n",
+      "stderr_tail": "",
+      "gate": "final_pdf_proofread"
+    },
+    {
+      "name": "python scripts/check_manuscript_claim_hygiene.py --tex paper/main.tex --out outputs\\paper_readiness_check_20260617_handoff_gap\\manuscript_claim_hygiene",
+      "command": [
+        "python",
+        "scripts/check_manuscript_claim_hygiene.py",
+        "--tex",
+        "paper/main.tex",
+        "--out",
+        "outputs\\paper_readiness_check_20260617_handoff_gap\\manuscript_claim_hygiene"
+      ],
+      "returncode": 0,
+      "status": "pass",
+      "stdout_tail": "Manuscript claim hygiene: pass -> outputs\\paper_readiness_check_20260617_handoff_gap\\manuscript_claim_hygiene\n",
+      "stderr_tail": "",
+      "gate": "manuscript_claim_hygiene"
+    },
+    {
+      "name": "python scripts/check_double_anonymous_submission.py --pdf paper/main.pdf --tex paper/main.tex --out outputs\\paper_readiness_check_20260617_handoff_gap\\double_anonymous_submission",
+      "command": [
+        "python",
+        "scripts/check_double_anonymous_submission.py",
+        "--pdf",
+        "paper/main.pdf",
+        "--tex",
+        "paper/main.tex",
+        "--out",
+        "outputs\\paper_readiness_check_20260617_handoff_gap\\double_anonymous_submission"
+      ],
+      "returncode": 0,
+      "status": "pass",
+      "stdout_tail": "Double-anonymous submission check: pass (0 fail, 0 warn)\n",
+      "stderr_tail": "",
+      "gate": "double_anonymous_submission"
+    },
+    {
+      "name": "python -m pytest -q",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "returncode": 0,
+      "status": "pass",
+      "stdout_tail": "........................................................................ [ 49%]\n........................................................................ [ 99%]\n.                                                                        [100%]\n145 passed in 13.25s\n",
+      "stderr_tail": "",
+      "gate": "pytest"
+    },
+    {
+      "name": "python scripts/reproduce_artifact_smoke.py",
+      "command": [
+        "python",
+        "scripts/reproduce_artifact_smoke.py"
+      ],
+      "returncode": 0,
+      "status": "pass",
+      "stdout_tail": "Artifact smoke workflow completed: outputs/artifact_smoke\n",
+      "stderr_tail": "",
+      "gate": "artifact_smoke"
+    },
+    {
+      "name": "<REPO_ROOT>\\outputs\\real_pilot_mixed_source_annotation_sheet_completed_20260613.csv --out <REPO_ROOT>\\outputs\\real_pilot_mixed_source_annotation_sheet_completed_validation_20260613.json",
+      "command": [
+        "python",
+        "-m",
+        "mergedossier_bench.cli",
+        "validate-annotation-csv",
+        "--annotations",
+        "<REPO_ROOT>\\outputs\\real_pilot_mixed_source_annotation_sheet_completed_20260613.csv",
+        "--out",
+        "<REPO_ROOT>\\outputs\\real_pilot_mixed_source_annotation_sheet_completed_validation_20260613.json"
+      ],
+      "returncode": 0,
+      "status": "pass",
+      "stdout_tail": "Annotation CSV validation: 27 complete rows, 0 incomplete rows, 0 errors\n",
+      "stderr_tail": "",
+      "gate": "annotation_csv"
+    }
+  ],
+  "next_required_human_action": null
+}

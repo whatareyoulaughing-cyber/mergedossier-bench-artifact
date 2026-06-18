@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-06-17T13:28:47.936287+00:00",
+  "status": "pass",
+  "zip_path": "outputs/external_audit_handoff_20260617/MergeDossier-external-audit-handoff.zip",
+  "failure_count": 0,
+  "checks": [
+    {
+      "name": "required_files",
+      "status": "pass",
+      "evidence": "All 8 required handoff files are present.",
+      "action": "Send this zip to the external auditor."
+    },
+    {
+      "name": "forbidden_result_paths",
+      "status": "pass",
+      "evidence": "No primary annotation/result-table path patterns found.",
+      "action": "Keep the handoff zip independent from paper results."
+    },
+    {
+      "name": "manifest_exclusion_boundary",
+      "status": "pass",
+      "evidence": "HANDOFF_MANIFEST records excluded primary/result artifacts.",
+      "action": "Keep this boundary visible to auditors."
+    },
+    {
+      "name": "blank_audit_labels",
+      "status": "pass",
+      "evidence": "All 500 external audit label cells are blank.",
+      "action": "The auditor can code independently."
+    },
+    {
+      "name": "no_completed_codes",
+      "status": "pass",
+      "evidence": "No completed audit-code values found in the handoff CSV.",
+      "action": "Keep completed codes out of the auditor package."
+    }
+  ],
+  "claim_boundary": "Handoff independence check only. Passing this check does not complete the external audit or establish external agreement."
+}

@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-06-17T15:58:36.851586+00:00",
+  "status": "pass",
+  "zip_path": "outputs/release/MergeDossier-Bench-anonymous-review.zip",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_cli_smoke.py",
+        "tests/test_schemas.py",
+        "tests/test_scoring.py",
+        "tests/test_corpus.py",
+        "tests/test_provenance.py",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout_tail": "..................                                                       [100%]\n18 passed in 2.20s\n",
+      "stderr_tail": "",
+      "name": "pytest_subset"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "mergedossier_bench.cli",
+        "summarize",
+        "--dossiers",
+        "examples/corpus",
+        "--out",
+        "outputs/release_zip_smoke/corpus"
+      ],
+      "returncode": 0,
+      "stdout_tail": "Corpus summary written: 4 valid, 0 invalid of 4 dossiers\n",
+      "stderr_tail": "",
+      "name": "corpus_summary"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "mergedossier_bench.cli",
+        "audit-provenance",
+        "--dossiers",
+        "examples/corpus",
+        "--out",
+        "outputs/release_zip_smoke/provenance"
+      ],
+      "returncode": 0,
+      "stdout_tail": "Provenance audit written: 0 provenance-rich dossiers of 4 valid dossiers\n",
+      "stderr_tail": "",
+      "name": "provenance_audit"
+    }
+  ],
+  "expected_outputs": [
+    {
+      "path": "outputs/release_zip_smoke/corpus/summary.json",
+      "present": true
+    },
+    {
+      "path": "outputs/release_zip_smoke/corpus/scores.jsonl",
+      "present": true
+    },
+    {
+      "path": "outputs/release_zip_smoke/provenance/provenance_summary.json",
+      "present": true
+    },
+    {
+      "path": "outputs/release_zip_smoke/provenance/uncited_evidence.jsonl",
+      "present": true
+    }
+  ],
+  "package_root": "MergeDossier-Bench-anonymous-20260617"
+}

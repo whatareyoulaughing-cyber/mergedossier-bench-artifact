@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-06-17T13:35:49.053336+00:00",
+  "tex_path": "<REPO_ROOT>\\paper\\main.tex",
+  "status": "pass",
+  "finding_count": 0,
+  "findings": [],
+  "style_watch_counts": {
+    "comprehensive": 0,
+    "novel": 0,
+    "robust": 12,
+    "seamless": 0,
+    "transformative": 0,
+    "unlock": 0,
+    "leverage": 0
+  },
+  "required_checks": [
+    "handoff_gap",
+    "review_evidence_availability",
+    "diff_slogan",
+    "provenance_slogan",
+    "aidev_pop",
+    "single_operator",
+    "legacy_triage",
+    "claims_nonclaims_table",
+    "handoff_gap_table",
+    "tipping_point_table",
+    "availability_interval_table",
+    "population_sample_table"
+  ],
+  "boundary_checks": [
+    "not_correctness",
+    "not_mergeability",
+    "not_reviewer_utility",
+    "not_ai_vs_human",
+    "not_all_github",
+    "not_inter_rater"
+  ]
+}

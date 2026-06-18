@@ -1,0 +1,116 @@
+{
+  "generated_at": "2026-06-18T06:55:11.544397+00:00",
+  "status": "blocked_on_external_actions",
+  "p0_open_count": 1,
+  "fail_count": 0,
+  "checks": [
+    {
+      "name": "External audit slice",
+      "status": "open",
+      "severity": "P0",
+      "evidence": "outputs/external_audit_analysis_20260617/external_audit_summary.json status=incomplete; blank_label_cells=500.",
+      "action": "Have an independent operator complete the 50-task sheet, then rerun analyze_external_audit_slice.py."
+    },
+    {
+      "name": "Anonymous artifact release",
+      "status": "pass",
+      "severity": "P0",
+      "evidence": "release/UPLOAD_RESULT.md records verified anonymous GitHub release: https://github.com/whatareyoulaughing-cyber/mergedossier-bench-artifact/releases/tag/v0.1-anonymous.",
+      "action": "Use the anonymous release URL in the submission portal; defer DOI archival until double-anonymous constraints are lifted."
+    },
+    {
+      "name": "DOI archival boundary",
+      "status": "ready",
+      "severity": "P2",
+      "evidence": "release/UPLOAD_RESULT.md records DOI deferral during double-anonymous review.",
+      "action": "Do not claim DOI archival in the submission; mint DOI after review constraints are lifted or if the venue explicitly permits anonymous DOI."
+    },
+    {
+      "name": "Local paper readiness",
+      "status": "pass",
+      "severity": "P1",
+      "evidence": "outputs/paper_readiness_check_20260617_handoff_gap/paper_readiness_check.json status=pass; gates=8.",
+      "action": "Keep rerunning before final submission."
+    },
+    {
+      "name": "Manuscript claim hygiene",
+      "status": "pass",
+      "severity": "P1",
+      "evidence": "outputs/manuscript_claim_hygiene_20260617/manuscript_claim_hygiene.json status=pass; findings=0.",
+      "action": "Keep rerunning after paper edits."
+    },
+    {
+      "name": "Post-upload ICSE submission packet",
+      "status": "pass",
+      "severity": "P1",
+      "evidence": "outputs/icse_submission_packet_post_upload_20260618/packet_status.json records artifact URL and remaining action: complete 50-task external audit slice.",
+      "action": "Use outputs/icse_submission_packet_post_upload_20260618/PORTAL_FIELDS_FINAL_POST_UPLOAD.md and send the external-audit handoff packet."
+    },
+    {
+      "name": "External auditor handoff independence",
+      "status": "pass",
+      "severity": "P1",
+      "evidence": "outputs/external_audit_handoff_20260617/external_auditor_handoff_check.json status=pass; failures=0.",
+      "action": "Send the checked handoff zip to the external auditor."
+    },
+    {
+      "name": "ICSE submission packet self-check",
+      "status": "pass",
+      "severity": "P1",
+      "evidence": "outputs/icse_submission_packet_check_20260617/icse_submission_packet_check.json status=pass; failures=0; warnings=0.",
+      "action": "Keep rerunning after rebuilding the ICSE submission packet."
+    },
+    {
+      "name": "Double-anonymous submission check",
+      "status": "pass",
+      "severity": "P1",
+      "evidence": "outputs/double_anonymous_submission_check_20260617/double_anonymous_submission_check.json status=pass; failures=0; warnings=0.",
+      "action": "Keep rerunning after paper/PDF edits."
+    },
+    {
+      "name": "AI assistance disclosure",
+      "status": "pass",
+      "severity": "P1",
+      "evidence": "outputs/ai_assistance_disclosure_check_20260617/ai_assistance_disclosure_check.json status=pass; failures=0; warnings=1.",
+      "action": "Use outputs/ai_assistance_disclosure_packet_20260617/PORTAL_AI_DISCLOSURE.md if the submission portal asks for AI usage."
+    },
+    {
+      "name": "Release zip functional smoke",
+      "status": "pass",
+      "severity": "P1",
+      "evidence": "outputs/release_zip_smoke_20260617/release_zip_smoke.json status=pass; commands=3.",
+      "action": "Keep rerunning after rebuilding the anonymous release zip."
+    },
+    {
+      "name": "Public release preflight",
+      "status": "pass",
+      "severity": "P1",
+      "evidence": "outputs/public_release_preflight_20260617/public_release_preflight.json status=ready_for_manual_publication; warnings=2.",
+      "action": "Use the preflight report while manually publishing the DOI/public repository."
+    },
+    {
+      "name": "Anonymous release leak scan",
+      "status": "pass",
+      "severity": "P1",
+      "evidence": "outputs/anonymous_release_check_20260617/anonymous_release_check.json status=pass; findings=0.",
+      "action": "Keep rerunning after rebuilding the release zip."
+    },
+    {
+      "name": "Public metadata placeholders",
+      "status": "open",
+      "severity": "P1",
+      "evidence": "Placeholders remain in: outputs/public_release_metadata_20260617/zenodo_metadata_template.json, CITATION.cff, README.md",
+      "action": "After DOI/public repository creation, run scripts/update_public_release_metadata.py."
+    },
+    {
+      "name": "Raw-frame release policy",
+      "status": "ready",
+      "severity": "P2",
+      "evidence": "outputs/raw_frame_release_risk_20260617/raw_frame_release_risk_summary.json reports 25 affected raw-frame rows; sanitized release remains default.",
+      "action": "Keep raw frame excluded unless a separate scrubbed/restricted archive is prepared."
+    }
+  ],
+  "next_actions": [
+    "Have an independent operator complete the 50-task sheet, then rerun analyze_external_audit_slice.py."
+  ]
+}

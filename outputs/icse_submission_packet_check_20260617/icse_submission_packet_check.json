@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-06-17T15:59:35.310779+00:00",
+  "status": "pass",
+  "failure_count": 0,
+  "warning_count": 0,
+  "failures": [],
+  "warnings": [],
+  "packet_dir": "outputs/icse_submission_packet_20260617",
+  "manifest_rows": 3
+}

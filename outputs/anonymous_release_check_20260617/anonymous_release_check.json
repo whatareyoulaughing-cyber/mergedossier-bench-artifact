@@ -1,0 +1,8 @@
+{
+  "generated_at": "2026-06-17T15:58:36.702144+00:00",
+  "zip_path": "outputs/release/MergeDossier-Bench-anonymous-review.zip",
+  "status": "pass",
+  "finding_count": 0,
+  "findings": [],
+  "claim_boundary": "This check scans release text files for local path or local-user leaks. It does not validate empirical claims or publication metadata."
+}

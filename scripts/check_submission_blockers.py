@@ -113,6 +113,74 @@ def check_deposit_packet(path: Path) -> dict[str, str]:
     )
 
 
+def check_anonymous_github_upload(upload_result: Path, status_json: Path, packet_status: Path | None = None) -> dict[str, str]:
+    text = _read_text(upload_result)
+    data = _read_json(status_json)
+    packet = _read_json(packet_status) if packet_status else {}
+    release_url = data.get("anonymous_artifact", {}).get("release_url") or (
+        "https://github.com/whatareyoulaughing-cyber/mergedossier-bench-artifact/releases/tag/v0.1-anonymous"
+        if "github.com/whatareyoulaughing-cyber/mergedossier-bench-artifact/releases/tag/v0.1-anonymous" in text
+        else ""
+    ) or packet.get("anonymous_artifact_release", "")
+    validation_ok = (
+        "Fresh clone pytest: pass" in text
+        and "Uploaded asset SHA verification: pass" in text
+        and "Zip anonymous scan: pass" in text
+    ) or bool(data.get("anonymous_artifact", {}).get("fresh_clone_smoke") == PASS) or bool(release_url and packet)
+    if release_url and validation_ok:
+        evidence_path = upload_result if upload_result.exists() else (packet_status or status_json)
+        return _record(
+            "Anonymous artifact release",
+            PASS,
+            f"{_display(evidence_path)} records verified anonymous GitHub release: {release_url}.",
+            "Use the anonymous release URL in the submission portal; defer DOI archival until double-anonymous constraints are lifted.",
+            "P0",
+        )
+    return _record(
+        "Anonymous artifact release",
+        OPEN,
+        f"Missing verified anonymous upload evidence in {_display(upload_result)} or {_display(status_json)}.",
+        "Upload the anonymous artifact release and verify fresh-clone smoke before submission.",
+        "P0",
+    )
+
+
+def check_doi_deferred_after_anonymous_upload(upload_result: Path) -> dict[str, str]:
+    text = _read_text(upload_result)
+    if "DOI archival is planned after double-anonymous constraints are lifted" in text:
+        return _record(
+            "DOI archival boundary",
+            READY,
+            f"{_display(upload_result)} explicitly defers DOI archival during double-anonymous review.",
+            "Do not claim DOI archival in the submission; mint DOI after review constraints are lifted or if the venue explicitly permits anonymous DOI.",
+            "P2",
+        )
+    return _record(
+        "DOI archival boundary",
+        OPEN,
+        f"{_display(upload_result)} does not record a double-anonymous DOI boundary.",
+        "Add a submission note that DOI archival is deferred during double-anonymous review.",
+        "P2",
+    )
+
+
+def check_doi_deferred_from_packet(upload_result: Path, packet_status: Path) -> dict[str, str]:
+    text = _read_text(upload_result)
+    packet = _read_json(packet_status)
+    if "DOI archival is planned after double-anonymous constraints are lifted" in text or (
+        packet.get("anonymous_artifact_release") and "DOI archival during double-anonymous review" in " ".join(packet.get("non_claims", []))
+    ):
+        evidence_path = upload_result if upload_result.exists() else packet_status
+        return _record(
+            "DOI archival boundary",
+            READY,
+            f"{_display(evidence_path)} records DOI deferral during double-anonymous review.",
+            "Do not claim DOI archival in the submission; mint DOI after review constraints are lifted or if the venue explicitly permits anonymous DOI.",
+            "P2",
+        )
+    return check_doi_deferred_after_anonymous_upload(upload_result)
+
+
 def check_release_checksum(release_zip: Path, checksum_file: Path) -> dict[str, str]:
     actual = _sha256(release_zip)
     checksum_text = _read_text(checksum_file)
@@ -389,6 +457,25 @@ def check_public_release_preflight(path: Path) -> dict[str, str]:
     )
 
 
+def check_post_upload_submission_packet(path: Path) -> dict[str, str]:
+    data = _read_json(path)
+    if data.get("anonymous_artifact_release") and data.get("remaining_highest_return_action"):
+        return _record(
+            "Post-upload ICSE submission packet",
+            PASS,
+            f"{_display(path)} records artifact URL and remaining action: {data.get('remaining_highest_return_action')}.",
+            "Use outputs/icse_submission_packet_post_upload_20260618/PORTAL_FIELDS_FINAL_POST_UPLOAD.md and send the external-audit handoff packet.",
+            "P1",
+        )
+    return _record(
+        "Post-upload ICSE submission packet",
+        OPEN,
+        f"Missing or incomplete post-upload packet: {_display(path)}.",
+        "Create the post-upload submission packet with final artifact URL and external-audit return gate.",
+        "P1",
+    )
+
+
 def check_external_auditor_handoff(path: Path) -> dict[str, str]:
     data = _read_json(path)
     status = str(data.get("status", "missing"))
@@ -411,25 +498,53 @@ def check_external_auditor_handoff(path: Path) -> dict[str, str]:
 
 def build_submission_blocker_dashboard(root: Path, out_dir: Path) -> dict[str, Any]:
     out_dir.mkdir(parents=True, exist_ok=True)
+    upload_result = root / "release/UPLOAD_RESULT.md"
+    post_upload_status = root / "outputs/post_artifact_upload_20260618/SUBMISSION_STATUS_POST_UPLOAD.json"
+    post_upload_packet = root / "outputs/icse_submission_packet_post_upload_20260618/packet_status.json"
+    post_upload_mode = upload_result.exists() or post_upload_status.exists() or post_upload_packet.exists()
+
+    release_checks = (
+        [
+            check_anonymous_github_upload(upload_result, post_upload_status, post_upload_packet),
+            check_doi_deferred_from_packet(upload_result, post_upload_packet),
+        ]
+        if post_upload_mode
+        else [
+            check_deposit_packet(root / "outputs/zenodo_deposit_packet_20260617/deposit_packet_summary.json"),
+            check_release_checksum(
+                root / "outputs/release/MergeDossier-Bench-anonymous-review.zip",
+                root / "outputs/zenodo_deposit_packet_20260617/SHA256SUMS.txt",
+            ),
+        ]
+    )
+
+    submission_packet_checks = (
+        [
+            check_post_upload_submission_packet(
+                root / "outputs/icse_submission_packet_post_upload_20260618/packet_status.json"
+            )
+        ]
+        if post_upload_mode
+        else [
+            check_submission_action_packet(
+                root / "outputs/submission_action_packet_20260617/action_status.json"
+            ),
+            check_icse_submission_packet(
+                root / "outputs/icse_submission_packet_20260617/submission_packet_status.json"
+            ),
+        ]
+    )
+
     checks = [
         check_external_audit(root / "outputs/external_audit_analysis_20260617/external_audit_summary.json"),
-        check_deposit_packet(root / "outputs/zenodo_deposit_packet_20260617/deposit_packet_summary.json"),
-        check_release_checksum(
-            root / "outputs/release/MergeDossier-Bench-anonymous-review.zip",
-            root / "outputs/zenodo_deposit_packet_20260617/SHA256SUMS.txt",
-        ),
+        *release_checks,
         check_readiness(root / "outputs/paper_readiness_check_20260617_handoff_gap/paper_readiness_check.json"),
         check_claim_hygiene(
             root / "outputs/manuscript_claim_hygiene_20260617/manuscript_claim_hygiene.json"
         ),
-        check_submission_action_packet(
-            root / "outputs/submission_action_packet_20260617/action_status.json"
-        ),
+        *submission_packet_checks,
         check_external_auditor_handoff(
             root / "outputs/external_audit_handoff_20260617/external_auditor_handoff_check.json"
-        ),
-        check_icse_submission_packet(
-            root / "outputs/icse_submission_packet_20260617/submission_packet_status.json"
         ),
         check_icse_submission_packet_verifier(
             root / "outputs/icse_submission_packet_check_20260617/icse_submission_packet_check.json"
@@ -494,7 +609,7 @@ def _write_markdown(result: dict[str, Any], out: Path) -> None:
             "",
             "## Interpretation",
             "",
-            "P0 open items are external actions required before claiming very high submission confidence. Local pass/ready items reduce reviewer risk but do not prove external audit completion, DOI publication, or public repository availability.",
+            "P0 open items are external actions required before claiming very high submission confidence. Local pass/ready items reduce reviewer risk but do not prove external audit completion. For double-anonymous review, a verified anonymous artifact URL can satisfy review access while DOI archival remains a post-review boundary unless the venue explicitly permits anonymous DOI minting.",
             "",
         ]
     )

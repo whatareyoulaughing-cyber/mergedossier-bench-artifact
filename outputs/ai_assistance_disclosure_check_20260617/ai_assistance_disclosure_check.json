@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-06-17T10:23:32.114375+00:00",
+  "status": "pass",
+  "failure_count": 0,
+  "warning_count": 1,
+  "failures": [],
+  "warnings": [
+    {
+      "name": "disclosure_in_pdf",
+      "message": "AI disclosure text appears in the anonymous PDF; confirm venue requires in-PDF disclosure."
+    }
+  ],
+  "source": ".paper/ai_assistance_disclosure.md",
+  "packet_dir": "outputs/ai_assistance_disclosure_packet_20260617",
+  "word_count": 345
+}

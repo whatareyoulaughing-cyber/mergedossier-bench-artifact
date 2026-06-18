@@ -1,0 +1,29 @@
+{
+  "generated_date": "2026-06-18",
+  "purpose": "post-upload ICSE submission packet and 80-percent-gap execution aid",
+  "heuristic_readiness_band": "75-78%",
+  "not_a_calibrated_acceptance_probability": true,
+  "anonymous_artifact_release": "https://github.com/whatareyoulaughing-cyber/mergedossier-bench-artifact/releases/tag/v0.1-anonymous",
+  "artifact_zip_sha256": "32622b929dc9ba98d6b35031542d363499a6a9bd2206c99cb72a0db9d9a424d7",
+  "remaining_highest_return_action": "complete 50-task external audit slice",
+  "external_audit_current_status": "incomplete",
+  "external_audit_blank_cells": 500,
+  "external_audit_valid_cells": 0,
+  "files": [
+    "PORTAL_FIELDS_FINAL_POST_UPLOAD.md",
+    "EXTERNAL_AUDIT_SEND_NOW_EMAIL_ZH.md",
+    "EXTERNAL_AUDIT_SEND_NOW_EMAIL_ZH_WINDOWS.md",
+    "EXTERNAL_AUDIT_RETURN_GATE.md",
+    "SUBMIT_NOW_WITHOUT_EXTERNAL_AUDIT_LIMITATION.md",
+    "POST_UPLOAD_80_PERCENT_DASHBOARD.md"
+  ],
+  "non_claims": [
+    "patch correctness",
+    "mergeability",
+    "reviewer utility",
+    "AI-vs-human causal effects",
+    "all-GitHub rates",
+    "inter-rater reliability",
+    "DOI archival during double-anonymous review"
+  ]
+}

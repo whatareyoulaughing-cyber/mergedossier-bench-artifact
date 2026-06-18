@@ -1,0 +1,44 @@
+{
+  "status": "pass",
+  "fail_count": 0,
+  "warn_count": 0,
+  "checks": [
+    {
+      "name": "pdf_exists",
+      "status": "pass",
+      "detail": "paper\\main.pdf"
+    },
+    {
+      "name": "pdf_page_render",
+      "status": "pass",
+      "detail": "8 page image(s)."
+    },
+    {
+      "name": "contact_sheet",
+      "status": "pass",
+      "detail": "outputs\\paper_readiness_check_20260617_handoff_gap\\final_pdf_proofread\\contact.png"
+    },
+    {
+      "name": "pdf_text_extract",
+      "status": "pass",
+      "detail": "outputs\\paper_readiness_check_20260617_handoff_gap\\final_pdf_proofread\\paper_text.txt"
+    },
+    {
+      "name": "required_identity_phrases",
+      "status": "pass",
+      "detail": "All required paper identity phrases found."
+    },
+    {
+      "name": "placeholder_tokens",
+      "status": "pass",
+      "detail": "No TODO/TBD/unresolved-reference tokens found."
+    },
+    {
+      "name": "claim_boundary_terms",
+      "status": "pass",
+      "detail": "inter-rater reliability=2, all GitHub=1, AI-vs-human=3, reviewer utility=4, mergeability=13, patch correctness=2"
+    }
+  ],
+  "generated_at": "2026-06-17T15:58:42.064102+00:00",
+  "pdf": "paper\\main.pdf"
+}

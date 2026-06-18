@@ -68,6 +68,12 @@ INCLUDE_PATHS = [
     "outputs/raw_frame_release_risk_20260617",
     "outputs/manuscript_claim_hygiene_20260617",
     "outputs/submission_blocker_dashboard_20260617",
+    "outputs/submission_blocker_dashboard_20260618_post_upload",
+    "outputs/icse_submission_packet_post_upload_20260618/packet_status.json",
+    "outputs/icse_submission_packet_post_upload_20260618/PORTAL_FIELDS_FINAL_POST_UPLOAD.md",
+    "outputs/icse_submission_packet_post_upload_20260618/EXTERNAL_AUDIT_RETURN_GATE.md",
+    "outputs/icse_submission_packet_post_upload_20260618/SUBMIT_NOW_WITHOUT_EXTERNAL_AUDIT_LIMITATION.md",
+    "outputs/icse_submission_packet_post_upload_20260618/POST_UPLOAD_80_PERCENT_DASHBOARD.md",
     "outputs/submission_readiness_20260617",
 ]
 

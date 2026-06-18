@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-06-17T15:59:35.090514+00:00",
+  "status": "ready_for_manual_publication",
+  "failure_count": 0,
+  "warning_count": 2,
+  "doi_minted": false,
+  "public_repository_url_recorded": false,
+  "checks": [
+    {
+      "name": "archive_checksum",
+      "status": "pass",
+      "evidence": "outputs/zenodo_deposit_packet_20260617/files_to_upload/MergeDossier-Bench-anonymous-review.zip matches deposit summary.",
+      "action": "Upload this exact archive."
+    },
+    {
+      "name": "sha256sums_match",
+      "status": "pass",
+      "evidence": "SHA256SUMS.txt matches the upload archive.",
+      "action": "Use this checksum during deposit."
+    },
+    {
+      "name": "upload_manifest_match",
+      "status": "pass",
+      "evidence": "artifact_upload_manifest.csv records the upload archive and checksum.",
+      "action": "Use the manifest as upload evidence."
+    },
+    {
+      "name": "metadata_fields",
+      "status": "pass",
+      "evidence": "Zenodo metadata template has required fields.",
+      "action": "Copy fields into Zenodo after replacing placeholders."
+    },
+    {
+      "name": "publication_placeholders",
+      "status": "warn",
+      "evidence": "Placeholders remain: TO_BE_FILLED, TO_BE_FILLED_AFTER_ANONYMOUS_REVIEW, TO_BE_FILLED_PUBLIC_REPOSITORY_URL, TO_BE_FILLED_PAPER_URL_OR_DOI",
+      "action": "Replace these only after real public author/repository/paper metadata exists."
+    },
+    {
+      "name": "claim_boundary_notes",
+      "status": "pass",
+      "evidence": "Metadata notes include required non-claim boundaries.",
+      "action": "Keep these boundaries in the archive notes."
+    },
+    {
+      "name": "metadata_files_copied",
+      "status": "pass",
+      "evidence": "Deposit packet contains copied metadata templates.",
+      "action": "Use the copies in the deposit packet."
+    },
+    {
+      "name": "post_publication_update_command",
+      "status": "pass",
+      "evidence": "Post-publication metadata update command is documented.",
+      "action": "Run it after DOI/public URL exist."
+    },
+    {
+      "name": "copy_fields_boundary",
+      "status": "pass",
+      "evidence": "Zenodo/GitHub copy-field helpers include claim-boundary text.",
+      "action": "Use these files while filling release portals."
+    },
+    {
+      "name": "doi_public_url_boundary",
+      "status": "warn",
+      "evidence": "DOI/public URL are correctly recorded as not yet minted/published.",
+      "action": "Do not claim public availability until real values exist."
+    }
+  ],
+  "claim_boundary": "Preflight readiness only. Passing this check does not mint a DOI, publish a public repository, or establish artifact availability."
+}
