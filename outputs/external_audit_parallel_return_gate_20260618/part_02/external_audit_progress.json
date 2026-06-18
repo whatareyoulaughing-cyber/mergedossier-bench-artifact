@@ -1,0 +1,1120 @@
+{
+  "generated_at": "2026-06-18T07:33:40.277090+00:00",
+  "status": "incomplete",
+  "input_kind": "csv",
+  "input_path": "outputs/external_audit_parallel_packets_20260618/part_02/external_audit_sheet.csv",
+  "csv_used": "outputs/external_audit_parallel_return_gate_20260618/part_02/external_audit_progress_input.csv",
+  "selected_tasks": 25,
+  "rows_found": 25,
+  "complete_rows": 0,
+  "missing_rows": [],
+  "total_required_cells": 250,
+  "valid_label_cells": 0,
+  "blank_label_cells": [
+    {
+      "instance_id": "pop_Azure_azqr_490",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_Azure_azqr_490",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_Azure_azqr_490",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_Azure_azqr_490",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_Azure_azqr_490",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_Azure_azqr_490",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_Azure_azqr_490",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_Azure_azqr_490",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_Azure_azqr_490",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_Azure_azqr_490",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_CitizensFoundation_your-priorities-app_238",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_CitizensFoundation_your-priorities-app_238",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_CitizensFoundation_your-priorities-app_238",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_CitizensFoundation_your-priorities-app_238",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_CitizensFoundation_your-priorities-app_238",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_CitizensFoundation_your-priorities-app_238",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_CitizensFoundation_your-priorities-app_238",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_CitizensFoundation_your-priorities-app_238",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_CitizensFoundation_your-priorities-app_238",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_CitizensFoundation_your-priorities-app_238",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_EvotecIT_Mailozaurr_69",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_EvotecIT_Mailozaurr_69",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_EvotecIT_Mailozaurr_69",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_EvotecIT_Mailozaurr_69",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_EvotecIT_Mailozaurr_69",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_EvotecIT_Mailozaurr_69",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_EvotecIT_Mailozaurr_69",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_EvotecIT_Mailozaurr_69",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_EvotecIT_Mailozaurr_69",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_EvotecIT_Mailozaurr_69",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2176",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2176",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2176",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2176",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2176",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2176",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2176",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2176",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2176",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2176",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_60",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_60",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_60",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_60",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_60",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_60",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_60",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_60",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_60",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_60",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_OpenAgentsInc_openagents_911",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_OpenAgentsInc_openagents_911",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_OpenAgentsInc_openagents_911",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_OpenAgentsInc_openagents_911",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_OpenAgentsInc_openagents_911",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_OpenAgentsInc_openagents_911",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_OpenAgentsInc_openagents_911",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_OpenAgentsInc_openagents_911",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_OpenAgentsInc_openagents_911",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_OpenAgentsInc_openagents_911",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_PolicyEngine_policyengine-us_6061",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_PolicyEngine_policyengine-us_6061",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_PolicyEngine_policyengine-us_6061",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_PolicyEngine_policyengine-us_6061",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_PolicyEngine_policyengine-us_6061",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_PolicyEngine_policyengine-us_6061",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_PolicyEngine_policyengine-us_6061",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_PolicyEngine_policyengine-us_6061",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_PolicyEngine_policyengine-us_6061",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_PolicyEngine_policyengine-us_6061",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_acoyfellow_UserDO_26",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_acoyfellow_UserDO_26",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_acoyfellow_UserDO_26",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_acoyfellow_UserDO_26",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_acoyfellow_UserDO_26",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_acoyfellow_UserDO_26",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_acoyfellow_UserDO_26",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_acoyfellow_UserDO_26",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_acoyfellow_UserDO_26",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_acoyfellow_UserDO_26",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_antiwork_flexile_186",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_flexile_186",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_flexile_186",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_flexile_186",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_antiwork_flexile_186",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_flexile_186",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_flexile_186",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_flexile_186",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_flexile_186",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_flexile_186",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_466",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_466",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_466",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_466",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_466",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_466",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_466",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_466",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_466",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_466",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_bionic-gpt_bionic-gpt_858",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_bionic-gpt_bionic-gpt_858",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_bionic-gpt_bionic-gpt_858",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_bionic-gpt_bionic-gpt_858",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_bionic-gpt_bionic-gpt_858",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_bionic-gpt_bionic-gpt_858",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_bionic-gpt_bionic-gpt_858",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_bionic-gpt_bionic-gpt_858",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_bionic-gpt_bionic-gpt_858",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_bionic-gpt_bionic-gpt_858",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_crewAIInc_crewAI-tools_289",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_crewAIInc_crewAI-tools_289",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_crewAIInc_crewAI-tools_289",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_crewAIInc_crewAI-tools_289",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_crewAIInc_crewAI-tools_289",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_crewAIInc_crewAI-tools_289",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_crewAIInc_crewAI-tools_289",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_crewAIInc_crewAI-tools_289",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_crewAIInc_crewAI-tools_289",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_crewAIInc_crewAI-tools_289",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_imgntn_j360_11",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_imgntn_j360_11",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_imgntn_j360_11",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_imgntn_j360_11",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_imgntn_j360_11",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_imgntn_j360_11",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_imgntn_j360_11",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_imgntn_j360_11",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_imgntn_j360_11",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_imgntn_j360_11",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_mendableai_firecrawl_1413",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_mendableai_firecrawl_1413",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_mendableai_firecrawl_1413",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_mendableai_firecrawl_1413",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_mendableai_firecrawl_1413",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_mendableai_firecrawl_1413",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_mendableai_firecrawl_1413",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_mendableai_firecrawl_1413",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_mendableai_firecrawl_1413",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_mendableai_firecrawl_1413",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252186",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252186",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252186",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252186",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252186",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252186",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252186",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252186",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252186",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252186",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252342",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252342",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252342",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252342",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252342",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252342",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252342",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252342",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252342",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252342",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_11038",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_11038",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_11038",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_11038",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_11038",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_11038",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_11038",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_11038",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_11038",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_11038",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_14293",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_14293",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_14293",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_14293",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_14293",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_14293",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_14293",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_14293",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_14293",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_14293",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5581",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5581",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5581",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5581",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5581",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5581",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5581",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5581",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5581",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5581",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_nrwl_nx_32088",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_nrwl_nx_32088",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_nrwl_nx_32088",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_nrwl_nx_32088",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_nrwl_nx_32088",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_nrwl_nx_32088",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_nrwl_nx_32088",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_nrwl_nx_32088",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_nrwl_nx_32088",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_nrwl_nx_32088",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_pardeike_Harmony_676",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_pardeike_Harmony_676",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_pardeike_Harmony_676",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_pardeike_Harmony_676",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_pardeike_Harmony_676",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_pardeike_Harmony_676",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_pardeike_Harmony_676",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_pardeike_Harmony_676",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_pardeike_Harmony_676",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_pardeike_Harmony_676",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_ruvnet_claude-flow_489",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_ruvnet_claude-flow_489",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_ruvnet_claude-flow_489",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_ruvnet_claude-flow_489",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_ruvnet_claude-flow_489",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_ruvnet_claude-flow_489",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_ruvnet_claude-flow_489",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_ruvnet_claude-flow_489",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_ruvnet_claude-flow_489",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_ruvnet_claude-flow_489",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_theopenco_llmgateway_102",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_theopenco_llmgateway_102",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_theopenco_llmgateway_102",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_theopenco_llmgateway_102",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_theopenco_llmgateway_102",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_theopenco_llmgateway_102",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_theopenco_llmgateway_102",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_theopenco_llmgateway_102",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_theopenco_llmgateway_102",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_theopenco_llmgateway_102",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_vdaas_vald_2967",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_vdaas_vald_2967",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_vdaas_vald_2967",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_vdaas_vald_2967",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_vdaas_vald_2967",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_vdaas_vald_2967",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_vdaas_vald_2967",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_vdaas_vald_2967",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_vdaas_vald_2967",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_vdaas_vald_2967",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_zeroc-ice_ice-demos_505",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_zeroc-ice_ice-demos_505",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_zeroc-ice_ice-demos_505",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_zeroc-ice_ice-demos_505",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_zeroc-ice_ice-demos_505",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_zeroc-ice_ice-demos_505",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_zeroc-ice_ice-demos_505",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_zeroc-ice_ice-demos_505",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_zeroc-ice_ice-demos_505",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_zeroc-ice_ice-demos_505",
+      "category": "ownership_handoff"
+    }
+  ],
+  "invalid_label_cells": [],
+  "completion_rate": 0.0,
+  "by_category": [
+    {
+      "category": "intent_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "requirement_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "test_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "risk_analysis",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "scope_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "trace_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "dependency_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "regression_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "rationale_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "ownership_handoff",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    }
+  ],
+  "claim_boundary": "Progress report only. Do not cite external agreement until the returned sheet is complete and check_external_audit_return.py reports status=complete."
+}

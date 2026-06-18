@@ -1,0 +1,1120 @@
+{
+  "generated_at": "2026-06-18T07:33:40.249050+00:00",
+  "status": "incomplete",
+  "input_kind": "csv",
+  "input_path": "outputs/external_audit_parallel_packets_20260618/part_01/external_audit_sheet.csv",
+  "csv_used": "outputs/external_audit_parallel_return_gate_20260618/part_01/external_audit_progress_input.csv",
+  "selected_tasks": 25,
+  "rows_found": 25,
+  "complete_rows": 0,
+  "missing_rows": [],
+  "total_required_cells": 250,
+  "valid_label_cells": 0,
+  "blank_label_cells": [
+    {
+      "instance_id": "pop_AzureAD_microsoft-authentication-library-for-js_7878",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_AzureAD_microsoft-authentication-library-for-js_7878",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_AzureAD_microsoft-authentication-library-for-js_7878",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_AzureAD_microsoft-authentication-library-for-js_7878",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_AzureAD_microsoft-authentication-library-for-js_7878",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_AzureAD_microsoft-authentication-library-for-js_7878",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_AzureAD_microsoft-authentication-library-for-js_7878",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_AzureAD_microsoft-authentication-library-for-js_7878",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_AzureAD_microsoft-authentication-library-for-js_7878",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_AzureAD_microsoft-authentication-library-for-js_7878",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_Cap-go_capgo_1050",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_Cap-go_capgo_1050",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_Cap-go_capgo_1050",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_Cap-go_capgo_1050",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_Cap-go_capgo_1050",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_Cap-go_capgo_1050",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_Cap-go_capgo_1050",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_Cap-go_capgo_1050",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_Cap-go_capgo_1050",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_Cap-go_capgo_1050",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_DannyMac180_meta-agent_150",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_DannyMac180_meta-agent_150",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_DannyMac180_meta-agent_150",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_DannyMac180_meta-agent_150",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_DannyMac180_meta-agent_150",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_DannyMac180_meta-agent_150",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_DannyMac180_meta-agent_150",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_DannyMac180_meta-agent_150",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_DannyMac180_meta-agent_150",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_DannyMac180_meta-agent_150",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_MihaiCristianCondrea_Smart-Cleaner-for-Android_69",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_MihaiCristianCondrea_Smart-Cleaner-for-Android_69",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_MihaiCristianCondrea_Smart-Cleaner-for-Android_69",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_MihaiCristianCondrea_Smart-Cleaner-for-Android_69",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_MihaiCristianCondrea_Smart-Cleaner-for-Android_69",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_MihaiCristianCondrea_Smart-Cleaner-for-Android_69",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_MihaiCristianCondrea_Smart-Cleaner-for-Android_69",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_MihaiCristianCondrea_Smart-Cleaner-for-Android_69",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_MihaiCristianCondrea_Smart-Cleaner-for-Android_69",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_MihaiCristianCondrea_Smart-Cleaner-for-Android_69",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2939",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2939",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2939",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2939",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2939",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2939",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2939",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2939",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2939",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_2939",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_655",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_655",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_655",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_655",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_655",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_655",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_655",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_655",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_655",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_MontrealAI_AGI-Alpha-Agent-v0_655",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_OpenHFT_Chronicle-Core_777",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_OpenHFT_Chronicle-Core_777",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_OpenHFT_Chronicle-Core_777",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_OpenHFT_Chronicle-Core_777",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_OpenHFT_Chronicle-Core_777",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_OpenHFT_Chronicle-Core_777",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_OpenHFT_Chronicle-Core_777",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_OpenHFT_Chronicle-Core_777",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_OpenHFT_Chronicle-Core_777",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_OpenHFT_Chronicle-Core_777",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_QL-Win_QuickLook_1712",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_QL-Win_QuickLook_1712",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_QL-Win_QuickLook_1712",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_QL-Win_QuickLook_1712",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_QL-Win_QuickLook_1712",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_QL-Win_QuickLook_1712",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_QL-Win_QuickLook_1712",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_QL-Win_QuickLook_1712",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_QL-Win_QuickLook_1712",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_QL-Win_QuickLook_1712",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_airbytehq_airbyte_52602",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_airbytehq_airbyte_52602",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_airbytehq_airbyte_52602",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_airbytehq_airbyte_52602",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_airbytehq_airbyte_52602",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_airbytehq_airbyte_52602",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_airbytehq_airbyte_52602",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_airbytehq_airbyte_52602",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_airbytehq_airbyte_52602",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_airbytehq_airbyte_52602",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_132",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_132",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_132",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_132",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_132",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_132",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_132",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_132",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_132",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_antiwork_helper_132",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_ateliee_jquery.schedule_58",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_ateliee_jquery.schedule_58",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_ateliee_jquery.schedule_58",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_ateliee_jquery.schedule_58",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_ateliee_jquery.schedule_58",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_ateliee_jquery.schedule_58",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_ateliee_jquery.schedule_58",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_ateliee_jquery.schedule_58",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_ateliee_jquery.schedule_58",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_ateliee_jquery.schedule_58",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_cloudflare_next-on-pages_975",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_cloudflare_next-on-pages_975",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_cloudflare_next-on-pages_975",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_cloudflare_next-on-pages_975",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_cloudflare_next-on-pages_975",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_cloudflare_next-on-pages_975",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_cloudflare_next-on-pages_975",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_cloudflare_next-on-pages_975",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_cloudflare_next-on-pages_975",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_cloudflare_next-on-pages_975",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_dotnet_SqlClient_3425",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_dotnet_SqlClient_3425",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_dotnet_SqlClient_3425",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_dotnet_SqlClient_3425",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_dotnet_SqlClient_3425",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_dotnet_SqlClient_3425",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_dotnet_SqlClient_3425",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_dotnet_SqlClient_3425",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_dotnet_SqlClient_3425",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_dotnet_SqlClient_3425",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_lukemurraynz_awesome-azure-architecture_55",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_lukemurraynz_awesome-azure-architecture_55",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_lukemurraynz_awesome-azure-architecture_55",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_lukemurraynz_awesome-azure-architecture_55",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_lukemurraynz_awesome-azure-architecture_55",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_lukemurraynz_awesome-azure-architecture_55",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_lukemurraynz_awesome-azure-architecture_55",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_lukemurraynz_awesome-azure-architecture_55",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_lukemurraynz_awesome-azure-architecture_55",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_lukemurraynz_awesome-azure-architecture_55",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_251252",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_251252",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_251252",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_251252",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_251252",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_251252",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_251252",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_251252",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_251252",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_251252",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252334",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252334",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252334",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252334",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252334",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252334",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252334",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252334",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252334",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_microsoft_vscode_252334",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_10773",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_10773",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_10773",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_10773",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_10773",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_10773",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_10773",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_10773",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_10773",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_10773",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_1372",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_1372",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_1372",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_1372",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_1372",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_1372",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_1372",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_1372",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_1372",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_1372",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_487",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_487",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_487",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_487",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_487",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_487",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_487",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_487",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_487",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_487",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5874",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5874",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5874",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5874",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5874",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5874",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5874",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5874",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5874",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_mochilang_mochi_5874",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_odigos-io_odigos_3069",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_odigos-io_odigos_3069",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_odigos-io_odigos_3069",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_odigos-io_odigos_3069",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_odigos-io_odigos_3069",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_odigos-io_odigos_3069",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_odigos-io_odigos_3069",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_odigos-io_odigos_3069",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_odigos-io_odigos_3069",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_odigos-io_odigos_3069",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_pyth-network_pyth-crosschain_2354",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_pyth-network_pyth-crosschain_2354",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_pyth-network_pyth-crosschain_2354",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_pyth-network_pyth-crosschain_2354",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_pyth-network_pyth-crosschain_2354",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_pyth-network_pyth-crosschain_2354",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_pyth-network_pyth-crosschain_2354",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_pyth-network_pyth-crosschain_2354",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_pyth-network_pyth-crosschain_2354",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_pyth-network_pyth-crosschain_2354",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_sam-goodwin_alchemy_406",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_sam-goodwin_alchemy_406",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_sam-goodwin_alchemy_406",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_sam-goodwin_alchemy_406",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_sam-goodwin_alchemy_406",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_sam-goodwin_alchemy_406",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_sam-goodwin_alchemy_406",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_sam-goodwin_alchemy_406",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_sam-goodwin_alchemy_406",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_sam-goodwin_alchemy_406",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_ui5-community_wdi5_674",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_ui5-community_wdi5_674",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_ui5-community_wdi5_674",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_ui5-community_wdi5_674",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_ui5-community_wdi5_674",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_ui5-community_wdi5_674",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_ui5-community_wdi5_674",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_ui5-community_wdi5_674",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_ui5-community_wdi5_674",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_ui5-community_wdi5_674",
+      "category": "ownership_handoff"
+    },
+    {
+      "instance_id": "pop_zapier_zapier-platform_1075",
+      "category": "intent_evidence"
+    },
+    {
+      "instance_id": "pop_zapier_zapier-platform_1075",
+      "category": "requirement_evidence"
+    },
+    {
+      "instance_id": "pop_zapier_zapier-platform_1075",
+      "category": "test_evidence"
+    },
+    {
+      "instance_id": "pop_zapier_zapier-platform_1075",
+      "category": "risk_analysis"
+    },
+    {
+      "instance_id": "pop_zapier_zapier-platform_1075",
+      "category": "scope_evidence"
+    },
+    {
+      "instance_id": "pop_zapier_zapier-platform_1075",
+      "category": "trace_evidence"
+    },
+    {
+      "instance_id": "pop_zapier_zapier-platform_1075",
+      "category": "dependency_evidence"
+    },
+    {
+      "instance_id": "pop_zapier_zapier-platform_1075",
+      "category": "regression_evidence"
+    },
+    {
+      "instance_id": "pop_zapier_zapier-platform_1075",
+      "category": "rationale_evidence"
+    },
+    {
+      "instance_id": "pop_zapier_zapier-platform_1075",
+      "category": "ownership_handoff"
+    }
+  ],
+  "invalid_label_cells": [],
+  "completion_rate": 0.0,
+  "by_category": [
+    {
+      "category": "intent_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "requirement_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "test_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "risk_analysis",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "scope_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "trace_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "dependency_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "regression_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "rationale_evidence",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    },
+    {
+      "category": "ownership_handoff",
+      "valid": 0,
+      "blank": 25,
+      "invalid": 0,
+      "present": 0,
+      "partially_present": 0,
+      "missing": 0,
+      "not_applicable": 0
+    }
+  ],
+  "claim_boundary": "Progress report only. Do not cite external agreement until the returned sheet is complete and check_external_audit_return.py reports status=complete."
+}

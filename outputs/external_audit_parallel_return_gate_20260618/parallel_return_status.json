@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-06-18T07:33:40.285641+00:00",
+  "status": "incomplete",
+  "all_parts_complete": false,
+  "part_results": [
+    {
+      "part_id": "part_01",
+      "input": "outputs/external_audit_parallel_packets_20260618/part_01/external_audit_sheet.csv",
+      "manifest": "outputs/external_audit_parallel_packets_20260618/part_01/external_audit_manifest.json",
+      "status": "incomplete",
+      "completion_rate": 0.0,
+      "selected_tasks": 25,
+      "blank_label_cells": 250,
+      "invalid_label_cells": 0,
+      "missing_rows": 0,
+      "feedback": "outputs/external_audit_parallel_return_gate_20260618/part_01/AUDITOR_FEEDBACK_REQUEST.md"
+    },
+    {
+      "part_id": "part_02",
+      "input": "outputs/external_audit_parallel_packets_20260618/part_02/external_audit_sheet.csv",
+      "manifest": "outputs/external_audit_parallel_packets_20260618/part_02/external_audit_manifest.json",
+      "status": "incomplete",
+      "completion_rate": 0.0,
+      "selected_tasks": 25,
+      "blank_label_cells": 250,
+      "invalid_label_cells": 0,
+      "missing_rows": 0,
+      "feedback": "outputs/external_audit_parallel_return_gate_20260618/part_02/AUDITOR_FEEDBACK_REQUEST.md"
+    }
+  ],
+  "merged_csv": null,
+  "formal_return_gate": null,
+  "formal_return_status": null,
+  "claim_boundary": "Parallel return gate only. A complete result supports a bounded external-audit slice statement, not inter-rater reliability."
+}

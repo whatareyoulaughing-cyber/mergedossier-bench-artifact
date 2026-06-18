@@ -1,0 +1,1751 @@
+annotator_id,instance_id,reliability_group_id,is_reliability_repeat,source,repo,pr_number,pr_url,title,existing_score,missing_evidence,dossier_text,intent_evidence_label,intent_evidence_comment,requirement_evidence_label,requirement_evidence_comment,test_evidence_label,test_evidence_comment,risk_analysis_label,risk_analysis_comment,scope_evidence_label,scope_evidence_comment,trace_evidence_label,trace_evidence_comment,dependency_evidence_label,dependency_evidence_comment,regression_evidence_label,regression_evidence_comment,rationale_evidence_label,rationale_evidence_comment,ownership_handoff_label,ownership_handoff_comment,overall_acceptability,review_confidence
+external_auditor,pop_AzureAD_microsoft-authentication-library-for-js_7878,pop_AzureAD_microsoft-authentication-library-for-js_7878,False,outputs\population_ai_pr_500_20260616\dossiers\pop_AzureAD_microsoft-authentication-library-for-js_7878.json,AzureAD/microsoft-authentication-library-for-js,7878,https://github.com/AzureAD/microsoft-authentication-library-for-js/pull/7878,,47.25,regression_evidence;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 23 files changed (+0/-0): change/@azure-msal-browser-521ed11e-3749-4232-b690-43fbd0c99ed6.json, change/@azure-msal-common-6d6025c3-3105-431a-9d18-01b2174504f9.json, lib/msal-browser/src/interaction_client/RedirectClient.ts, lib/msal-browser/test/interaction_client/RedirectClient.spec.ts, lib/msal-common/apiReview/msal-common.api.md, lib/msal-common/src/account/AccountInfo.ts, lib/msal-common/src/account/AuthToken.ts, lib/msal-common/src/account/ClientCredentials.ts
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Fix redirect loop when URLs contain encoded apostrophes in MSAL Angular standalone components
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: True
+  quality: 1
+  claim: PR references linked issue or issue-style requirement.
+  grounding: issue reference
+  notes: Observed from linked issue metadata or issue reference in PR body.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: True
+  quality: 1
+  claim: Risk-related language appears in PR text or comments.
+  grounding: risk terms
+  notes: Observed risk language; quality remains thin unless the text provides a concrete analysis.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 23 files changed (+0/-0): change/@azure-msal-browser-521ed11e-3749-4232-b690-43fbd0c99ed6.json, change/@azure-msal-common-6d6025c3-3105-431a-9d18-01b2174504f9.json, lib/msal-browser/src/interaction_client/RedirectClient.ts, lib/msal-browser/test/interaction_client/RedirectClient.spec.ts, lib/msal-common/apiReview/msal-common.api.md, lib/msal-common/src/account/AccountInfo.ts, lib/msal-common/src/account/AuthToken.ts, lib/msal-common/src/account/ClientCredentials.ts
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 2
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test files
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_Cap-go_capgo_1050,pop_Cap-go_capgo_1050,False,outputs\population_ai_pr_500_20260616\dossiers\pop_Cap-go_capgo_1050.json,Cap-go/capgo,1050,https://github.com/Cap-go/capgo/pull/1050,,44.15,regression_evidence;trace_evidence;limitations;rationale_evidence,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 25 files changed (+0/-0): CHANGELOG.md, bun.lockb, messages/de.json, messages/en.json, messages/es.json, messages/fr.json, messages/id.json, messages/it.json
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: fix: improve deploy history performance and code quality
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: True
+  quality: 1
+  claim: Ownership, rollout, monitoring, manual steps, follow-up responsibility, or rollback is mentioned.
+  grounding: ownership terms
+  notes: Observed handoff language.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: True
+  quality: 1
+  claim: PR references linked issue or issue-style requirement.
+  grounding: issue reference
+  notes: Observed from linked issue metadata or issue reference in PR body.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: True
+  quality: 1
+  claim: Risk-related language appears in PR text or comments.
+  grounding: risk terms
+  notes: Observed risk language; quality remains thin unless the text provides a concrete analysis.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 25 files changed (+0/-0): CHANGELOG.md, bun.lockb, messages/de.json, messages/en.json, messages/es.json, messages/fr.json, messages/id.json, messages/it.json
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 1
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test checks
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_DannyMac180_meta-agent_150,pop_DannyMac180_meta-agent_150,False,outputs\population_ai_pr_500_20260616\dossiers\pop_DannyMac180_meta-agent_150.json,DannyMac180/meta-agent,150,https://github.com/DannyMac180/meta-agent/pull/150,,34.05,requirement_evidence;regression_evidence;risk_analysis;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 3 files changed (+0/-0): src/meta_agent/__init__.py, src/meta_agent/template_governance.py, tests/test_template_governance.py
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: feat: add template governance
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: False
+  quality: 0
+  claim: 
+  notes: No risk, breaking-change, compatibility, security, migration, rollback, or regression-risk discussion found.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 3 files changed (+0/-0): src/meta_agent/__init__.py, src/meta_agent/template_governance.py, tests/test_template_governance.py
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 2
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test files
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_MihaiCristianCondrea_Smart-Cleaner-for-Android_69,pop_MihaiCristianCondrea_Smart-Cleaner-for-Android_69,False,outputs\population_ai_pr_500_20260616\dossiers\pop_MihaiCristianCondrea_Smart-Cleaner-for-Android_69.json,MihaiCristianCondrea/Smart-Cleaner-for-Android,69,https://github.com/MihaiCristianCondrea/Smart-Cleaner-for-Android/pull/69,,28.2,requirement_evidence;regression_evidence;risk_analysis;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 2 files changed (+0/-0): app/src/main/kotlin/com/d4rk/cleaner/app/clean/home/ui/HomeScreen.kt, app/src/main/kotlin/com/d4rk/cleaner/app/clean/home/ui/components/ApkCleanerCard.kt
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Improve APK cleaner card
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: False
+  quality: 0
+  claim: 
+  notes: No risk, breaking-change, compatibility, security, migration, rollback, or regression-risk discussion found.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 2 files changed (+0/-0): app/src/main/kotlin/com/d4rk/cleaner/app/clean/home/ui/HomeScreen.kt, app/src/main/kotlin/com/d4rk/cleaner/app/clean/home/ui/components/ApkCleanerCard.kt
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 1
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test checks
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_MontrealAI_AGI-Alpha-Agent-v0_2939,pop_MontrealAI_AGI-Alpha-Agent-v0_2939,False,outputs\population_ai_pr_500_20260616\dossiers\pop_MontrealAI_AGI-Alpha-Agent-v0_2939.json,MontrealAI/AGI-Alpha-Agent-v0,2939,https://github.com/MontrealAI/AGI-Alpha-Agent-v0/pull/2939,,28.2,requirement_evidence;regression_evidence;risk_analysis;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 1 files changed (+0/-0): scripts/fetch_assets.py
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: [alpha_factory] Clarify IPFS gateway comment
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: False
+  quality: 0
+  claim: 
+  notes: No risk, breaking-change, compatibility, security, migration, rollback, or regression-risk discussion found.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 1 files changed (+0/-0): scripts/fetch_assets.py
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 1
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test checks
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_MontrealAI_AGI-Alpha-Agent-v0_655,pop_MontrealAI_AGI-Alpha-Agent-v0_655,False,outputs\population_ai_pr_500_20260616\dossiers\pop_MontrealAI_AGI-Alpha-Agent-v0_655.json,MontrealAI/AGI-Alpha-Agent-v0,655,https://github.com/MontrealAI/AGI-Alpha-Agent-v0/pull/655,,28.2,requirement_evidence;regression_evidence;risk_analysis;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 1 files changed (+0/-0): AGENTS.md
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: [alpha_factory] clarify offline setup instructions
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: False
+  quality: 0
+  claim: 
+  notes: No risk, breaking-change, compatibility, security, migration, rollback, or regression-risk discussion found.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 1 files changed (+0/-0): AGENTS.md
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 1
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test checks
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_OpenHFT_Chronicle-Core_777,pop_OpenHFT_Chronicle-Core_777,False,outputs\population_ai_pr_500_20260616\dossiers\pop_OpenHFT_Chronicle-Core_777.json,OpenHFT/Chronicle-Core,777,https://github.com/OpenHFT/Chronicle-Core/pull/777,,28.2,requirement_evidence;regression_evidence;risk_analysis;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 2 files changed (+0/-0): src/main/java/net/openhft/chronicle/core/threads/EventHandler.java, src/main/java/net/openhft/chronicle/core/threads/VanillaEventHandler.java
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Improve event handler docs
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: False
+  quality: 0
+  claim: 
+  notes: No risk, breaking-change, compatibility, security, migration, rollback, or regression-risk discussion found.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 2 files changed (+0/-0): src/main/java/net/openhft/chronicle/core/threads/EventHandler.java, src/main/java/net/openhft/chronicle/core/threads/VanillaEventHandler.java
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 1
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test checks
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_QL-Win_QuickLook_1712,pop_QL-Win_QuickLook_1712,False,outputs\population_ai_pr_500_20260616\dossiers\pop_QL-Win_QuickLook_1712.json,QL-Win/QuickLook,1712,https://github.com/QL-Win/QuickLook/pull/1712,,31.5,test_evidence;regression_evidence;risk_analysis;trace_evidence;limitations;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 1 files changed (+0/-0): QuickLook/App.xaml.cs
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Fix QuickLook crash after waking from sleep by adding power management event handling
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: True
+  quality: 1
+  claim: PR references linked issue or issue-style requirement.
+  grounding: issue reference
+  notes: Observed from linked issue metadata or issue reference in PR body.
+
+reviewer_actionability:
+  present: True
+  quality: 1
+  claim: Reviewer instructions or validation steps appear in artifacts.
+  grounding: reviewer action terms
+  notes: Observed reviewer-action language.
+
+risk_analysis:
+  present: False
+  quality: 0
+  claim: 
+  notes: No risk, breaking-change, compatibility, security, migration, rollback, or regression-risk discussion found.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 1 files changed (+0/-0): QuickLook/App.xaml.cs
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: False
+  quality: 0
+  claim: 
+  notes: No changed test files, test checks, or PR body test rationale found.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_airbytehq_airbyte_52602,pop_airbytehq_airbyte_52602,False,outputs\population_ai_pr_500_20260616\dossiers\pop_airbytehq_airbyte_52602.json,airbytehq/airbyte,52602,https://github.com/airbytehq/airbyte/pull/52602,,37.9,requirement_evidence;regression_evidence;risk_analysis;trace_evidence;limitations;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 10 files changed (+0/-0): airbyte-integrations/connectors/destination-milvus/check_milvus.py, airbyte-integrations/connectors/destination-milvus/check_milvus_lite.py, airbyte-integrations/connectors/destination-milvus/destination_milvus/indexer.py, airbyte-integrations/connectors/destination-milvus/integration_tests/milvus_integration_test.py, airbyte-integrations/connectors/destination-milvus/integration_tests/test_config_local.json, airbyte-integrations/connectors/destination-milvus/milvus_local.db, airbyte-integrations/connectors/destination-milvus/poetry.lock, airbyte-integrations/connectors/destination-milvus/pyproject.toml
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Add Milvus Lite support for integration tests
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: True
+  quality: 1
+  claim: Reviewer instructions or validation steps appear in artifacts.
+  grounding: reviewer action terms
+  notes: Observed reviewer-action language.
+
+risk_analysis:
+  present: False
+  quality: 0
+  claim: 
+  notes: No risk, breaking-change, compatibility, security, migration, rollback, or regression-risk discussion found.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 10 files changed (+0/-0): airbyte-integrations/connectors/destination-milvus/check_milvus.py, airbyte-integrations/connectors/destination-milvus/check_milvus_lite.py, airbyte-integrations/connectors/destination-milvus/destination_milvus/indexer.py, airbyte-integrations/connectors/destination-milvus/integration_tests/milvus_integration_test.py, airbyte-integrations/connectors/destination-milvus/integration_tests/test_config_local.json, airbyte-integrations/connectors/destination-milvus/milvus_local.db, airbyte-integrations/connectors/destination-milvus/poetry.lock, airbyte-integrations/connectors/destination-milvus/pyproject.toml
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 2
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test files
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_antiwork_helper_132,pop_antiwork_helper_132,False,outputs\population_ai_pr_500_20260616\dossiers\pop_antiwork_helper_132.json,antiwork/helper,132,https://github.com/antiwork/helper/pull/132,,30.4,requirement_evidence;test_evidence;regression_evidence;trace_evidence;limitations;rationale_evidence,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 4 files changed (+0/-0): apps/nextjs/src/app/api/chat/conversation/[slug]/escalated/route.ts, apps/nextjs/src/components/widget/Conversation.tsx, apps/nextjs/src/components/widget/SupportButtons.tsx, apps/nextjs/src/lib/data/conversation.ts
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Hide human support button when conversation is already escalated
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: True
+  quality: 1
+  claim: Ownership, rollout, monitoring, manual steps, follow-up responsibility, or rollback is mentioned.
+  grounding: ownership terms
+  notes: Observed handoff language.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: True
+  quality: 1
+  claim: Risk-related language appears in PR text or comments.
+  grounding: risk terms
+  notes: Observed risk language; quality remains thin unless the text provides a concrete analysis.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 4 files changed (+0/-0): apps/nextjs/src/app/api/chat/conversation/[slug]/escalated/route.ts, apps/nextjs/src/components/widget/Conversation.tsx, apps/nextjs/src/components/widget/SupportButtons.tsx, apps/nextjs/src/lib/data/conversation.ts
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: False
+  quality: 0
+  claim: 
+  notes: No changed test files, test checks, or PR body test rationale found.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_ateliee_jquery.schedule_58,pop_ateliee_jquery.schedule_58,False,outputs\population_ai_pr_500_20260616\dossiers\pop_ateliee_jquery.schedule_58.json,ateliee/jquery.schedule,58,https://github.com/ateliee/jquery.schedule/pull/58,,37.55,requirement_evidence;regression_evidence;trace_evidence;limitations;rationale_evidence,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 5 files changed (+0/-0): EFFICIENCY_REPORT.md, dist/js/jq.schedule.js, dist/js/jq.schedule.min.js, dist/js/jq.schedule.min.js.map, src/js/jq.schedule.js
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: jQuery Schedule Plugin - DOM Element Caching Optimization
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: True
+  quality: 1
+  claim: Ownership, rollout, monitoring, manual steps, follow-up responsibility, or rollback is mentioned.
+  grounding: ownership terms
+  notes: Observed handoff language.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: True
+  quality: 1
+  claim: Risk-related language appears in PR text or comments.
+  grounding: risk terms
+  notes: Observed risk language; quality remains thin unless the text provides a concrete analysis.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 5 files changed (+0/-0): EFFICIENCY_REPORT.md, dist/js/jq.schedule.js, dist/js/jq.schedule.min.js, dist/js/jq.schedule.min.js.map, src/js/jq.schedule.js
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 1
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test checks
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_cloudflare_next-on-pages_975,pop_cloudflare_next-on-pages_975,False,outputs\population_ai_pr_500_20260616\dossiers\pop_cloudflare_next-on-pages_975.json,cloudflare/next-on-pages,975,https://github.com/cloudflare/next-on-pages/pull/975,,43.4,requirement_evidence;regression_evidence;trace_evidence;limitations;rationale_evidence,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 8 files changed (+0/-0): package-lock.json, packages/next-on-pages/src/buildApplication/buildApplication.ts, packages/next-on-pages/src/buildApplication/buildWorkerFile.ts, packages/next-on-pages/src/buildApplication/compileInstrumentation.ts, packages/next-on-pages/templates/_worker.js/index.ts, packages/next-on-pages/templates/_worker.js/utils/routing.ts, packages/next-on-pages/tests/src/buildApplication/buildWorkerFile.test.ts, packages/next-on-pages/tests/src/buildApplication/compileInstrumentation.test.ts
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: add support for nextjs instrumentation
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: True
+  quality: 1
+  claim: Ownership, rollout, monitoring, manual steps, follow-up responsibility, or rollback is mentioned.
+  grounding: ownership terms
+  notes: Observed handoff language.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: True
+  quality: 1
+  claim: Risk-related language appears in PR text or comments.
+  grounding: risk terms
+  notes: Observed risk language; quality remains thin unless the text provides a concrete analysis.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 8 files changed (+0/-0): package-lock.json, packages/next-on-pages/src/buildApplication/buildApplication.ts, packages/next-on-pages/src/buildApplication/buildWorkerFile.ts, packages/next-on-pages/src/buildApplication/compileInstrumentation.ts, packages/next-on-pages/templates/_worker.js/index.ts, packages/next-on-pages/templates/_worker.js/utils/routing.ts, packages/next-on-pages/tests/src/buildApplication/buildWorkerFile.test.ts, packages/next-on-pages/tests/src/buildApplication/compileInstrumentation.test.ts
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 2
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test files
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_dotnet_SqlClient_3425,pop_dotnet_SqlClient_3425,False,outputs\population_ai_pr_500_20260616\dossiers\pop_dotnet_SqlClient_3425.json,dotnet/SqlClient,3425,https://github.com/dotnet/SqlClient/pull/3425,,25.05,test_evidence;regression_evidence;scope_evidence;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 1
+  claim: Initial plan for issue
+  grounding: messages
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: [WIP] Always encrypted: 401 errors from Azure Key Vault is cached forever
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: True
+  quality: 1
+  claim: PR references linked issue or issue-style requirement.
+  grounding: issue reference
+  notes: Observed from linked issue metadata or issue reference in PR body.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: True
+  quality: 1
+  claim: Risk-related language appears in PR text or comments.
+  grounding: risk terms
+  notes: Observed risk language; quality remains thin unless the text provides a concrete analysis.
+
+scope_justification:
+  present: False
+  quality: 0
+  claim: 
+  notes: No changed file metadata available.
+
+test_rationale:
+  present: False
+  quality: 0
+  claim: 
+  notes: No changed test files, test checks, or PR body test rationale found.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_lukemurraynz_awesome-azure-architecture_55,pop_lukemurraynz_awesome-azure-architecture_55,False,outputs\population_ai_pr_500_20260616\dossiers\pop_lukemurraynz_awesome-azure-architecture_55.json,lukemurraynz/awesome-azure-architecture,55,https://github.com/lukemurraynz/awesome-azure-architecture/pull/55,,41.4,regression_evidence;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 1 files changed (+0/-0): README.md
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Enhance Azure architecture documentation with comprehensive patterns and practices guidance
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: True
+  quality: 1
+  claim: PR references linked issue or issue-style requirement.
+  grounding: issue reference
+  notes: Observed from linked issue metadata or issue reference in PR body.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: True
+  quality: 1
+  claim: Risk-related language appears in PR text or comments.
+  grounding: risk terms
+  notes: Observed risk language; quality remains thin unless the text provides a concrete analysis.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 1 files changed (+0/-0): README.md
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 1
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test checks
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_microsoft_vscode_251252,pop_microsoft_vscode_251252,False,outputs\population_ai_pr_500_20260616\dossiers\pop_microsoft_vscode_251252.json,microsoft/vscode,251252,https://github.com/microsoft/vscode/pull/251252,,41.4,regression_evidence;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 5 files changed (+0/-0): build/gulpfile.reh.js, src/vs/base/node/nls.ts, src/vs/platform/extensionManagement/common/extensionManagement.ts, src/vs/platform/extensionManagement/common/extensionManagementIpc.ts, src/vs/platform/extensionManagement/node/extensionManagementService.ts
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Fix translations for built-in extensions missing in remote mode
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: True
+  quality: 1
+  claim: PR references linked issue or issue-style requirement.
+  grounding: issue reference
+  notes: Observed from linked issue metadata or issue reference in PR body.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: True
+  quality: 1
+  claim: Risk-related language appears in PR text or comments.
+  grounding: risk terms
+  notes: Observed risk language; quality remains thin unless the text provides a concrete analysis.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 5 files changed (+0/-0): build/gulpfile.reh.js, src/vs/base/node/nls.ts, src/vs/platform/extensionManagement/common/extensionManagement.ts, src/vs/platform/extensionManagement/common/extensionManagementIpc.ts, src/vs/platform/extensionManagement/node/extensionManagementService.ts
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 1
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test checks
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_microsoft_vscode_252334,pop_microsoft_vscode_252334,False,outputs\population_ai_pr_500_20260616\dossiers\pop_microsoft_vscode_252334.json,microsoft/vscode,252334,https://github.com/microsoft/vscode/pull/252334,,41.4,regression_evidence;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 1 files changed (+0/-0): src/vs/editor/common/languages/autoIndent.ts
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Refactor autoIndent.ts: improve code organization and maintainability
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: True
+  quality: 1
+  claim: PR references linked issue or issue-style requirement.
+  grounding: issue reference
+  notes: Observed from linked issue metadata or issue reference in PR body.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: True
+  quality: 1
+  claim: Risk-related language appears in PR text or comments.
+  grounding: risk terms
+  notes: Observed risk language; quality remains thin unless the text provides a concrete analysis.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 1 files changed (+0/-0): src/vs/editor/common/languages/autoIndent.ts
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 1
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test checks
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_mochilang_mochi_10773,pop_mochilang_mochi_10773,False,outputs\population_ai_pr_500_20260616\dossiers\pop_mochilang_mochi_10773.json,mochilang/mochi,10773,https://github.com/mochilang/mochi/pull/10773,,37.9,requirement_evidence;regression_evidence;risk_analysis;trace_evidence;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 13 files changed (+0/-0): tests/transpiler/x/scala/in_operator.error, tests/transpiler/x/scala/in_operator.scala, tests/transpiler/x/scala/list_set_ops.error, tests/transpiler/x/scala/list_set_ops.scala, tests/transpiler/x/scala/partial_application.error, tests/transpiler/x/scala/partial_application.scala, tests/transpiler/x/scala/tail_recursion.error, tests/transpiler/x/scala/tail_recursion.scala
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Improve Scala transpiler and progress
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: True
+  quality: 1
+  claim: Limitations, follow-ups, TODOs, or constraints appear in artifacts.
+  grounding: limitation terms
+  notes: Observed limitation language.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: False
+  quality: 0
+  claim: 
+  notes: No risk, breaking-change, compatibility, security, migration, rollback, or regression-risk discussion found.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 13 files changed (+0/-0): tests/transpiler/x/scala/in_operator.error, tests/transpiler/x/scala/in_operator.scala, tests/transpiler/x/scala/list_set_ops.error, tests/transpiler/x/scala/list_set_ops.scala, tests/transpiler/x/scala/partial_application.error, tests/transpiler/x/scala/partial_application.scala, tests/transpiler/x/scala/tail_recursion.error, tests/transpiler/x/scala/tail_recursion.scala
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 2
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test files
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_mochilang_mochi_1372,pop_mochilang_mochi_1372,False,outputs\population_ai_pr_500_20260616\dossiers\pop_mochilang_mochi_1372.json,mochilang/mochi,1372,https://github.com/mochilang/mochi/pull/1372,,34.05,requirement_evidence;regression_evidence;risk_analysis;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 7 files changed (+0/-0): compile/scala/compiler.go, tests/compiler/scala/avg_builtin.mochi, tests/compiler/scala/avg_builtin.out, tests/compiler/scala/avg_builtin.scala.out, tests/compiler/scala/count_builtin.mochi, tests/compiler/scala/count_builtin.out, tests/compiler/scala/count_builtin.scala.out
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Add avg/count builtins to Scala backend
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: False
+  quality: 0
+  claim: 
+  notes: No risk, breaking-change, compatibility, security, migration, rollback, or regression-risk discussion found.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 7 files changed (+0/-0): compile/scala/compiler.go, tests/compiler/scala/avg_builtin.mochi, tests/compiler/scala/avg_builtin.out, tests/compiler/scala/avg_builtin.scala.out, tests/compiler/scala/count_builtin.mochi, tests/compiler/scala/count_builtin.out, tests/compiler/scala/count_builtin.scala.out
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 2
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test files
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_mochilang_mochi_487,pop_mochilang_mochi_487,False,outputs\population_ai_pr_500_20260616\dossiers\pop_mochilang_mochi_487.json,mochilang/mochi,487,https://github.com/mochilang/mochi/pull/487,,34.05,requirement_evidence;regression_evidence;risk_analysis;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 6 files changed (+0/-0): compile/py/compiler.go, compile/py/runtime.go, tests/compiler/py/dataset.py.out, tests/compiler/py/dataset_sort_take_limit.py.out, tests/compiler/valid/cross_join.py.out, tests/compiler/valid/join.py.out
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Remove helperIndex/iter in Python compiler
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: False
+  quality: 0
+  claim: 
+  notes: No risk, breaking-change, compatibility, security, migration, rollback, or regression-risk discussion found.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 6 files changed (+0/-0): compile/py/compiler.go, compile/py/runtime.go, tests/compiler/py/dataset.py.out, tests/compiler/py/dataset_sort_take_limit.py.out, tests/compiler/valid/cross_join.py.out, tests/compiler/valid/join.py.out
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 2
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test files
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_mochilang_mochi_5874,pop_mochilang_mochi_5874,False,outputs\population_ai_pr_500_20260616\dossiers\pop_mochilang_mochi_5874.json,mochilang/mochi,5874,https://github.com/mochilang/mochi/pull/5874,,34.05,requirement_evidence;regression_evidence;risk_analysis;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 11 files changed (+0/-0): tests/human/x/php/README.md, tests/human/x/php/append_builtin.php, tests/human/x/php/avg_builtin.php, tests/human/x/php/basic_compare.php, tests/human/x/php/binary_precedence.php, tests/human/x/php/bool_chain.php, tests/human/x/php/break_continue.php, tests/human/x/php/cast_string_to_int.php
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Add initial PHP translations for Mochi tests
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: False
+  quality: 0
+  claim: 
+  notes: No risk, breaking-change, compatibility, security, migration, rollback, or regression-risk discussion found.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 11 files changed (+0/-0): tests/human/x/php/README.md, tests/human/x/php/append_builtin.php, tests/human/x/php/avg_builtin.php, tests/human/x/php/basic_compare.php, tests/human/x/php/binary_precedence.php, tests/human/x/php/bool_chain.php, tests/human/x/php/break_continue.php, tests/human/x/php/cast_string_to_int.php
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 2
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test files
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_odigos-io_odigos_3069,pop_odigos-io_odigos_3069,False,outputs\population_ai_pr_500_20260616\dossiers\pop_odigos-io_odigos_3069.json,odigos-io/odigos,3069,https://github.com/odigos-io/odigos/pull/3069,,34.8,requirement_evidence;regression_evidence;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 23 files changed (+0/-0): CI_FAILURE_INVESTIGATION.md, GRPC_OAUTH2_TLS_FIX.md, OAUTH2_FIX_DEMONSTRATION.md, OAUTH2_IMPLEMENTATION_SUMMARY.md, TLS_CONFIG_OPTIMIZATION_SUMMARY.md, collector/builder-config.yaml, collector/odigosotelcol/components.go, collector/odigosotelcol/go.mod
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Add oauth2 client credentials support
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: True
+  quality: 1
+  claim: Risk-related language appears in PR text or comments.
+  grounding: risk terms
+  notes: Observed risk language; quality remains thin unless the text provides a concrete analysis.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 23 files changed (+0/-0): CI_FAILURE_INVESTIGATION.md, GRPC_OAUTH2_TLS_FIX.md, OAUTH2_FIX_DEMONSTRATION.md, OAUTH2_IMPLEMENTATION_SUMMARY.md, TLS_CONFIG_OPTIMIZATION_SUMMARY.md, collector/builder-config.yaml, collector/odigosotelcol/components.go, collector/odigosotelcol/go.mod
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 1
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test files
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_pyth-network_pyth-crosschain_2354,pop_pyth-network_pyth-crosschain_2354,False,outputs\population_ai_pr_500_20260616\dossiers\pop_pyth-network_pyth-crosschain_2354.json,pyth-network/pyth-crosschain,2354,https://github.com/pyth-network/pyth-crosschain/pull/2354,,30.4,requirement_evidence;test_evidence;regression_evidence;trace_evidence;limitations;rationale_evidence,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 1 files changed (+0/-0): target_chains/sui/contracts/rust-toolchain.toml
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: fix: pin Rust version to 1.73.0 for Sui contracts
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: True
+  quality: 1
+  claim: Ownership, rollout, monitoring, manual steps, follow-up responsibility, or rollback is mentioned.
+  grounding: ownership terms
+  notes: Observed handoff language.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: True
+  quality: 1
+  claim: Risk-related language appears in PR text or comments.
+  grounding: risk terms
+  notes: Observed risk language; quality remains thin unless the text provides a concrete analysis.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 1 files changed (+0/-0): target_chains/sui/contracts/rust-toolchain.toml
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: False
+  quality: 0
+  claim: 
+  notes: No changed test files, test checks, or PR body test rationale found.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_sam-goodwin_alchemy_406,pop_sam-goodwin_alchemy_406,False,outputs\population_ai_pr_500_20260616\dossiers\pop_sam-goodwin_alchemy_406.json,sam-goodwin/alchemy,406,https://github.com/sam-goodwin/alchemy/pull/406,,40.65,requirement_evidence;regression_evidence;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 4 files changed (+0/-0): alchemy-web/docs/providers/stripe/price.md, alchemy/src/stripe/price.ts, alchemy/test/stripe/meter.test.ts, alchemy/test/stripe/price.test.ts
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: feat(stripe): Add Full Tier Support for Stripe Prices
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: True
+  quality: 1
+  claim: Risk-related language appears in PR text or comments.
+  grounding: risk terms
+  notes: Observed risk language; quality remains thin unless the text provides a concrete analysis.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 4 files changed (+0/-0): alchemy-web/docs/providers/stripe/price.md, alchemy/src/stripe/price.ts, alchemy/test/stripe/meter.test.ts, alchemy/test/stripe/price.test.ts
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 2
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test files
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_ui5-community_wdi5_674,pop_ui5-community_wdi5_674,False,outputs\population_ai_pr_500_20260616\dossiers\pop_ui5-community_wdi5_674.json,ui5-community/wdi5,674,https://github.com/ui5-community/wdi5/pull/674,,40.65,requirement_evidence;regression_evidence;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 2 files changed (+0/-0): src/lib/authentication/BTPAuthenticator.ts, test/BTPAuthenticator.test.ts
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: Fix idpDomainOpt assignment in BTPAuthenticator constructor to prevent undefined behavior
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No linked issue, closing keyword, or issue reference found.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: True
+  quality: 1
+  claim: Risk-related language appears in PR text or comments.
+  grounding: risk terms
+  notes: Observed risk language; quality remains thin unless the text provides a concrete analysis.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 2 files changed (+0/-0): src/lib/authentication/BTPAuthenticator.ts, test/BTPAuthenticator.test.ts
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 2
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test files
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
+external_auditor,pop_zapier_zapier-platform_1075,pop_zapier_zapier-platform_1075,False,outputs\population_ai_pr_500_20260616\dossiers\pop_zapier_zapier-platform_1075.json,zapier/zapier-platform,1075,https://github.com/zapier/zapier-platform/pull/1075,,47.25,regression_evidence;trace_evidence;limitations;rationale_evidence;ownership_handoff,"agent_trace:
+  present: False
+  quality: 0
+  claim: 
+  notes: No agent logs, tool logs, command logs, reasoning summaries, or explicit agent trace found.
+
+change_summary:
+  present: True
+  quality: 2
+  claim: 7 files changed (+0/-0): packages/core/index.js, packages/core/index.mjs, packages/core/src/tools/exported.js, packages/core/test/errors-import.js, packages/core/test/errors.js, packages/core/test/final-verification.js, packages/core/types/custom.d.ts
+  grounding: files
+  notes: Observed from changed file metadata, commits, or PR body.
+
+intent:
+  present: True
+  quality: 2
+  claim: feat(core) Export errors from zapier-platform-core [PDE-6340]
+  grounding: title/body
+  notes: Observed from PR title/body or linked issue.
+
+limitations:
+  present: False
+  quality: 0
+  claim: 
+  notes: No known limitations, follow-ups, partial implementation notes, TODOs, or constraints found.
+
+ownership_handoff:
+  present: False
+  quality: 0
+  claim: 
+  notes: No owner, rollout, monitoring, manual step, follow-up responsibility, or maintainer handoff found.
+
+regression_safety:
+  present: False
+  quality: 0
+  claim: 
+  notes: No passing check metadata or regression-safety discussion found.
+
+requirement_traceability:
+  present: True
+  quality: 1
+  claim: PR references linked issue or issue-style requirement.
+  grounding: issue reference
+  notes: Observed from linked issue metadata or issue reference in PR body.
+
+reviewer_actionability:
+  present: False
+  quality: 0
+  claim: 
+  notes: No clear review instructions, validation steps, test commands, or inspection guidance found.
+
+risk_analysis:
+  present: True
+  quality: 1
+  claim: Risk-related language appears in PR text or comments.
+  grounding: risk terms
+  notes: Observed risk language; quality remains thin unless the text provides a concrete analysis.
+
+scope_justification:
+  present: True
+  quality: 1
+  claim: 7 files changed (+0/-0): packages/core/index.js, packages/core/index.mjs, packages/core/src/tools/exported.js, packages/core/test/errors-import.js, packages/core/test/errors.js, packages/core/test/final-verification.js, packages/core/types/custom.d.ts
+  grounding: files
+  notes: Inferred from changed file metadata; explicit scope rationale was not assumed.
+
+test_rationale:
+  present: True
+  quality: 2
+  claim: Test evidence observed from files, checks, or PR body.
+  grounding: test files
+  notes: Evidence is observed; metadata-only test signals are marked as thin.",,,,,,,,,,,,,,,,,,,,,,
