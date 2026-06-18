@@ -227,7 +227,7 @@ outputs/artifact_smoke/
   artifact_smoke_log.json
 ```
 
-It also runs `pytest -q`. The current test suite has 145 passing tests.
+It also runs `pytest -q`. The current test suite has 151 passing tests.
 
 The release-zip smoke checker writes:
 

@@ -218,7 +218,7 @@ Expected:
 
 - smoke workflow exits with code 0,
 - `outputs/artifact_smoke/artifact_smoke_log.json` exists,
-- `pytest -q` reports 145 passing tests in the current snapshot,
+- `pytest -q` reports 151 passing tests in the current snapshot,
 - `scripts/build_and_check_paper_layout.py` exits with code 0 and rebuilds
   `paper/main.pdf` before running format and layout gates,
 - `scripts/check_layout_quality.py` exits with code 0, reports 0 warnings,
