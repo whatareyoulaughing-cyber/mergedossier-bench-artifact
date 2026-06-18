@@ -87,7 +87,7 @@ Recommended ambitious version:
 - at least three languages,
 - post-merge maintenance signals.
 
-## Phase D: Modeling
+## Phase D: Future-only modeling
 
 ### Outcome variables
 
@@ -127,7 +127,8 @@ Recommended ambitious version:
 - regression models,
 - ablation by evidence category,
 - mixed-effects models by repository if sample size supports it,
-- calibration analysis for Evidence Sufficiency Score.
+- optional calibration analysis for the legacy triage score, if a later study
+  collects the independent outcome data needed for that question.
 
 ## Phase E: Controlled human study
 

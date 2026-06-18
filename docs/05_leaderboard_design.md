@@ -1,5 +1,14 @@
 # Leaderboard Design
 
+> **Superseded current-paper notice (2026-06-18):** This file is an early
+> leaderboard design sketch. The current ICSE manuscript does **not** evaluate
+> agents on reviewer usefulness, patch correctness, mergeability, or
+> AI-vs-human effects. The active paper claim is the handoff-evidence gap in a
+> deterministic 500-PR AIDev-pop sample, using review-evidence availability,
+> provenance-backed outputs, sensitivity analysis, and a single-operator audit
+> with delayed repeats. Treat the leaderboard ideas below as future design
+> notes, not as submitted empirical claims.
+
 ## Principle
 
 MergeDossier-Bench should not reward verbose hallucinated explanations. It should reward grounded, useful, reviewer-relevant evidence.
@@ -40,9 +49,10 @@ Evidence is grounded if it cites or points to a PR artifact:
 
 Ungrounded claims should be penalized.
 
-### Reviewer usefulness
+### Future reviewer-usefulness study
 
-Optional human study rating.
+Optional future human-study rating. This is outside the current ICSE
+submission and must not be described as a completed result.
 
 ### Calibration
 
@@ -50,7 +60,7 @@ Compare agent claims against available artifacts. For example, if the dossier cl
 
 ## Suggested table
 
-| Agent | Harness | ESS | Intent | Tests | Risk | Scope | Trace | Groundedness | Reviewer usefulness |
+| Agent | Harness | ESS | Intent | Tests | Risk | Scope | Trace | Groundedness | Future usefulness study |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|
 
 ## Anti-gaming rules

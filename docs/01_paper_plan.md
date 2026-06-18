@@ -11,66 +11,48 @@
 > `paper/main.tex`, `docs/14_reframing_to_evidence_availability.md`, and
 > `docs/15_claims_and_nonclaims.md`.
 
-## Working title
+## Current working title
 
-**MergeDossier-Bench: Evidence-Centered Evaluation of AI-Authored Pull Requests**
+**MergeDossier-Bench: Measuring the Handoff-Evidence Gap in AI-Authored Pull Requests**
 
 Backup title:
 
 **A Diff Is Not a Dossier: Evidence-Centered Evaluation of AI-Authored Pull Requests**
 
-## Thesis
+## Current thesis
 
-Coding agents are increasingly able to open pull requests, but a pull request is not merely a diff. Before humans can merge AI-authored changes, they need evidence about intent, requirements, tests, risks, scope, uncertainty, and downstream responsibility. MergeDossier-Bench introduces a schema, benchmark, and scoring protocol for evaluating the evidence sufficiency of AI-authored pull requests.
+Coding agents are increasingly able to open pull requests, but a pull request is
+not merely a diff. Before humans can take responsibility for a change, they
+need visible evidence about intent, requirements, tests, risks, scope, trace,
+rationale, and downstream ownership. MergeDossier-Bench provides a
+provenance-aware measurement framework for review-evidence availability and
+measures the handoff-evidence gap in a deterministic 500-PR AIDev-pop sample.
 
-## Abstract skeleton
+## Current abstract skeleton
 
-Coding agents increasingly submit pull requests, but a pull request is not merely a diff: maintainers need evidence to verify its intent, risks, tests, and downstream consequences before they can accept responsibility for merging it. Existing benchmarks focus primarily on patch correctness, mergeability, or review effort. This paper introduces **MergeDossier-Bench**, an evidence-centered benchmark for AI-authored pull requests. We define a MergeDossier as a structured evidence packet containing intent, requirement traceability, test rationale, regression-safety evidence, risk analysis, scope justification, agent trace, limitations, reviewer actionability, and ownership handoff. Using real AI-authored pull requests and human annotations, we study where current agents provide or omit evidence, whether evidence sufficiency explains human acceptability beyond pass/fail tests and patch size, and whether richer dossiers improve reviewer decision quality. Our results motivate a shift from evaluating only whether agents can produce patches to evaluating whether agents can support responsible human integration.
+MergeDossier-Bench is a provenance-aware benchmark and measurement framework
+for review-evidence availability in AI-authored pull requests. The current
+paper uses the AIDev-pop curated public agentic-PR frame, normalizes 33,596
+eligible PRs, draws a deterministic stratified sample of 500 PRs, and audits
+50 delayed repeats with one operator. The paper reports category-level
+availability intervals, provenance-backed inspectability, sensitivity analyses,
+and a quantified handoff-evidence gap. It does not claim patch correctness,
+mergeability, reviewer utility, AI-vs-human causal effects, all-GitHub rates,
+or inter-rater reliability.
 
-## Research questions
+## Current research questions
 
-### RQ1: What evidence do maintainers need when reviewing AI-authored pull requests?
+### RQ1: How can review evidence be represented as provenance-certified availability intervals?
 
-Data sources:
+Output: a MergeDossier representation, evidence-family crosswalk, provenance
+statuses, availability intervals, and handoff-gap quantities.
 
-- PR review comments,
-- requested changes,
-- closing comments,
-- issue discussions,
-- maintainer edits,
-- post-merge follow-up commits.
+### RQ2: What handoff-evidence gap appears in AIDev-pop?
 
-Output:
+Output: category-level evidence availability and handoff-evidence-gap estimates
+for the deterministic 500-PR AIDev-pop sample, bounded to that declared frame.
 
-- Review Evidence Taxonomy.
-
-### RQ2: How much evidence do current AI-authored PRs provide?
-
-Measure evidence sufficiency by agent, language, repo size, task type, PR size, and merge outcome.
-
-Output:
-
-- Evidence Sufficiency Score distributions.
-- Missing-evidence heatmaps.
-
-### RQ3: Does evidence sufficiency explain human acceptability beyond traditional signals?
-
-Traditional signals:
-
-- tests passed,
-- CI status,
-- patch size,
-- file count,
-- review rounds,
-- merge outcome,
-- time-to-merge.
-
-Output:
-
-- Predictive models / regression analyses.
-- Ablations showing whether dossier evidence adds explanatory power.
-
-### RQ4: Do richer MergeDossiers improve reviewer decisions?
+### Future-only extension: Do richer MergeDossiers improve reviewer decisions?
 
 Controlled study:
 
@@ -78,6 +60,8 @@ Controlled study:
 - Condition B: diff + tests/CI.
 - Condition C: diff + generated MergeDossier.
 - Condition D: diff + full curated MergeDossier.
+
+This reviewer-utility study is not part of the current submission.
 
 Measure:
 

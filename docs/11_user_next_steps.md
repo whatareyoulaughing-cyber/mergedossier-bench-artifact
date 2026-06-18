@@ -1,5 +1,12 @@
 # User Next Steps For The ICSE Pilot
 
+> **Superseded current-paper notice (2026-06-18):** This checklist described an
+> earlier 20--50 PR pilot path. The current submission route uses the completed
+> AIDev-pop 500-PR deterministic stratified sample, 50 delayed repeats, and a
+> single-operator audit. The 22-PR public snapshot is retained only as
+> preliminary pipeline/rubric validation. Do not use the older pilot checklist
+> below to describe the submitted empirical scope.
+
 This file is the working checklist for turning the current infrastructure
 prototype into a real pilot study. It assumes a single annotator. Do not report
 inter-rater reliability unless a second annotator is added later.
@@ -8,8 +15,9 @@ inter-rater reliability unless a second annotator is added later.
 
 - The corpus pipeline, GitHub fetcher, reconstruction, summarization, Label
   Studio export, and delayed-repeat reliability sample are implemented.
-- The paper draft is an infrastructure-plus-pilot-plan draft, not a final
-  empirical ICSE paper.
+- This historical checklist no longer describes the submitted empirical scope;
+  use `paper/main.tex`, `docs/14_reframing_to_evidence_availability.md`, and
+  `docs/17_single_operator_submission_strategy.md` for the current paper route.
 - The current public PR candidate list has 18 candidates. They are candidates,
   not verified AI-authored examples.
 - The live probe has only 3 PRs. Its scores are useful for smoke testing, not
