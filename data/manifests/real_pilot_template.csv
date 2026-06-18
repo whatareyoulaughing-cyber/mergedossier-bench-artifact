@@ -1,0 +1,6 @@
+instance_id,repo,pr_number,pr_url,source,author_type,agent_name,task_type,language,outcome,sample_split,notes
+pilot_placeholder_001,owner/repo,1,,live,unknown,unknown,bug_fix,unknown,unknown,pilot,Replace with a public PR and record authorship evidence.
+pilot_placeholder_002,owner/repo,2,,live,unknown,unknown,feature,unknown,unknown,pilot,Replace with a public PR and record authorship evidence.
+pilot_placeholder_003,owner/repo,3,,live,unknown,unknown,refactor,unknown,unknown,pilot,Replace with a public PR and record authorship evidence.
+pilot_placeholder_004,owner/repo,4,,live,unknown,unknown,test,unknown,unknown,pilot,Replace with a public PR and record authorship evidence.
+pilot_placeholder_005,owner/repo,5,,live,unknown,unknown,dependency,unknown,unknown,pilot,Replace with a public PR and record authorship evidence.
