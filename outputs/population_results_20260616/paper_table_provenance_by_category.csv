@@ -1,0 +1,14 @@
+category,observed,inferred,missing,not_applicable
+intent,500,0,0,0
+requirement_traceability,0,144,356,0
+test_rationale,387,22,91,0
+regression_safety,14,0,486,0
+risk_analysis,105,0,395,0
+scope_justification,15,478,7,0
+change_summary,500,0,0,0
+agent_trace,0,0,500,0
+limitations,31,0,469,0
+reviewer_actionability,46,0,454,0
+ownership_handoff,89,0,411,0
+dependency_evidence,0,70,0,430
+rationale_evidence,61,0,439,0

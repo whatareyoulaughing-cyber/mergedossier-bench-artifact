@@ -1,0 +1,5 @@
+metric,lower,upper,value,unit,interpretation
+Core evidence availability,0.4693,0.9347,,proportion,"Intent, Test, and Scope availability interval."
+Handoff Evidence Availability,0.0,0.1016,,proportion,"Average availability interval over Risk, Trace, Regression, Rationale, and Ownership."
+Handoff-Evidence Gap,0.8984,1.0,,proportion,One minus handoff evidence availability.
+Minimum robust separation,,,0.3677,percentage points,Core strict lower bound minus handoff lenient upper bound.

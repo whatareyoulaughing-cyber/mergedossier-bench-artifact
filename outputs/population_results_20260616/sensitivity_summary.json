@@ -1,0 +1,24 @@
+{
+  "construct": "Review-Evidence Availability",
+  "annotation_records": 500,
+  "main_rule": "present + partially_present counted positive",
+  "strict_rule": "only present counted positive",
+  "conservative_rule": "partially_present counted missing",
+  "robustly_high_categories": [
+    "intent_evidence"
+  ],
+  "robustly_low_categories": [
+    "requirement_evidence",
+    "risk_analysis",
+    "trace_evidence",
+    "regression_evidence",
+    "rationale_evidence",
+    "ownership_handoff"
+  ],
+  "partial_sensitive_categories": [
+    "test_evidence",
+    "scope_evidence"
+  ],
+  "handoff_critical_gap_remains_under_strict_coding": true,
+  "interpretation": "The handoff-critical evidence gap remains under stricter treatment of partial evidence."
+}

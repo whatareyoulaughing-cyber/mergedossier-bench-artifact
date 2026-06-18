@@ -1,0 +1,237 @@
+{
+  "population_frame": "AIDev curated public agentic-PR frame",
+  "annotation_records": 500,
+  "sample_manifest_rows": 500,
+  "category_estimates": {
+    "intent_evidence": {
+      "eligible_records": 500,
+      "positive_records": 500,
+      "missing_records": 0,
+      "coverage_rate": 1.0,
+      "coverage_ci_lower": 0.9924,
+      "coverage_ci_upper": 1.0,
+      "missing_rate": 0.0,
+      "weighted_coverage_rate": 1.0,
+      "weighted_missing_rate": 0.0,
+      "label_counts": {
+        "present": 492,
+        "partially_present": 8,
+        "missing": 0,
+        "not_applicable": 0
+      }
+    },
+    "requirement_evidence": {
+      "eligible_records": 500,
+      "positive_records": 144,
+      "missing_records": 356,
+      "coverage_rate": 0.288,
+      "coverage_ci_lower": 0.25,
+      "coverage_ci_upper": 0.3292,
+      "missing_rate": 0.712,
+      "weighted_coverage_rate": 0.2088,
+      "weighted_missing_rate": 0.7912,
+      "label_counts": {
+        "present": 0,
+        "partially_present": 144,
+        "missing": 356,
+        "not_applicable": 0
+      }
+    },
+    "test_evidence": {
+      "eligible_records": 500,
+      "positive_records": 409,
+      "missing_records": 91,
+      "coverage_rate": 0.818,
+      "coverage_ci_lower": 0.7818,
+      "coverage_ci_upper": 0.8494,
+      "missing_rate": 0.182,
+      "weighted_coverage_rate": 0.875,
+      "weighted_missing_rate": 0.125,
+      "label_counts": {
+        "present": 197,
+        "partially_present": 212,
+        "missing": 91,
+        "not_applicable": 0
+      }
+    },
+    "risk_analysis": {
+      "eligible_records": 500,
+      "positive_records": 105,
+      "missing_records": 395,
+      "coverage_rate": 0.21,
+      "coverage_ci_lower": 0.1766,
+      "coverage_ci_upper": 0.2478,
+      "missing_rate": 0.79,
+      "weighted_coverage_rate": 0.1299,
+      "weighted_missing_rate": 0.8701,
+      "label_counts": {
+        "present": 0,
+        "partially_present": 105,
+        "missing": 395,
+        "not_applicable": 0
+      }
+    },
+    "scope_evidence": {
+      "eligible_records": 500,
+      "positive_records": 493,
+      "missing_records": 7,
+      "coverage_rate": 0.986,
+      "coverage_ci_lower": 0.9714,
+      "coverage_ci_upper": 0.9932,
+      "missing_rate": 0.014,
+      "weighted_coverage_rate": 0.9882,
+      "weighted_missing_rate": 0.0118,
+      "label_counts": {
+        "present": 15,
+        "partially_present": 478,
+        "missing": 7,
+        "not_applicable": 0
+      }
+    },
+    "trace_evidence": {
+      "eligible_records": 500,
+      "positive_records": 0,
+      "missing_records": 500,
+      "coverage_rate": 0.0,
+      "coverage_ci_lower": 0.0,
+      "coverage_ci_upper": 0.0076,
+      "missing_rate": 1.0,
+      "weighted_coverage_rate": 0.0,
+      "weighted_missing_rate": 1.0,
+      "label_counts": {
+        "present": 0,
+        "partially_present": 0,
+        "missing": 500,
+        "not_applicable": 0
+      }
+    },
+    "dependency_evidence": {
+      "eligible_records": 0,
+      "positive_records": 0,
+      "missing_records": 0,
+      "coverage_rate": null,
+      "coverage_ci_lower": null,
+      "coverage_ci_upper": null,
+      "missing_rate": null,
+      "weighted_coverage_rate": null,
+      "weighted_missing_rate": null,
+      "label_counts": {
+        "present": 0,
+        "partially_present": 0,
+        "missing": 0,
+        "not_applicable": 500
+      }
+    },
+    "regression_evidence": {
+      "eligible_records": 500,
+      "positive_records": 14,
+      "missing_records": 486,
+      "coverage_rate": 0.028,
+      "coverage_ci_lower": 0.0168,
+      "coverage_ci_upper": 0.0464,
+      "missing_rate": 0.972,
+      "weighted_coverage_rate": 0.0246,
+      "weighted_missing_rate": 0.9754,
+      "label_counts": {
+        "present": 0,
+        "partially_present": 14,
+        "missing": 486,
+        "not_applicable": 0
+      }
+    },
+    "rationale_evidence": {
+      "eligible_records": 500,
+      "positive_records": 46,
+      "missing_records": 454,
+      "coverage_rate": 0.092,
+      "coverage_ci_lower": 0.0697,
+      "coverage_ci_upper": 0.1205,
+      "missing_rate": 0.908,
+      "weighted_coverage_rate": 0.0585,
+      "weighted_missing_rate": 0.9415,
+      "label_counts": {
+        "present": 0,
+        "partially_present": 46,
+        "missing": 454,
+        "not_applicable": 0
+      }
+    },
+    "ownership_handoff": {
+      "eligible_records": 500,
+      "positive_records": 89,
+      "missing_records": 411,
+      "coverage_rate": 0.178,
+      "coverage_ci_lower": 0.147,
+      "coverage_ci_upper": 0.2139,
+      "missing_rate": 0.822,
+      "weighted_coverage_rate": 0.1346,
+      "weighted_missing_rate": 0.8654,
+      "label_counts": {
+        "present": 0,
+        "partially_present": 89,
+        "missing": 411,
+        "not_applicable": 0
+      }
+    }
+  },
+  "interpretation": "Population estimates are limited to the declared sampling frame and single-operator audit codes. They are not AI-vs-human causal effects or reviewer-utility results.",
+  "sensitivity_summary": {
+    "construct": "Review-Evidence Availability",
+    "annotation_records": 500,
+    "main_rule": "present + partially_present counted positive",
+    "strict_rule": "only present counted positive",
+    "conservative_rule": "partially_present counted missing",
+    "robustly_high_categories": [
+      "intent_evidence"
+    ],
+    "robustly_low_categories": [
+      "requirement_evidence",
+      "risk_analysis",
+      "trace_evidence",
+      "regression_evidence",
+      "rationale_evidence",
+      "ownership_handoff"
+    ],
+    "partial_sensitive_categories": [
+      "test_evidence",
+      "scope_evidence"
+    ],
+    "handoff_critical_gap_remains_under_strict_coding": true,
+    "interpretation": "The handoff-critical evidence gap remains under stricter treatment of partial evidence."
+  },
+  "provenance_status_summary": {
+    "dossier_source": "outputs\\population_ai_pr_500_20260616\\dossiers",
+    "valid_dossiers": 500,
+    "invalid_dossiers": 0,
+    "invalid_rows": [],
+    "interpretation": "Provenance rows summarize inspectable evidence sources and reconstruction status; they do not establish patch correctness, mergeability, reviewer utility, or inter-rater reliability."
+  },
+  "handoff_gap_summary": {
+    "core_categories": [
+      "intent_evidence",
+      "test_evidence",
+      "scope_evidence"
+    ],
+    "handoff_categories": [
+      "risk_analysis",
+      "trace_evidence",
+      "regression_evidence",
+      "rationale_evidence",
+      "ownership_handoff"
+    ],
+    "core_availability_interval": [
+      0.4693,
+      0.9347
+    ],
+    "handoff_evidence_availability_interval": [
+      0.0,
+      0.1016
+    ],
+    "handoff_evidence_gap_interval": [
+      0.8984,
+      1.0
+    ],
+    "minimum_robust_separation": 0.3677,
+    "interpretation": "Surface/core evidence remains separated from handoff-critical evidence even under strict coding for core categories and lenient coding for handoff categories."
+  }
+}

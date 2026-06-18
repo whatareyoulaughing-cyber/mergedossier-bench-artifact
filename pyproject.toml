@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mergedossier-bench"
+version = "0.1.0"
+description = "Provenance-aware measurement of the handoff-evidence gap in AI-authored pull requests."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Anonymous Author(s)" }]
+license = { text = "MIT" }
+keywords = [
+  "coding agents",
+  "AI-authored pull requests",
+  "software engineering",
+  "code review",
+  "handoff-evidence gap",
+  "review-evidence availability",
+  "provenance",
+  "benchmark",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "jsonschema>=4.22",
+]
+analysis = [
+  "pandas>=2.2",
+  "pyarrow>=16.0",
+  "scikit-learn>=1.4",
+]
+workbook = [
+  "openpyxl>=3.1",
+]
+
+[project.scripts]
+mergedossier = "mergedossier_bench.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

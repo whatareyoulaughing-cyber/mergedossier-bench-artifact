@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mergedossier-bench.org/schemas/github_pr_raw.schema.json",
+  "title": "GitHubPrRaw",
+  "type": "object",
+  "required": [
+    "instance_id",
+    "repo",
+    "pr_number",
+    "pr_url",
+    "fetched_at",
+    "fetch_mode",
+    "manifest_metadata",
+    "pr",
+    "commits",
+    "files",
+    "reviews",
+    "review_comments",
+    "issue_comments",
+    "checks",
+    "linked_issues",
+    "errors"
+  ],
+  "properties": {
+    "instance_id": {"type": "string"},
+    "repo": {"type": "string"},
+    "pr_number": {"type": ["integer", "string"]},
+    "pr_url": {"type": "string"},
+    "fetched_at": {"type": "string"},
+    "fetch_mode": {"type": "string"},
+    "manifest_metadata": {"type": "object", "additionalProperties": true},
+    "pr": {"type": "object", "additionalProperties": true},
+    "commits": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "files": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "reviews": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "review_comments": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "issue_comments": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "checks": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "linked_issues": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "errors": {"type": "array", "items": {"type": ["object", "string"], "additionalProperties": true}}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,141 @@
+{
+  "schema_version": "0.1.0",
+  "dossier_id": "dossier-toy-owner-repo-42",
+  "instance_id": "toy-owner-repo-42",
+  "repository": "toy-owner/toy-repo",
+  "pr_url": "https://github.com/toy-owner/toy-repo/pull/42",
+  "source_agent": "Codex",
+  "created_at": "2026-06-01T12:00:00Z",
+  "dossier_created_at": "2026-06-02T00:00:00Z",
+  "evidence": {
+    "intent": {
+      "present": true,
+      "quality": 2,
+      "claim": "Fix empty-cache lookups returning 500.",
+      "grounding": [
+        {
+          "artifact_type": "pr_body",
+          "reference": "body",
+          "excerpt": "Fixes #41."
+        }
+      ],
+      "notes": "Clear linked issue."
+    },
+    "requirement_traceability": {
+      "present": true,
+      "quality": 2,
+      "claim": "Maps behavior to issue #41: empty cache should return 404.",
+      "grounding": [
+        {
+          "artifact_type": "issue",
+          "reference": "#41"
+        }
+      ],
+      "notes": "Specific behavior."
+    },
+    "test_rationale": {
+      "present": true,
+      "quality": 2,
+      "claim": "Added targeted regression test for empty-cache behavior.",
+      "grounding": [
+        {
+          "artifact_type": "test",
+          "reference": "tests/cache/test_lookup.py::test_empty_cache_returns_404"
+        }
+      ],
+      "notes": "Specific test."
+    },
+    "regression_safety": {
+      "present": true,
+      "quality": 1,
+      "claim": "Ran targeted pytest and CI passed.",
+      "grounding": [
+        {
+          "artifact_type": "ci",
+          "reference": "pytest"
+        }
+      ],
+      "notes": "No full regression matrix."
+    },
+    "risk_analysis": {
+      "present": false,
+      "quality": 0,
+      "claim": "",
+      "grounding": [],
+      "notes": "No risk discussion."
+    },
+    "scope_justification": {
+      "present": true,
+      "quality": 1,
+      "claim": "Only cache lookup and test files changed.",
+      "grounding": [
+        {
+          "artifact_type": "changed_files",
+          "reference": "files_changed"
+        }
+      ],
+      "notes": "Implicit scope; no alternatives."
+    },
+    "change_summary": {
+      "present": true,
+      "quality": 2,
+      "claim": "Modifies lookup behavior and adds regression test.",
+      "grounding": [
+        {
+          "artifact_type": "diff_summary",
+          "reference": "files_changed"
+        }
+      ],
+      "notes": "Reviewer-friendly."
+    },
+    "agent_trace": {
+      "present": true,
+      "quality": 1,
+      "claim": "Agent read lookup file and ran targeted test.",
+      "grounding": [
+        {
+          "artifact_type": "agent_trace",
+          "reference": "steps 1-2"
+        }
+      ],
+      "notes": "Trace is minimal."
+    },
+    "limitations": {
+      "present": true,
+      "quality": 1,
+      "claim": "No full regression matrix reported.",
+      "grounding": [
+        {
+          "artifact_type": "ci",
+          "reference": "pytest"
+        }
+      ],
+      "notes": "Useful caveat."
+    },
+    "reviewer_actionability": {
+      "present": true,
+      "quality": 1,
+      "claim": "Reviewer should verify cache semantics and status-code expectation.",
+      "grounding": [
+        {
+          "artifact_type": "pr_body",
+          "reference": "body"
+        }
+      ],
+      "notes": "Could be more specific."
+    },
+    "ownership_handoff": {
+      "present": false,
+      "quality": 0,
+      "claim": "",
+      "grounding": [],
+      "notes": "No follow-up or rollback plan."
+    }
+  },
+  "limitations": [
+    "Toy example only."
+  ],
+  "metadata": {
+    "toy": true
+  }
+}

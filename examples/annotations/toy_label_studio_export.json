@@ -1,0 +1,150 @@
+[
+  {
+    "id": 101,
+    "data": {
+      "instance_id": "toy-complete-1",
+      "repo": "toy-owner/complete-repo"
+    },
+    "annotations": [
+      {
+        "id": 1001,
+        "completed_by": {"id": "ann-a"},
+        "created_at": "2026-06-10T10:00:00Z",
+        "updated_at": "2026-06-10T10:05:00Z",
+        "result": [
+          {"from_name": "intent_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "requirement_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "test_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "risk_analysis", "value": {"choices": ["present"]}},
+          {"from_name": "scope_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "trace_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "dependency_evidence", "value": {"choices": ["not_applicable"]}},
+          {"from_name": "regression_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "rationale_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "ownership_handoff", "value": {"choices": ["present"]}},
+          {"from_name": "overall_acceptability", "value": {"choices": ["strong"]}},
+          {"from_name": "review_confidence", "value": {"rating": 5}}
+        ]
+      },
+      {
+        "id": 1002,
+        "completed_by": {"id": "ann-b"},
+        "created_at": "2026-06-10T11:00:00Z",
+        "updated_at": "2026-06-10T11:05:00Z",
+        "result": [
+          {"from_name": "intent_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "requirement_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "test_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "risk_analysis", "value": {"choices": ["present"]}},
+          {"from_name": "scope_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "trace_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "dependency_evidence", "value": {"choices": ["not_applicable"]}},
+          {"from_name": "regression_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "rationale_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "ownership_handoff", "value": {"choices": ["present"]}},
+          {"from_name": "overall_acceptability", "value": {"choices": ["strong"]}},
+          {"from_name": "review_confidence", "value": {"rating": 5}}
+        ]
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "data": {
+      "instance_id": "toy-risk-2",
+      "repo": "toy-owner/risk-repo"
+    },
+    "annotations": [
+      {
+        "id": 2001,
+        "completed_by": {"id": "ann-a"},
+        "created_at": "2026-06-10T12:00:00Z",
+        "updated_at": "2026-06-10T12:05:00Z",
+        "result": [
+          {"from_name": "intent_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "requirement_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "test_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "risk_analysis", "value": {"choices": ["missing"]}},
+          {"from_name": "scope_evidence", "value": {"choices": ["partially_present"]}},
+          {"from_name": "trace_evidence", "value": {"choices": ["partially_present"]}},
+          {"from_name": "dependency_evidence", "value": {"choices": ["not_applicable"]}},
+          {"from_name": "regression_evidence", "value": {"choices": ["partially_present"]}},
+          {"from_name": "rationale_evidence", "value": {"choices": ["partially_present"]}},
+          {"from_name": "ownership_handoff", "value": {"choices": ["partially_present"]}},
+          {"from_name": "risk_analysis_comment", "value": {"text": ["No risk discussion is visible."]}},
+          {"from_name": "overall_acceptability", "value": {"choices": ["adequate"]}},
+          {"from_name": "review_confidence", "value": {"rating": 4}}
+        ]
+      },
+      {
+        "id": 2002,
+        "completed_by": {"id": "ann-b"},
+        "created_at": "2026-06-10T13:00:00Z",
+        "updated_at": "2026-06-10T13:05:00Z",
+        "result": [
+          {"from_name": "intent_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "requirement_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "test_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "risk_analysis", "value": {"choices": ["partially_present"]}},
+          {"from_name": "scope_evidence", "value": {"choices": ["partially_present"]}},
+          {"from_name": "trace_evidence", "value": {"choices": ["partially_present"]}},
+          {"from_name": "dependency_evidence", "value": {"choices": ["not_applicable"]}},
+          {"from_name": "regression_evidence", "value": {"choices": ["partially_present"]}},
+          {"from_name": "rationale_evidence", "value": {"choices": ["partially_present"]}},
+          {"from_name": "ownership_handoff", "value": {"choices": ["partially_present"]}},
+          {"from_name": "overall_acceptability", "value": {"choices": ["adequate"]}},
+          {"from_name": "review_confidence", "value": {"rating": 3}}
+        ]
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "data": {
+      "instance_id": "toy-sparse-4",
+      "repo": "toy-owner/sparse-repo"
+    },
+    "annotations": [
+      {
+        "id": 3001,
+        "completed_by": {"id": "ann-a"},
+        "created_at": "2026-06-10T14:00:00Z",
+        "updated_at": "2026-06-10T14:05:00Z",
+        "result": [
+          {"from_name": "intent_evidence", "value": {"choices": ["partially_present"]}},
+          {"from_name": "requirement_evidence", "value": {"choices": ["missing"]}},
+          {"from_name": "test_evidence", "value": {"choices": ["missing"]}},
+          {"from_name": "risk_analysis", "value": {"choices": ["missing"]}},
+          {"from_name": "scope_evidence", "value": {"choices": ["missing"]}},
+          {"from_name": "trace_evidence", "value": {"choices": ["missing"]}},
+          {"from_name": "dependency_evidence", "value": {"choices": ["not_applicable"]}},
+          {"from_name": "regression_evidence", "value": {"choices": ["missing"]}},
+          {"from_name": "rationale_evidence", "value": {"choices": ["missing"]}},
+          {"from_name": "ownership_handoff", "value": {"choices": ["missing"]}},
+          {"from_name": "overall_acceptability", "value": {"choices": ["insufficient"]}},
+          {"from_name": "review_confidence", "value": {"rating": 4}}
+        ]
+      },
+      {
+        "id": 3002,
+        "completed_by": {"id": "ann-b"},
+        "created_at": "2026-06-10T15:00:00Z",
+        "updated_at": "2026-06-10T15:05:00Z",
+        "result": [
+          {"from_name": "intent_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "requirement_evidence", "value": {"choices": ["missing"]}},
+          {"from_name": "test_evidence", "value": {"choices": ["present"]}},
+          {"from_name": "risk_analysis", "value": {"choices": ["missing"]}},
+          {"from_name": "scope_evidence", "value": {"choices": ["partially_present"]}},
+          {"from_name": "trace_evidence", "value": {"choices": ["missing"]}},
+          {"from_name": "dependency_evidence", "value": {"choices": ["not_applicable"]}},
+          {"from_name": "regression_evidence", "value": {"choices": ["missing"]}},
+          {"from_name": "rationale_evidence", "value": {"choices": ["missing"]}},
+          {"from_name": "ownership_handoff", "value": {"choices": ["missing"]}},
+          {"from_name": "overall_acceptability", "value": {"choices": ["thin"]}},
+          {"from_name": "review_confidence", "value": {"rating": 2}}
+        ]
+      }
+    ]
+  }
+]

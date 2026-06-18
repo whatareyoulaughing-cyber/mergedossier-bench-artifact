@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mergedossier-bench.org/schemas/pr_instance.schema.json",
+  "title": "PRInstance",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "instance_id",
+    "repository",
+    "pr_number",
+    "pr_url",
+    "author",
+    "source_agent",
+    "created_at",
+    "base_sha",
+    "head_sha",
+    "files_changed",
+    "commits",
+    "tests",
+    "ci_runs",
+    "review_events"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "instance_id": {
+      "type": "string"
+    },
+    "repository": {
+      "type": "string",
+      "description": "owner/name"
+    },
+    "pr_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "pr_url": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "source_agent": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "closed_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "merged_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "base_sha": {
+      "type": "string"
+    },
+    "head_sha": {
+      "type": "string"
+    },
+    "issue_links": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "files_changed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "status",
+          "additions",
+          "deletions"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "additions": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "deletions": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "commits": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "ci_runs": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "review_events": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "agent_trace": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object"
+      }
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

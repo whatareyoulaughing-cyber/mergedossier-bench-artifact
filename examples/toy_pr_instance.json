@@ -1,0 +1,73 @@
+{
+  "schema_version": "0.1.0",
+  "instance_id": "toy-owner-repo-42",
+  "repository": "toy-owner/toy-repo",
+  "pr_number": 42,
+  "pr_url": "https://github.com/toy-owner/toy-repo/pull/42",
+  "title": "Fix empty cache lookup returning 500",
+  "body": "Fixes #41. The empty-cache path now returns 404 instead of 500. Added a targeted regression test and ran pytest tests/cache/test_lookup.py.",
+  "author": "codex-bot",
+  "source_agent": "Codex",
+  "created_at": "2026-06-01T12:00:00Z",
+  "closed_at": null,
+  "merged_at": null,
+  "base_sha": "abc123",
+  "head_sha": "def456",
+  "issue_links": [
+    "https://github.com/toy-owner/toy-repo/issues/41"
+  ],
+  "files_changed": [
+    {
+      "path": "src/cache/lookup.py",
+      "status": "modified",
+      "additions": 8,
+      "deletions": 3
+    },
+    {
+      "path": "tests/cache/test_lookup.py",
+      "status": "modified",
+      "additions": 16,
+      "deletions": 0
+    }
+  ],
+  "commits": [
+    {
+      "sha": "def456",
+      "message": "Fix empty cache lookup behavior"
+    }
+  ],
+  "tests": [
+    {
+      "name": "test_empty_cache_returns_404",
+      "path": "tests/cache/test_lookup.py",
+      "status": "added"
+    }
+  ],
+  "ci_runs": [
+    {
+      "name": "pytest",
+      "status": "success",
+      "url": "https://github.com/toy-owner/toy-repo/actions/runs/123"
+    }
+  ],
+  "review_events": [],
+  "agent_trace": [
+    {
+      "step": 1,
+      "action": "read",
+      "target": "src/cache/lookup.py"
+    },
+    {
+      "step": 2,
+      "action": "run",
+      "target": "pytest tests/cache/test_lookup.py"
+    }
+  ],
+  "labels": [
+    "bug",
+    "ai-authored"
+  ],
+  "metadata": {
+    "toy": true
+  }
+}

@@ -1,0 +1,10 @@
+family,category,set,applicable_records,present_count,partial_count,missing_count,availability_lower,availability_upper
+Intent,intent_evidence,core,500,492,8,0,0.984,1.0
+Requirement,requirement_evidence,context,500,0,144,356,0.0,0.288
+Test,test_evidence,core,500,197,212,91,0.394,0.818
+Risk,risk_analysis,handoff,500,0,105,395,0.0,0.21
+Scope,scope_evidence,core,500,15,478,7,0.03,0.986
+Trace,trace_evidence,handoff,500,0,0,500,0.0,0.0
+Regression,regression_evidence,handoff,500,0,14,486,0.0,0.028
+Rationale,rationale_evidence,handoff,500,0,46,454,0.0,0.092
+Ownership,ownership_handoff,handoff,500,0,89,411,0.0,0.178

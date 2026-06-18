@@ -1,0 +1,40 @@
+{
+  "instance_id": "fixture_ai_merged_good_evidence",
+  "repo": "synthetic/agent-cache",
+  "pr_number": 101,
+  "pr_url": "https://github.com/synthetic/agent-cache/pull/101",
+  "fetched_at": "2026-06-13T00:00:00Z",
+  "fetch_mode": "fixture",
+  "manifest_metadata": {},
+  "pr": {
+    "title": "Return 404 for empty cache lookups",
+    "body": "Fixes #77. This PR is limited to the cache lookup path and adds pytest coverage for empty cache behavior. Risk analysis: the main regression risk is changing status-code semantics for existing clients, so reviewers should inspect the cache adapter and run pytest tests/cache/test_lookup.py. Agent trace: files read were cache/lookup.py and tests/cache/test_lookup.py; commands run: pytest tests/cache/test_lookup.py. Limitation: no load test was run. Ownership handoff: cache owner will monitor 404 rates after rollout and rollback is reverting the lookup branch.",
+    "created_at": "2026-06-01T12:00:00Z",
+    "user": {"login": "agent-codex-bot"}
+  },
+  "commits": [
+    {"sha": "abc101", "message": "fix cache miss status code"},
+    {"sha": "abc102", "message": "add regression test for empty cache"}
+  ],
+  "files": [
+    {"filename": "cache/lookup.py", "status": "modified", "additions": 12, "deletions": 5},
+    {"filename": "tests/cache/test_lookup.py", "status": "modified", "additions": 18, "deletions": 0}
+  ],
+  "reviews": [
+    {"user": "maintainer-a", "state": "APPROVED", "body": "Evidence is clear; please verify monitoring after rollout."}
+  ],
+  "review_comments": [
+    {"path": "cache/lookup.py", "body": "The rollback note is useful for handoff."}
+  ],
+  "issue_comments": [
+    {"body": "Linked issue confirms empty cache should return 404."}
+  ],
+  "checks": [
+    {"name": "pytest", "status": "completed", "conclusion": "success"},
+    {"name": "lint", "status": "completed", "conclusion": "success"}
+  ],
+  "linked_issues": [
+    {"number": 77, "title": "Empty cache lookup returns 500", "body": "Expected behavior is a 404 when no cache entry exists."}
+  ],
+  "errors": []
+}

@@ -1,0 +1,11 @@
+category,eligible_records,present_count,partial_count,missing_count,not_applicable_count,availability_main,availability_strict,availability_conservative,missing_main,missing_strict,missing_conservative
+intent_evidence,500,492,8,0,0,1.0,0.984,0.984,0.0,0.016,0.016
+requirement_evidence,500,0,144,356,0,0.288,0.0,0.0,0.712,1.0,1.0
+test_evidence,500,197,212,91,0,0.818,0.394,0.394,0.182,0.606,0.606
+risk_analysis,500,0,105,395,0,0.21,0.0,0.0,0.79,1.0,1.0
+scope_evidence,500,15,478,7,0,0.986,0.03,0.03,0.014,0.97,0.97
+trace_evidence,500,0,0,500,0,0.0,0.0,0.0,1.0,1.0,1.0
+dependency_evidence,0,0,0,0,500,,,,,,
+regression_evidence,500,0,14,486,0,0.028,0.0,0.0,0.972,1.0,1.0
+rationale_evidence,500,0,46,454,0,0.092,0.0,0.0,0.908,1.0,1.0
+ownership_handoff,500,0,89,411,0,0.178,0.0,0.0,0.822,1.0,1.0

@@ -1,0 +1,5 @@
+instance_id,repo,pr_number,pr_url,source,author_type,agent_name,task_type,language,outcome,sample_split,notes
+fixture_ai_merged_good_evidence,synthetic/agent-cache,101,https://github.com/synthetic/agent-cache/pull/101,fixture,ai_authored,codex,bug_fix,python,merged,pilot,Synthetic AI-authored PR with strong evidence.
+fixture_ai_closed_missing_evidence,synthetic/agent-config,102,https://github.com/synthetic/agent-config/pull/102,fixture,ai_authored,claude_code,refactor,typescript,closed_unmerged,pilot,Synthetic AI-authored PR with sparse evidence.
+fixture_ai_dependency_change_missing_risk,synthetic/agent-web,103,https://github.com/synthetic/agent-web/pull/103,fixture,ai_authored,copilot,dependency,javascript,open,pilot,Synthetic dependency PR without explicit risk analysis.
+fixture_human_matched_pr,synthetic/human-cache,104,https://github.com/synthetic/human-cache/pull/104,fixture,human_authored,human,bug_fix,python,merged,pilot,Synthetic human-authored matched PR.

@@ -1,0 +1,243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mergedossier-bench.org/schemas/merge_dossier.schema.json",
+  "title": "MergeDossier",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "dossier_id",
+    "instance_id",
+    "repository",
+    "pr_url",
+    "source_agent",
+    "created_at",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "dossier_id": {
+      "type": "string"
+    },
+    "instance_id": {
+      "type": "string"
+    },
+    "repository": {
+      "type": "string"
+    },
+    "pr_url": {
+      "type": "string"
+    },
+    "source_agent": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "dossier_created_at": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "intent",
+        "requirement_traceability",
+        "test_rationale",
+        "regression_safety",
+        "risk_analysis",
+        "scope_justification",
+        "change_summary",
+        "agent_trace",
+        "limitations",
+        "reviewer_actionability",
+        "ownership_handoff"
+      ],
+      "properties": {
+        "intent": {
+          "$ref": "#/$defs/evidence_item"
+        },
+        "requirement_traceability": {
+          "$ref": "#/$defs/evidence_item"
+        },
+        "test_rationale": {
+          "$ref": "#/$defs/evidence_item"
+        },
+        "regression_safety": {
+          "$ref": "#/$defs/evidence_item"
+        },
+        "risk_analysis": {
+          "$ref": "#/$defs/evidence_item"
+        },
+        "scope_justification": {
+          "$ref": "#/$defs/evidence_item"
+        },
+        "change_summary": {
+          "$ref": "#/$defs/evidence_item"
+        },
+        "agent_trace": {
+          "$ref": "#/$defs/evidence_item"
+        },
+        "limitations": {
+          "$ref": "#/$defs/evidence_item"
+        },
+        "reviewer_actionability": {
+          "$ref": "#/$defs/evidence_item"
+        },
+        "ownership_handoff": {
+          "$ref": "#/$defs/evidence_item"
+        }
+      }
+    },
+    "evidence_provenance": {
+      "type": "object",
+      "description": "Per-category provenance records explaining where evidence status came from.",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/provenance_record"
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "provenance_record": {
+      "type": "object",
+      "required": [
+        "status",
+        "source_type",
+        "extraction_rule",
+        "confidence"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "observed",
+            "inferred",
+            "missing",
+            "not_applicable"
+          ]
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "pr_title",
+            "pr_body",
+            "linked_issue",
+            "changed_file",
+            "commit",
+            "ci_check",
+            "status",
+            "review",
+            "review_comment",
+            "issue_comment",
+            "manifest",
+            "heuristic",
+            "unknown"
+          ]
+        },
+        "source_id": {
+          "type": [
+            "string",
+            "number",
+            "null"
+          ]
+        },
+        "source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "raw_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "excerpt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "extraction_rule": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_item": {
+      "type": "object",
+      "required": [
+        "present",
+        "quality",
+        "claim",
+        "grounding"
+      ],
+      "properties": {
+        "present": {
+          "type": "boolean"
+        },
+        "quality": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "claim": {
+          "type": "string"
+        },
+        "grounding": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "artifact_type",
+              "reference"
+            ],
+            "properties": {
+              "artifact_type": {
+                "type": "string"
+              },
+              "reference": {
+                "type": "string"
+              },
+              "excerpt": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

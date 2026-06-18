@@ -1,0 +1,53 @@
+[
+  {
+    "data": {
+      "instance_id": "toy-complete-1",
+      "source": "examples/corpus/toy_dossier_complete.json",
+      "repo": "toy-owner/complete-repo",
+      "pr_number": "1",
+      "pr_url": "https://github.com/toy-owner/complete-repo/pull/1",
+      "title": "Complete evidence dossier",
+      "pr_body": "Toy task with a complete evidence packet.",
+      "issue_summary": "Cache miss behavior is documented.",
+      "changed_files_summary": "Cache handler and tests.",
+      "dossier_text": "All required evidence categories are present.",
+      "evidence_sections": {},
+      "existing_score": 100.0,
+      "missing_evidence": []
+    }
+  },
+  {
+    "data": {
+      "instance_id": "toy-risk-2",
+      "source": "examples/corpus/toy_dossier_missing_risk.json",
+      "repo": "toy-owner/risk-repo",
+      "pr_number": "2",
+      "pr_url": "https://github.com/toy-owner/risk-repo/pull/2",
+      "title": "Risk evidence is thin",
+      "pr_body": "Toy task with incomplete risk discussion.",
+      "issue_summary": "Empty cache returns the wrong status.",
+      "changed_files_summary": "Cache lookup and tests.",
+      "dossier_text": "Risk analysis is absent; other evidence is partial.",
+      "evidence_sections": {},
+      "existing_score": 67.95,
+      "missing_evidence": ["risk_analysis"]
+    }
+  },
+  {
+    "data": {
+      "instance_id": "toy-sparse-4",
+      "source": "examples/corpus/toy_dossier_sparse.json",
+      "repo": "toy-owner/sparse-repo",
+      "pr_number": "4",
+      "pr_url": "https://github.com/toy-owner/sparse-repo/pull/4",
+      "title": "Sparse evidence dossier",
+      "pr_body": "Toy task with sparse evidence.",
+      "issue_summary": "",
+      "changed_files_summary": "Brief cleanup summary.",
+      "dossier_text": "Most evidence categories are missing.",
+      "evidence_sections": {},
+      "existing_score": 8.25,
+      "missing_evidence": ["requirement_evidence", "test_evidence", "risk_analysis"]
+    }
+  }
+]

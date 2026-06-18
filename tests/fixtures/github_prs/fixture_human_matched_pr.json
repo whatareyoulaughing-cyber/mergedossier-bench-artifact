@@ -1,0 +1,35 @@
+{
+  "instance_id": "fixture_human_matched_pr",
+  "repo": "synthetic/human-cache",
+  "pr_number": 104,
+  "pr_url": "https://github.com/synthetic/human-cache/pull/104",
+  "fetched_at": "2026-06-13T00:00:00Z",
+  "fetch_mode": "fixture",
+  "manifest_metadata": {},
+  "pr": {
+    "title": "Handle cache key normalization",
+    "body": "Fixes #81. The change is limited to key normalization and a regression test. Please verify unicode key behavior. Follow-up owner is the cache maintainer for rollout monitoring.",
+    "created_at": "2026-06-04T12:00:00Z",
+    "user": {"login": "human-maintainer"}
+  },
+  "commits": [
+    {"sha": "jkl101", "message": "normalize cache keys"},
+    {"sha": "jkl102", "message": "add unicode key test"}
+  ],
+  "files": [
+    {"filename": "cache/keys.py", "status": "modified", "additions": 16, "deletions": 7},
+    {"filename": "tests/cache/test_keys.py", "status": "added", "additions": 22, "deletions": 0}
+  ],
+  "reviews": [
+    {"user": "maintainer-c", "state": "APPROVED", "body": "Regression test covers the linked issue."}
+  ],
+  "review_comments": [],
+  "issue_comments": [],
+  "checks": [
+    {"name": "pytest", "status": "completed", "conclusion": "success"}
+  ],
+  "linked_issues": [
+    {"number": 81, "title": "Unicode cache key mismatch", "body": "Normalization should be consistent for unicode cache keys."}
+  ],
+  "errors": []
+}

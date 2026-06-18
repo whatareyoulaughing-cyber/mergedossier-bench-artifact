@@ -1,0 +1,11 @@
+category,eligible_records,positive_records,missing_records,coverage_rate,coverage_ci_lower,coverage_ci_upper,missing_rate,weighted_coverage_rate,weighted_missing_rate
+intent_evidence,500,500,0,1.0,0.9924,1.0,0.0,1.0,0.0
+requirement_evidence,500,144,356,0.288,0.25,0.3292,0.712,0.2088,0.7912
+test_evidence,500,409,91,0.818,0.7818,0.8494,0.182,0.875,0.125
+risk_analysis,500,105,395,0.21,0.1766,0.2478,0.79,0.1299,0.8701
+scope_evidence,500,493,7,0.986,0.9714,0.9932,0.014,0.9882,0.0118
+trace_evidence,500,0,500,0.0,0.0,0.0076,1.0,0.0,1.0
+dependency_evidence,0,0,0,,,,,,
+regression_evidence,500,14,486,0.028,0.0168,0.0464,0.972,0.0246,0.9754
+rationale_evidence,500,46,454,0.092,0.0697,0.1205,0.908,0.0585,0.9415
+ownership_handoff,500,89,411,0.178,0.147,0.2139,0.822,0.1346,0.8654

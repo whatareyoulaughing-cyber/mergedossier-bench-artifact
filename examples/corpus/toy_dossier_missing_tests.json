@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1.0",
+  "dossier_id": "dossier-toy-missing-tests",
+  "instance_id": "toy-tests-3",
+  "repository": "toy-owner/tests-repo",
+  "pr_url": "https://github.com/toy-owner/tests-repo/pull/3",
+  "source_agent": "Copilot",
+  "created_at": "2026-06-01T12:00:00Z",
+  "dossier_created_at": "2026-06-02T00:00:00Z",
+  "evidence": {
+    "intent": {"present": true, "quality": 2, "claim": "Clarifies a configuration parsing failure.", "grounding": [{"artifact_type": "pr_body", "reference": "summary"}]},
+    "requirement_traceability": {"present": true, "quality": 2, "claim": "Links behavior to issue #88.", "grounding": [{"artifact_type": "issue", "reference": "#88"}]},
+    "test_rationale": {"present": false, "quality": 0, "claim": "", "grounding": [], "notes": "No test rationale."},
+    "regression_safety": {"present": false, "quality": 0, "claim": "", "grounding": [], "notes": "No CI or regression statement."},
+    "risk_analysis": {"present": true, "quality": 1, "claim": "Mentions parser compatibility risk.", "grounding": [{"artifact_type": "pr_body", "reference": "risk note"}]},
+    "scope_justification": {"present": true, "quality": 1, "claim": "States only parser files changed.", "grounding": [{"artifact_type": "changed_files", "reference": "files"}]},
+    "change_summary": {"present": true, "quality": 2, "claim": "Summarizes parser fallback change.", "grounding": [{"artifact_type": "diff_summary", "reference": "summary"}]},
+    "agent_trace": {"present": true, "quality": 1, "claim": "Agent trace lists inspected parser files.", "grounding": [{"artifact_type": "agent_trace", "reference": "trace"}]},
+    "limitations": {"present": true, "quality": 1, "claim": "States tests were not run.", "grounding": [{"artifact_type": "pr_body", "reference": "limitations"}]},
+    "reviewer_actionability": {"present": true, "quality": 1, "claim": "Asks reviewer to inspect fallback behavior.", "grounding": [{"artifact_type": "pr_body", "reference": "review notes"}]},
+    "ownership_handoff": {"present": true, "quality": 1, "claim": "Suggests reverting parser fallback if needed.", "grounding": [{"artifact_type": "pr_body", "reference": "handoff"}]}
+  },
+  "limitations": ["Toy dossier with missing test evidence."],
+  "metadata": {"toy": true, "corpus_role": "missing_tests"}
+}

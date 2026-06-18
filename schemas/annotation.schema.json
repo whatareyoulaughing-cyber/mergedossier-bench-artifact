@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mergedossier-bench.org/schemas/annotation.schema.json",
+  "title": "DossierAnnotation",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "annotation_id",
+    "dossier_id",
+    "annotator_id",
+    "created_at",
+    "category_ratings",
+    "overall_evidence_sufficiency",
+    "merge_decision_support"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "annotation_id": {
+      "type": "string"
+    },
+    "dossier_id": {
+      "type": "string"
+    },
+    "annotator_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "category_ratings": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 2
+      }
+    },
+    "overall_evidence_sufficiency": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "merge_decision_support": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "blocking_concerns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewer_confidence": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 5
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,9 @@
+family,category,observed,inferred,missing,not_applicable,audit_note
+Intent,intent,500,0,0,0,direct visible intent
+Test,test_rationale,387,22,91,0,test text or file-derived signal
+Risk,risk_analysis,105,0,395,0,risk or rollback text when visible
+Scope,scope_justification,15,478,7,0,often metadata-inferred scope signal
+Trace,agent_trace,0,0,500,0,trace evidence absent in reconstructed dossiers
+Regression,regression_safety,14,0,486,0,explicit regression boundary when visible
+Rationale,reviewer_actionability,46,0,454,0,annotation-family rationale proxy
+Ownership,ownership_handoff,89,0,411,0,handoff or follow-up text when visible

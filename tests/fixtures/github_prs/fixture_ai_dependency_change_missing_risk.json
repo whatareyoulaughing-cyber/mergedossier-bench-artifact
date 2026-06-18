@@ -1,0 +1,36 @@
+{
+  "instance_id": "fixture_ai_dependency_change_missing_risk",
+  "repo": "synthetic/agent-web",
+  "pr_number": 103,
+  "pr_url": "https://github.com/synthetic/agent-web/pull/103",
+  "fetched_at": "2026-06-13T00:00:00Z",
+  "fetch_mode": "fixture",
+  "manifest_metadata": {},
+  "pr": {
+    "title": "Bump markdown renderer dependency",
+    "body": "Updates the markdown renderer to the latest patch release. Tests: npm test passed. The scope is limited to package metadata and snapshot updates. Please verify rendered markdown snapshots.",
+    "created_at": "2026-06-03T12:00:00Z",
+    "user": {"login": "agent-copilot-bot"}
+  },
+  "commits": [
+    {"sha": "ghi101", "message": "bump markdown renderer"},
+    {"sha": "ghi102", "message": "update snapshots"}
+  ],
+  "files": [
+    {"filename": "package.json", "status": "modified", "additions": 2, "deletions": 2},
+    {"filename": "package-lock.json", "status": "modified", "additions": 55, "deletions": 49},
+    {"filename": "tests/snapshots/markdown.test.ts.snap", "status": "modified", "additions": 8, "deletions": 8}
+  ],
+  "reviews": [],
+  "review_comments": [],
+  "issue_comments": [
+    {"body": "Dependency update requested for renderer bug fix."}
+  ],
+  "checks": [
+    {"name": "npm test", "status": "completed", "conclusion": "success"}
+  ],
+  "linked_issues": [
+    {"number": 12, "title": "Renderer patch release available", "body": "Update dependency after snapshot review."}
+  ],
+  "errors": []
+}

@@ -1,0 +1,9 @@
+family,category,availability_main,availability_strict,availability_conservative,note
+Intent,intent_evidence,1.0,0.984,0.984,robust high
+Test,test_evidence,0.818,0.394,0.394,partial-sensitive
+Risk,risk_analysis,0.21,0.0,0.0,robust low
+Scope,scope_evidence,0.986,0.03,0.03,partial-sensitive
+Trace,trace_evidence,0.0,0.0,0.0,robust low
+Regression,regression_evidence,0.028,0.0,0.0,robust low
+Rationale,rationale_evidence,0.092,0.0,0.0,robust low
+Ownership,ownership_handoff,0.178,0.0,0.0,robust low

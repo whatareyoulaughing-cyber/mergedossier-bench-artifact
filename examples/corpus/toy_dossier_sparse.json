@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1.0",
+  "dossier_id": "dossier-toy-sparse",
+  "instance_id": "toy-sparse-4",
+  "repository": "toy-owner/sparse-repo",
+  "pr_url": "https://github.com/toy-owner/sparse-repo/pull/4",
+  "source_agent": "Devin",
+  "created_at": "2026-06-01T12:00:00Z",
+  "dossier_created_at": "2026-06-02T00:00:00Z",
+  "evidence": {
+    "intent": {"present": true, "quality": 1, "claim": "Mentions a broad cleanup goal.", "grounding": [{"artifact_type": "pr_body", "reference": "summary"}]},
+    "requirement_traceability": {"present": false, "quality": 0, "claim": "", "grounding": [], "notes": "No issue or requirement reference."},
+    "test_rationale": {"present": false, "quality": 0, "claim": "", "grounding": [], "notes": "No test rationale."},
+    "regression_safety": {"present": false, "quality": 0, "claim": "", "grounding": [], "notes": "No regression safety evidence."},
+    "risk_analysis": {"present": false, "quality": 0, "claim": "", "grounding": [], "notes": "No risk analysis."},
+    "scope_justification": {"present": false, "quality": 0, "claim": "", "grounding": [], "notes": "No scope justification."},
+    "change_summary": {"present": true, "quality": 1, "claim": "Gives a short changed-files summary.", "grounding": [{"artifact_type": "diff_summary", "reference": "summary"}]},
+    "agent_trace": {"present": false, "quality": 0, "claim": "", "grounding": [], "notes": "No agent trace."},
+    "limitations": {"present": false, "quality": 0, "claim": "", "grounding": [], "notes": "No limitations."},
+    "reviewer_actionability": {"present": false, "quality": 0, "claim": "", "grounding": [], "notes": "No reviewer guidance."},
+    "ownership_handoff": {"present": false, "quality": 0, "claim": "", "grounding": [], "notes": "No ownership handoff."}
+  },
+  "limitations": ["Toy sparse dossier."],
+  "metadata": {"toy": true, "corpus_role": "sparse"}
+}

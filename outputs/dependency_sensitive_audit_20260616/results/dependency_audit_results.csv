@@ -1,0 +1,2 @@
+dependency_sensitive_candidates,candidate_rate,applicable_candidates,positive_candidates,coverage_rate,coverage_ci_lower,coverage_ci_upper,missing_candidates,missing_rate
+71,0.142,71,59,0.831,0.7274,0.9006,12,0.169

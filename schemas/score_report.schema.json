@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mergedossier-bench.org/schemas/score_report.schema.json",
+  "title": "ScoreReport",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "dossier_id",
+    "evidence_sufficiency_score",
+    "readiness_band",
+    "category_scores",
+    "missing_evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "dossier_id": {
+      "type": "string"
+    },
+    "evidence_sufficiency_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "readiness_band": {
+      "type": "string"
+    },
+    "category_scores": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "missing_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,21 @@
+{
+  "valid": true,
+  "errors": [],
+  "sample_size": 500,
+  "dependency_sensitive_candidates": 71,
+  "candidate_rate": 0.142,
+  "applicable_candidates": 71,
+  "positive_candidates": 59,
+  "missing_candidates": 12,
+  "label_counts": {
+    "present": 38,
+    "partially_present": 21,
+    "missing": 12,
+    "not_applicable": 0
+  },
+  "coverage_rate": 0.831,
+  "coverage_ci_lower": 0.7274,
+  "coverage_ci_upper": 0.9006,
+  "missing_rate": 0.169,
+  "interpretation": "Dependency estimates apply only to the dependency-sensitive candidate subset detected by manifest/lockfile changes. They are a secondary focused audit, not a full-sample dependency denominator."
+}

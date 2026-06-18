@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use MergeDossier-Bench, please cite the forthcoming paper."
+title: "MergeDossier-Bench: Measuring the Handoff-Evidence Gap in AI-Authored Pull Requests"
+authors:
+  - name: "Anonymous Author(s)"
+year: 2027
+version: 0.1.0
+abstract: "MergeDossier-Bench is a provenance-aware benchmark and measurement framework for estimating review-evidence availability and the handoff-evidence gap in AI-authored pull requests."
+repository-code: "To be added after anonymous review."
+url: "To be added after anonymous review."
+keywords:
+  - coding agents
+  - AI-authored pull requests
+  - handoff-evidence gap
+  - review-evidence availability
+  - software engineering benchmark
+  - provenance
