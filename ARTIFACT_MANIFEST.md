@@ -37,6 +37,7 @@
 ## Safe Data Files Included
 
 - `data/manifests/seed_prs.csv`
+- `data/manifests/real_pilot_template.csv`
 - `data/manifests/population_ai_pr_frame_sanitized_20260616.csv`
 - `data/manifests/population_ai_pr_sample_500_20260616.csv`
 - `outputs/population_ai_pr_500_20260616/reports/annotation_sheet_completed.csv`
