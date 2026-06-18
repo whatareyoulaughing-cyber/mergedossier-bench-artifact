@@ -69,6 +69,8 @@ INCLUDE_PATHS = [
     "outputs/manuscript_claim_hygiene_20260617",
     "outputs/submission_blocker_dashboard_20260617",
     "outputs/submission_blocker_dashboard_20260618_post_upload",
+    "outputs/submission_blocker_dashboard_20260618_single_operator",
+    "outputs/no_second_operator_alternative_20260618",
     "outputs/icse_submission_packet_post_upload_20260618/packet_status.json",
     "outputs/icse_submission_packet_post_upload_20260618/PORTAL_FIELDS_FINAL_POST_UPLOAD.md",
     "outputs/icse_submission_packet_post_upload_20260618/EXTERNAL_AUDIT_RETURN_GATE.md",
@@ -119,6 +121,9 @@ LOCAL_PATH_PATTERNS = [
     re.compile(r"C:/Users/[^/]+/.*?MergeDossier-Bench-starter"),
 ]
 
+EMAIL_PATTERN = re.compile(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.I)
+SSH_REMOTE_PATTERN = re.compile(r"\bgit@github\.com:[^\s\"']+", re.I)
+
 
 def should_include(path: Path) -> bool:
     rel_parts = path.relative_to(ROOT).parts
@@ -163,6 +168,8 @@ def redact_local_paths(text: str) -> str:
         redacted = pattern.sub("python", redacted)
     for pattern in LOCAL_PATH_PATTERNS[3:]:
         redacted = pattern.sub("<REPO_ROOT>/", redacted)
+    redacted = EMAIL_PATTERN.sub("<EMAIL_REDACTED>", redacted)
+    redacted = SSH_REMOTE_PATTERN.sub("<SSH_REMOTE_REDACTED>", redacted)
     return redacted
 
 

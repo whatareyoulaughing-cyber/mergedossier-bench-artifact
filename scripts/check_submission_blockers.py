@@ -63,7 +63,7 @@ def _record(name: str, status: str, evidence: str, action: str, severity: str) -
     }
 
 
-def check_external_audit(path: Path) -> dict[str, str]:
+def check_external_audit(path: Path, *, required: bool = True) -> dict[str, str]:
     data = _read_json(path)
     status = str(data.get("status", "missing"))
     if status == "complete":
@@ -75,6 +75,14 @@ def check_external_audit(path: Path) -> dict[str, str]:
             "P0",
         )
     blank_count = len(data.get("blank_label_cells", [])) if isinstance(data.get("blank_label_cells"), list) else "unknown"
+    if not required:
+        return _record(
+            "External audit slice",
+            READY,
+            f"{_display(path)} status={status}; blank_label_cells={blank_count}.",
+            "Submit with the single-operator boundary: delayed-repeat self-consistency, provenance/perturbation checks, and no inter-rater-reliability claim.",
+            "P1",
+        )
     return _record(
         "External audit slice",
         OPEN,
@@ -496,7 +504,7 @@ def check_external_auditor_handoff(path: Path) -> dict[str, str]:
     )
 
 
-def build_submission_blocker_dashboard(root: Path, out_dir: Path) -> dict[str, Any]:
+def build_submission_blocker_dashboard(root: Path, out_dir: Path, *, external_audit_required: bool = True) -> dict[str, Any]:
     out_dir.mkdir(parents=True, exist_ok=True)
     upload_result = root / "release/UPLOAD_RESULT.md"
     post_upload_status = root / "outputs/post_artifact_upload_20260618/SUBMISSION_STATUS_POST_UPLOAD.json"
@@ -536,7 +544,10 @@ def build_submission_blocker_dashboard(root: Path, out_dir: Path) -> dict[str, A
     )
 
     checks = [
-        check_external_audit(root / "outputs/external_audit_analysis_20260617/external_audit_summary.json"),
+        check_external_audit(
+            root / "outputs/external_audit_analysis_20260617/external_audit_summary.json",
+            required=external_audit_required,
+        ),
         *release_checks,
         check_readiness(root / "outputs/paper_readiness_check_20260617_handoff_gap/paper_readiness_check.json"),
         check_claim_hygiene(
@@ -575,6 +586,7 @@ def build_submission_blocker_dashboard(root: Path, out_dir: Path) -> dict[str, A
     fail = [check for check in checks if check["status"] == FAIL]
     result = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "external_audit_required": external_audit_required,
         "status": "blocked_on_external_actions" if p0_open else ("fail" if fail else "submission_ready_local"),
         "p0_open_count": len(p0_open),
         "fail_count": len(fail),
@@ -590,10 +602,21 @@ def build_submission_blocker_dashboard(root: Path, out_dir: Path) -> dict[str, A
 
 
 def _write_markdown(result: dict[str, Any], out: Path) -> None:
+    mode_note = (
+        "External audit completion is required as a P0 item in this dashboard."
+        if result.get("external_audit_required", True)
+        else (
+            "Single-operator submission mode is active: an incomplete external audit is treated as a P1 limitation, "
+            "not a P0 blocker, because the manuscript must avoid inter-rater-reliability claims and rely on "
+            "delayed-repeat self-consistency, provenance records, perturbation checks, and reproducible scripts."
+        )
+    )
     lines = [
         "# Submission Blocker Dashboard",
         "",
         f"Overall status: **{result['status']}**",
+        "",
+        f"Mode: {mode_note}",
         "",
         "| Blocker | Severity | Status | Evidence | Action |",
         "|---|---:|---:|---|---|",
@@ -609,7 +632,7 @@ def _write_markdown(result: dict[str, Any], out: Path) -> None:
             "",
             "## Interpretation",
             "",
-            "P0 open items are external actions required before claiming very high submission confidence. Local pass/ready items reduce reviewer risk but do not prove external audit completion. For double-anonymous review, a verified anonymous artifact URL can satisfy review access while DOI archival remains a post-review boundary unless the venue explicitly permits anonymous DOI minting.",
+            "P0 open items are external actions required before claiming very high submission confidence. Local pass/ready items reduce reviewer risk but do not prove external audit completion. In single-operator submission mode, the external-audit packet remains prepared follow-up material rather than current evidence. For double-anonymous review, a verified anonymous artifact URL can satisfy review access while DOI archival remains a post-review boundary unless the venue explicitly permits anonymous DOI minting.",
             "",
         ]
     )
@@ -619,8 +642,21 @@ def _write_markdown(result: dict[str, Any], out: Path) -> None:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Build submission blocker dashboard")
     parser.add_argument("--out", default="outputs/submission_blocker_dashboard_20260617")
+    parser.add_argument(
+        "--single-operator-submission-mode",
+        action="store_true",
+        help=(
+            "Treat an incomplete external audit as a P1 limitation instead of a P0 blocker. "
+            "Use only when the paper explicitly reports a single-operator audit, delayed-repeat "
+            "self-consistency, provenance/perturbation checks, and no inter-rater-reliability claim."
+        ),
+    )
     args = parser.parse_args(argv)
-    result = build_submission_blocker_dashboard(ROOT, ROOT / args.out)
+    result = build_submission_blocker_dashboard(
+        ROOT,
+        ROOT / args.out,
+        external_audit_required=not args.single_operator_submission_mode,
+    )
     print(
         "Submission blocker dashboard: "
         f"{result['status']} (P0 open={result['p0_open_count']}, fail={result['fail_count']})"

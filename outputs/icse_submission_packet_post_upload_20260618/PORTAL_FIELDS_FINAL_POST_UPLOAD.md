@@ -22,9 +22,8 @@ https://github.com/whatareyoulaughing-cyber/mergedossier-bench-artifact/releases
 
 ## Artifact Note
 
-The anonymous artifact package is available for review at https://github.com/whatareyoulaughing-cyber/mergedossier-bench-artifact/releases/tag/v0.1-anonymous. It includes source, safe examples, derived tables, smoke-test instructions, and an anonymization scan report. DOI archival is planned after double-anonymous constraints are lifted.
+The anonymous artifact package is available for review at https://github.com/whatareyoulaughing-cyber/mergedossier-bench-artifact/releases/tag/v0.1-anonymous. It includes source, safe examples, derived tables, smoke-test instructions, an anonymization scan report, a `.sha256` checksum asset, and single-operator submission-boundary notes for the no-second-operator case. DOI archival is planned after double-anonymous constraints are lifted.
 
 ## Boundary Note
 
-This submission does not claim patch correctness, mergeability, reviewer utility, AI-vs-human causal effects, all-GitHub rates, inter-rater reliability, or DOI archival during double-anonymous review.
-
+This submission reports a single-operator AIDev-pop audit with 50 delayed repeats, provenance-backed inspectability, perturbation checks, and sensitivity analyses. It does not claim patch correctness, mergeability, reviewer utility, AI-vs-human causal effects, all-GitHub rates, completed external agreement, inter-rater reliability, or DOI archival during double-anonymous review.

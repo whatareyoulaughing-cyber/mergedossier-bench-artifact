@@ -1,12 +1,12 @@
 {
   "generated_date": "2026-06-18",
   "purpose": "post-upload ICSE submission packet and 80-percent-gap execution aid",
-  "heuristic_readiness_band": "75-78%",
+  "heuristic_readiness_band": "78-80%",
   "not_a_calibrated_acceptance_probability": true,
   "anonymous_artifact_release": "https://github.com/whatareyoulaughing-cyber/mergedossier-bench-artifact/releases/tag/v0.1-anonymous",
-  "artifact_zip_sha256": "32622b929dc9ba98d6b35031542d363499a6a9bd2206c99cb72a0db9d9a424d7",
-  "remaining_highest_return_action": "complete 50-task external audit slice",
-  "external_audit_current_status": "incomplete",
+  "artifact_zip_sha256": "recorded in the GitHub release asset MergeDossier-Bench-anonymous-artifact.sha256",
+  "remaining_highest_return_action": "submit with single-operator boundary; treat external audit as future replication material",
+  "external_audit_current_status": "incomplete_but_demoted_to_p1_limitation",
   "external_audit_blank_cells": 500,
   "external_audit_valid_cells": 0,
   "files": [
@@ -15,7 +15,9 @@
     "EXTERNAL_AUDIT_SEND_NOW_EMAIL_ZH_WINDOWS.md",
     "EXTERNAL_AUDIT_RETURN_GATE.md",
     "SUBMIT_NOW_WITHOUT_EXTERNAL_AUDIT_LIMITATION.md",
-    "POST_UPLOAD_80_PERCENT_DASHBOARD.md"
+    "POST_UPLOAD_80_PERCENT_DASHBOARD.md",
+    "outputs/submission_blocker_dashboard_20260618_single_operator/submission_blocker_dashboard.md",
+    "docs/17_single_operator_submission_strategy.md"
   ],
   "non_claims": [
     "patch correctness",

@@ -1,0 +1,680 @@
+\documentclass[10pt,conference]{IEEEtran}
+
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{xurl}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\interdisplaylinepenalty=2500
+\Urlmuskip=0mu plus 1mu
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\newcommand{\tool}{MergeDossier-Bench}
+\newcommand{\slogan}{A diff is not a dossier.}
+\newcommand{\provslogan}{A dossier must cite its evidence.}
+
+\title{\tool: Measuring the Handoff-Evidence Gap in AI-Authored Pull Requests}
+
+\author{
+\IEEEauthorblockN{Anonymous Author(s)}
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Coding agents increasingly submit pull requests, but maintainers need more than a patch before they can take responsibility for a change.
+They need evidence about intent, requirements, tests, regression behavior, risk, scope, traceability, rationale, and ownership.
+\tool{} is a provenance-aware benchmark and measurement framework for auditing review-evidence availability in AI-authored pull requests.
+The contribution is a measurement framework and a bounded population-frame evidence study, not a correctness or mergeability benchmark.
+The artifact defines a MergeDossier schema, category-level availability tables, a legacy triage score, corpus-level summaries, a Label Studio audit workflow, an offline seed-corpus builder, an optional live GitHub fetcher, and provenance-aware audit commands.
+Using the AIDev-pop curated public agentic-PR frame, we normalize 33,596 eligible pull requests, draw a deterministic stratified sample of 500 PRs, and collect 50 delayed-repeat records from one operator.
+Within this declared frame, audit codes reveal a handoff-evidence gap: surface evidence such as intent, scope, and tests is commonly visible, but handoff-critical evidence is largely absent.
+Treating partial evidence as threshold uncertainty yields handoff evidence availability in [0.0\%, 10.16\%] and a handoff-evidence gap in [89.84\%, 100.0\%].
+Even under strict coding for surface evidence and lenient coding for handoff evidence, the minimum separation is 36.77 percentage points.
+The delayed repeats produced no category-level disagreements, which we report only as single-operator self-consistency.
+The results estimate evidence availability within AIDev-pop; they do not claim AI-vs-human effects, reviewer utility, or all-GitHub population rates.
+\end{abstract}
+
+\begin{IEEEkeywords}
+AI-assisted software engineering, pull requests, empirical software engineering, benchmark design, review-evidence availability
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+\slogan{} \provslogan{} A pull request is a decision artifact, not only a patch.
+Existing coding-agent evaluations often ask whether a generated change passes tests or appears mergeable.
+Those outcomes are useful, but they stop before the human handoff problem.
+Maintainers still need to know what the change is trying to do, which requirement it satisfies, what was tested, what risks remain, and who owns follow-up work after merge.
+
+\tool{} evaluates that evidence interface.
+The benchmark does not judge whether an AI reviewer can find bugs, and it does not treat merge outcome as ground truth for correctness.
+Instead, it measures whether review evidence is visible, category-coded, and backed by auditable provenance.
+
+This paper asks two questions that the current artifact and AIDev-pop study can answer:
+\begin{itemize}
+\item \textbf{RQ1:} How can review evidence in AI-authored pull requests be represented as provenance-certified availability intervals rather than correctness or mergeability judgments?
+\item \textbf{RQ2:} What handoff-evidence gap is observed in a stratified 500-PR sample from AIDev-pop, and is the gap robust to strict and lenient coding rules?
+\end{itemize}
+
+The current repository supports these questions with a working measurement framework, an AIDev-pop sampling pipeline, and a completed single-operator audit over 500 sampled PRs plus 50 delayed repeats.
+The 500-PR AIDev-pop study is the paper's main empirical contribution; the earlier 22-PR public pilot is retained only as preliminary pipeline and rubric validation.
+It does not yet support reviewer-acceptability modeling or human-review experiments; those remain future extensions.
+Taken together, the paper makes three contributions:
+\begin{itemize}
+\item It defines MergeDossier as an evidence-centered pull-request handoff representation that separates review-evidence availability from correctness and mergeability.
+\item It implements a provenance-aware measurement framework with schema validation, category-level availability tables, a legacy triage score, audit-code export and statistics, AIDev-pop frame sampling, provenance audit, perturbation checks, dossier cards, population-result tables, fixture tests, and optional GitHub fetching.
+\item It reports a 500-PR population-frame handoff-evidence gap study within AIDev-pop, with delayed-repeat self-consistency, showing that surface evidence concentrates in intent, scope, and tests while trace, regression, rationale, ownership, and risk evidence are frequently missing.
+\end{itemize}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/pipeline_overview.pdf}
+\caption{Pipeline and construct boundary. Public PR artifacts become validated MergeDossiers and review-evidence reports, not correctness judgments.}
+\label{fig:pipeline-overview}
+\end{figure*}
+
+\section{MergeDossier-Bench}
+
+A MergeDossier is a structured evidence packet attached to a pull request.
+The reconstruction schema records eleven raw fields: intent, requirement traceability, test rationale, regression safety, risk analysis, scope justification, change summary, agent trace, limitations, reviewer actionability, and ownership handoff.
+Each evidence item records whether evidence is present, a 0--2 quality score, a claim, grounding artifacts, and notes.
+For paper reporting, we use ten annotation-facing evidence families: Intent, Requirement, Test, Risk, Scope, Trace, Dependency, Regression, Rationale, and Ownership.
+Table~\ref{tab:evidence-crosswalk} states how these families relate to the raw reconstruction fields.
+
+The scoring logic is intentionally conservative.
+Missing categories are recorded as \texttt{present=false} with a note naming the absent artifact.
+Metadata signals, such as changed-file counts or CI status, are marked as metadata-derived rather than as proof of correctness.
+The provenance layer makes this conservatism auditable by recording whether evidence is observed directly, inferred from metadata, missing, or not applicable.
+
+Table~\ref{tab:artifact} summarizes the artifact.
+The implementation uses public pull-request artifacts and queries the GitHub REST API when status metadata are available~\cite{githubPulls,githubChecks}.
+The annotation workflow exports Label Studio-compatible tasks with short provenance snippets~\cite{labelStudioTasks}.
+Table~\ref{tab:provenance-commands} lists the provenance-aware commands added for audit and release inspection.
+
+\begin{table}[t]
+\centering
+\caption{Implemented artifact components.}
+\label{tab:artifact}
+\footnotesize
+\begin{tabular}{@{}L{0.28\columnwidth}L{0.66\columnwidth}@{}}
+\toprule
+Component & Current status \\
+\midrule
+Scoring & Schema validation, category-level availability tables, and legacy triage score. \\
+Corpus mode & Batch scoring with JSON, JSONL, CSV, and Markdown reports. \\
+Annotation & Label Studio export, delayed repeats, export parsing, and self-consistency statistics. \\
+Seed builder & Raw PR fixtures and reconstructed dossiers from CSV manifests. \\
+GitHub fetcher & REST client with pagination, endpoint errors, caching, and token-safe operation. \\
+Provenance & Evidence-source records, provenance audit, perturbation checks, dossier cards, and pilot-analysis tables. \\
+Tests & 145 offline tests pass. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table*}[t]
+\centering
+\caption{Provenance-aware artifact commands for measurement and audit, not correctness or mergeability claims.}
+\label{tab:provenance-commands}
+\footnotesize
+\begin{tabular}{@{}L{0.22\textwidth}L{0.38\textwidth}L{0.34\textwidth}@{}}
+\toprule
+Command & Outputs & Use \\
+\midrule
+\path{audit-provenance} & \path{provenance_summary.json/md}, uncited and missing JSONL. & Check whether visible evidence is backed by provenance. \\
+\path{run-perturbation-suite} & \path{perturbation_results.json/md} and paper-table CSV. & Verify deterministic extraction and provenance-status rules on synthetic oracle fixtures. \\
+\path{make-dossier-cards} & \path{index.md}, \path{cards_summary.json}, and Markdown cards. & Support compact manual audit and release browsing. \\
+\path{pilot-analysis} & Coverage, missing-evidence, provenance, source-type, author, and outcome tables. & Emit descriptive paper-facing tables for a corpus. \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table}[t]
+\centering
+\caption{Schema-to-annotation evidence-family crosswalk.}
+\label{tab:evidence-crosswalk}
+\footnotesize
+\begin{tabular}{@{}L{0.26\columnwidth}L{0.68\columnwidth}@{}}
+\toprule
+Annotation target & Schema/source fields \\
+\midrule
+Direct families & Intent, Requirement, Test, Risk, Scope, Trace, Regression, and Ownership use corresponding raw fields such as test rationale, agent trace, and ownership handoff. \\
+Rationale & Reviewer actionability plus visible limitation or rationale notes. \\
+Dependency & Dependency, API, version, migration, or compatibility evidence when visible; otherwise not applicable. \\
+Support field & \texttt{change\_summary} supports reconstruction but is not a standalone annotation target. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Measurement Model}
+
+Let $D$ denote a corpus of pull-request dossiers and let $C$ denote the set of evidence categories.
+For dossier $d \in D$ and category $c \in C$, the reconstructed or annotated evidence quality is
+$q(d,c) \in \{0,1,2\}$, where 0 means missing, 1 means thin or partial evidence, and 2 means specific grounded evidence.
+Each category has weight $w_c$ and maximum quality $q_{\max}=2$.
+For reconstructed dossiers, provenance status $p(d,c)$ is one of observed, inferred, missing, or not applicable.
+Observed provenance means a visible artifact explicitly states the evidence; inferred provenance means metadata such as changed files or CI checks supports a cautious evidence claim.
+The legacy Evidence Sufficiency Score below is retained for artifact triage and corpus browsing; it is not the empirical estimand of the AIDev-pop study.
+
+\subsection{Availability Intervals and Handoff Gap}
+
+For the AIDev-pop empirical claims, partial evidence is treated as threshold uncertainty rather than forced into a single subjective point estimate.
+For category $c$, let $\mathrm{present}(c)$, $\mathrm{partial}(c)$, and $\mathrm{applicable}(c)$ denote the primary audit-code counts.
+We report the availability interval:
+\begin{equation}
+L_c=\frac{\mathrm{present}(c)}{\mathrm{applicable}(c)},\quad
+U_c=\frac{\mathrm{present}(c)+\mathrm{partial}(c)}
+{\mathrm{applicable}(c)}.
+\end{equation}
+Thus $\mathrm{Availability}(c)=[L_c,U_c]$.
+We write $K$ for Intent, Test, and Scope, the core surface-evidence categories.
+We write $H$ for Risk, Trace, Regression, Rationale, and Ownership, the handoff-critical categories.
+The set $H$ captures evidence needed for human handoff: risk or rollback, agent trace, regression boundary, rationale, and ownership or follow-up responsibility.
+Handoff Evidence Availability is:
+\begin{equation}
+\mathrm{HEA}^{-}=\frac{1}{|H|}\sum_{c\in H}L_c,\quad
+\mathrm{HEA}^{+}=\frac{1}{|H|}\sum_{c\in H}U_c.
+\end{equation}
+The handoff-evidence gap is the complementary interval:
+\begin{equation}
+\mathrm{HEG}^{-}=1-\mathrm{HEA}^{+},\quad
+\mathrm{HEG}^{+}=1-\mathrm{HEA}^{-}.
+\end{equation}
+For robustness, we also compute the minimum separation between strict core availability and lenient handoff availability:
+\begin{equation}
+\mathrm{Separation}_{\min}=\frac{1}{|K|}\sum_{c\in K}L_c-\mathrm{HEA}^{+}.
+\end{equation}
+Finally, for a target threshold $\tau=0.5$, the tipping-point count for category $c$ is:
+\begin{equation}
+T_c(\tau)=\max(0,\lceil \tau n_c\rceil-k_c),
+\end{equation}
+where $n_c$ is the applicable denominator and $k_c$ is the main-rule positive count.
+
+\subsection{Legacy Evidence Sufficiency Score for Artifact Triage}
+
+The artifact retains a legacy normalized evidence score for triage and corpus browsing.
+The empirical claims in this paper use category-level availability estimates rather than aggregate score thresholds:
+\begin{equation}
+S(d)=100 \cdot \frac{\sum_{c \in C} w_c q(d,c)}
+{\sum_{c \in C} w_c q_{\max}}.
+\end{equation}
+The score is not a correctness or mergeability score.
+It provides a coarse artifact browsing signal about how much review-relevant evidence is visible in the dossier.
+
+\subsection{Coverage and Missing Evidence}
+
+Category coverage measures how often a corpus contains any evidence for category $c$:
+\begin{equation}
+\mathrm{Coverage}(c)=
+\frac{|\{d \in D : q(d,c)>0\}|}{|D|}.
+\end{equation}
+The corresponding missing-evidence rate is:
+\begin{equation}
+\mathrm{Missing}(c)=
+\frac{|\{d \in D : q(d,c)=0\}|}{|D|}
+=1-\mathrm{Coverage}(c).
+\end{equation}
+
+\subsection{Artifact Triage Bands}
+
+For artifact browsing only, we convert $S(d)$ into a coarse triage band:
+\begin{equation}
+\mathrm{TriageBand}(d)=
+\begin{cases}
+\text{insufficient}, & S(d)<40,\\
+\text{thin}, & 40 \le S(d)<60,\\
+\text{adequate}, & 60 \le S(d)<80,\\
+\text{strong}, & S(d)\ge 80.
+\end{cases}
+\end{equation}
+The bands are retained only for artifact triage and are not used for the AIDev-pop empirical claims.
+They do not imply that a PR is safe to merge, review-ready, or acceptable to maintainers.
+
+\subsection{Self-Consistency}
+
+With one operator, repeatability is measured as delayed-repeat self-consistency rather than agreement between independent operators.
+For repeated task set $R$ and category $c$:
+\begin{equation}
+\mathrm{Agreement}(c)=
+\frac{|\{r \in R : y_{r,c}^{(1)}=y_{r,c}^{(2)}\}|}{|R|}.
+\end{equation}
+Overall self-consistency is:
+\begin{equation}
+\mathrm{SelfConsistency}=
+\frac{1}{|C|}\sum_{c \in C}\mathrm{Agreement}(c).
+\end{equation}
+Cohen's kappa is not reported for the current study because there is no second independent operator.
+
+\subsection{Instrument Audit Boundary}
+
+This release targets provenance-backed evidence availability rather than subjective reviewer preference.
+The current audit pass has one operator because the immediate artifact goal is an auditable measurement instrument, not a subjective-agreement study.
+We therefore separate instrument auditability from label agreement.
+Schema validation, provenance records, perturbation fixtures, delayed-repeat self-consistency, and offline reproducibility check whether each audit decision is inspectable and repeatable under the same protocol.
+These checks do not replace inter-rater agreement, and they do not establish reviewer utility or audit-code validity in the psychometric sense.
+Future external validation can add a second operator or audit slice without changing the current estimand.
+
+\begin{table}[t]
+\centering
+\caption{Claims and non-claims for \tool{}.}
+\label{tab:claims-nonclaims}
+\footnotesize
+\begin{tabular}{@{}L{0.45\columnwidth}L{0.45\columnwidth}@{}}
+\toprule
+This paper estimates & This paper does not estimate \\
+\midrule
+Handoff-evidence gap within AIDev-pop & All-GitHub AI-authored PR rates \\
+Category-level evidence visibility and missing evidence rates & Patch correctness \\
+Provenance-backed auditability of reconstructed PR evidence & Mergeability \\
+Delayed-repeat self-consistency for one operator & Inter-rater reliability \\
+Dependency evidence availability among detected manifest/lockfile candidates & Full-sample dependency prevalence \\
+Artifact reproducibility and offline inspectability & Reviewer utility \\
+Descriptive population-frame estimates & AI-vs-human causal effects \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Population-Frame Estimates}
+
+For the AIDev-pop study, the estimand is category-level evidence availability within the declared curated public agentic-PR frame.
+For category $c$, let $k_c$ be the number of primary sampled PRs with present or partial evidence and $n_c$ the number of applicable primary audit codes.
+We report $\hat{p}_c=k_c/n_c$ with Wilson 95\% intervals:
+\begin{equation}
+\mathrm{Wilson}(\hat{p}_c)=
+\frac{\hat{p}_c+\frac{z^2}{2n_c}}{1+\frac{z^2}{n_c}}
+\pm
+\frac{z\sqrt{\frac{\hat{p}_c(1-\hat{p}_c)}{n_c}+\frac{z^2}{4n_c^2}}}
+{1+\frac{z^2}{n_c}},
+\end{equation}
+where $z=1.96$ for the descriptive 95\% interval.
+Sampling weights are retained from the deterministic stratified sample and used for weighted descriptive rates.
+For delayed repeats, zero observed disagreements are summarized with the rule-of-three upper bound $3/N$ over $N$ repeated category decisions.
+These quantities estimate evidence availability within AIDev-pop only; they do not support all-GitHub population rates, authorship-group effects, or reviewer-utility claims.
+The dependency family receives special treatment.
+The main 500-PR audit pass conservatively coded dependency evidence as not applicable because dependency-related review evidence requires separate inspection of manifest and lockfile changes rather than the same surface cues used for intent, scope, and tests.
+A focused dependency-sensitive audit packet was therefore generated from the existing 500-PR sample by detecting dependency manifests and lockfiles.
+That audit is reported separately for the detected candidate subset and is not mixed into the main coverage denominator.
+Together, these definitions answer RQ1 by operationalizing review evidence as provenance-auditable availability intervals and handoff-gap quantities rather than correctness or mergeability judgments.
+
+\section{Pipeline Validation}
+
+The synthetic fixture corpus validates the pipeline but is not empirical evidence about real coding agents.
+It contains four reconstructed dossiers: three AI-authored synthetic PRs and one human-authored matched PR.
+All four dossiers validate against the MergeDossier schema.
+
+\begin{table}[t]
+\centering
+\caption{Synthetic fixture corpus summary. These numbers validate the pipeline only.}
+\label{tab:seed-summary}
+\footnotesize
+\begin{tabular}{@{}lr@{}}
+\toprule
+Metric & Value \\
+\midrule
+Total dossiers & 4 \\
+Valid dossiers & 4 \\
+Invalid dossiers & 0 \\
+Mean legacy Evidence Sufficiency Score & 56.58 \\
+Median legacy Evidence Sufficiency Score & 63.65 \\
+Minimum score & 21.05 \\
+Maximum score & 77.95 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The fixture run surfaces the kind of evidence gaps the benchmark is designed to measure.
+Risk analysis is present in 1 of 4 dossiers, and trace evidence is present in 1 of 4 dossiers.
+Intent and change-summary evidence are present in all four fixtures.
+These counts should be read only as a pipeline check because the fixtures were designed to exercise missing-evidence cases.
+
+\subsection{Pre-AIDev-pop Public Snapshot}
+
+Before running AIDev-pop, we used a 22-PR mixed-source public snapshot only to validate pipeline wiring and rubric feasibility.
+The snapshot contained 11 AI-authored or AI-assisted PRs and 11 matched human-authored candidates, but it is not interpreted as an empirical study.
+Its role was to check schema validation, live fetching, conservative reconstruction, audit-code export, and delayed-repeat workflow before committing to the 500-PR AIDev-pop audit.
+
+\section{AIDev-pop Population Results}
+
+We next use the artifact on AIDev-pop, the curated public agentic-PR subset released with AIDev~\cite{aidev}.
+The executable pipeline exports the AIDev-pop pull-request table, joins repository, commit, file, comment, and review metadata when available, normalizes 33,596 eligible PRs, and samples 500 PRs without replacement using seed 20260616.
+This section reports the paper's main empirical result: evidence availability within the AIDev-pop frame under a single-operator protocol.
+The sampling frame covers Codex, Copilot, Devin, Cursor, and Claude Code PRs; Table~\ref{tab:population-sample} summarizes the selected sample.
+One operator coded the 500 primary PRs plus 50 delayed repeats.
+
+\begin{table}[t]
+\centering
+\caption{AIDev-pop sampling frame and selected 500-PR sample.}
+\label{tab:population-sample}
+\footnotesize
+\begin{tabular}{@{}L{0.48\columnwidth}r@{}}
+\toprule
+Metric & Value \\
+\midrule
+Eligible AIDev-pop PRs & 33,596 \\
+Sampled PRs & 500 \\
+Delayed repeats & 50 \\
+Codex / Copilot / Devin & 215 / 86 / 84 \\
+Cursor / Claude Code & 61 / 54 \\
+Merged / closed / open & 338 / 122 / 40 \\
+Small / medium / large PRs & 200 / 130 / 170 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:population-evidence-estimates} reports the evidence-availability estimates.
+The answer to RQ2 is that AIDev-pop PRs expose surface evidence while exhibiting a quantified handoff-evidence gap.
+Intent evidence is visible in all 500 primary PRs, scope evidence in 98.6\%, and test evidence in 81.8\%.
+By contrast, trace evidence is absent in all 500 PRs; regression evidence appears in 2.8\%, rationale evidence in 9.2\%, ownership handoff in 17.8\%, and risk evidence in 21.0\%.
+Requirement evidence is visible in 28.8\% of PRs.
+Dependency evidence was conservatively excluded from the main denominator for this batch rather than interpreted as missing.
+We then ran a focused dependency-sensitive audit over the 71 sampled PRs with dependency manifest or lockfile changes.
+Among those candidates, 59 of 71 PRs have present or partially present dependency evidence (83.1\%, Wilson 95\% CI 72.7--90.1\%), while 12 of 71 remain missing (Table~\ref{tab:dependency-sensitive-audit}).
+This secondary audit should be read as evidence availability among dependency-sensitive candidates, not as a full-sample dependency denominator.
+
+\subsection{Mathematical Robustness of the Handoff-Evidence Gap}
+
+Table~\ref{tab:availability-intervals} treats partial evidence as interval uncertainty.
+The lower bound counts only present evidence, while the upper bound counts present plus partial evidence.
+Surface evidence has wide but high upper bounds: Intent [98.4\%, 100.0\%], Test [39.4\%, 81.8\%], and Scope [3.0\%, 98.6\%].
+Handoff-critical evidence remains low even under the lenient upper bound: Risk [0.0\%, 21.0\%], Trace [0.0\%, 0.0\%], Regression [0.0\%, 2.8\%], Rationale [0.0\%, 9.2\%], and Ownership [0.0\%, 17.8\%].
+
+\begin{table}[t]
+\centering
+\caption{Availability intervals by evidence family; partial evidence is threshold uncertainty.}
+\label{tab:availability-intervals}
+\footnotesize
+\begin{tabular}{@{}L{0.25\columnwidth}L{0.17\columnwidth}rL{0.31\columnwidth}@{}}
+\toprule
+Family & Set & $n$ & Interval \\
+\midrule
+Intent & core & 500 & [98.4\%, 100.0\%] \\
+Requirement & context & 500 & [0.0\%, 28.8\%] \\
+Test & core & 500 & [39.4\%, 81.8\%] \\
+Risk & handoff & 500 & [0.0\%, 21.0\%] \\
+Scope & core & 500 & [3.0\%, 98.6\%] \\
+Trace & handoff & 500 & [0.0\%, 0.0\%] \\
+Regression & handoff & 500 & [0.0\%, 2.8\%] \\
+Rationale & handoff & 500 & [0.0\%, 9.2\%] \\
+Ownership & handoff & 500 & [0.0\%, 17.8\%] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Aggregating over handoff-critical categories yields Handoff Evidence Availability in [0.0\%, 10.16\%], so the Handoff-Evidence Gap is [89.84\%, 100.0\%] (Table~\ref{tab:handoff-gap}).
+The robust separation check is deliberately adversarial to the claim: it compares strict core evidence availability against lenient handoff evidence availability.
+Even under that treatment, the minimum separation is 36.77 percentage points.
+
+\begin{table}[t]
+\centering
+\caption{Handoff-evidence gap and robust separation between core and handoff-critical evidence.}
+\label{tab:handoff-gap}
+\footnotesize
+\begin{tabular}{@{}L{0.48\columnwidth}L{0.42\columnwidth}@{}}
+\toprule
+Quantity & Estimate \\
+\midrule
+Core evidence availability & [46.93\%, 93.47\%] \\
+Handoff Evidence Availability & [0.0\%, 10.16\%] \\
+Handoff-Evidence Gap & [89.84\%, 100.0\%] \\
+Minimum robust separation & 36.77 pp \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The tipping-point analysis asks how many missing or negative handoff codes would have to flip positive to reach 50\% main-rule availability.
+Every handoff-critical family would require many code flips to reach the 50\% threshold: 145 for Risk, 250 for Trace, 236 for Regression, 204 for Rationale, and 161 for Ownership (Table~\ref{tab:tipping-point}).
+This means that one or a few borderline audit codes would not erase the gap.
+
+\begin{table}[t]
+\centering
+\caption{Tipping-point analysis for handoff-critical evidence at $\tau=0.5$.}
+\label{tab:tipping-point}
+\footnotesize
+\begin{tabular}{@{}L{0.31\columnwidth}rrr@{}}
+\toprule
+Family & Positive & Required & Flips \\
+\midrule
+Risk & 105 & 250 & 145 \\
+Trace & 0 & 250 & 250 \\
+Regression & 14 & 250 & 236 \\
+Rationale & 46 & 250 & 204 \\
+Ownership & 89 & 250 & 161 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+We also regenerated the evidence availability profile under strict and conservative coding rules.
+Under the main rule, present and partially present audit codes count as available; under strict and conservative rules, only present codes count as available.
+The handoff-critical evidence gap remains under stricter treatment of partial evidence: trace, regression, rationale, ownership, and risk stay at or below 21.0\% under the main rule and fall to 0.0\% under strict coding.
+Intent remains high under all rules, while test and scope are partial-sensitive categories whose main-rule availability comes largely from partial rather than fully present evidence.
+The full sensitivity table is emitted with the artifact as a paper-facing CSV and \LaTeX{} table.
+The same analysis run emits provenance-status and source-type tables by category.
+For example, intent and change-summary evidence are observed directly in all reconstructed dossiers, whereas requirement, scope, and some test evidence are often inferred from public artifacts.
+These provenance tables do not validate subjective agreement, but they make the basis for each availability code inspectable.
+
+\begin{table}[t]
+\centering
+\caption{Sensitivity check for review-evidence availability under main, strict, and conservative coding rules.}
+\label{tab:availability-sensitivity-compact}
+\footnotesize
+\begin{tabular}{@{}L{0.25\columnwidth}rrrL{0.23\columnwidth}@{}}
+\toprule
+Family & Main & Strict & Cons. & Note \\
+\midrule
+Intent & 100.0\% & 98.4\% & 98.4\% & robust high \\
+Test & 81.8\% & 39.4\% & 39.4\% & partial-sensitive \\
+Risk & 21.0\% & 0.0\% & 0.0\% & robust low \\
+Scope & 98.6\% & 3.0\% & 3.0\% & partial-sensitive \\
+Trace & 0.0\% & 0.0\% & 0.0\% & robust low \\
+Regression & 2.8\% & 0.0\% & 0.0\% & robust low \\
+Rationale & 9.2\% & 0.0\% & 0.0\% & robust low \\
+Ownership & 17.8\% & 0.0\% & 0.0\% & robust low \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Provenance-status check for result categories; Rationale maps to the \texttt{reviewer\_actionability} provenance key.}
+\label{tab:provenance-compact}
+\footnotesize
+\begin{tabular}{@{}L{0.28\columnwidth}rrrr@{}}
+\toprule
+Family & Obs. & Inf. & Miss. & N/A \\
+\midrule
+Intent & 500 & 0 & 0 & 0 \\
+Test & 387 & 22 & 91 & 0 \\
+Risk & 105 & 0 & 395 & 0 \\
+Scope & 15 & 478 & 7 & 0 \\
+Trace & 0 & 0 & 500 & 0 \\
+Regression & 14 & 0 & 486 & 0 \\
+Rationale & 46 & 0 & 454 & 0 \\
+Ownership & 89 & 0 & 411 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Population-frame coverage estimates for 500 sampled AIDev-pop PRs.}
+\label{tab:population-evidence-estimates}
+\footnotesize
+\begin{tabular}{@{}L{0.31\columnwidth}rL{0.22\columnwidth}r@{}}
+\toprule
+Family & Coverage & 95\% CI & Missing \\
+\midrule
+Intent & 100.0\% & 99.2--100.0\% & 0.0\% \\
+Requirement & 28.8\% & 25.0--32.9\% & 71.2\% \\
+Test & 81.8\% & 78.2--84.9\% & 18.2\% \\
+Risk & 21.0\% & 17.7--24.8\% & 79.0\% \\
+Scope & 98.6\% & 97.1--99.3\% & 1.4\% \\
+Trace & 0.0\% & 0.0--0.8\% & 100.0\% \\
+Regression & 2.8\% & 1.7--4.6\% & 97.2\% \\
+Rationale & 9.2\% & 7.0--12.0\% & 90.8\% \\
+Ownership & 17.8\% & 14.7--21.4\% & 82.2\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Focused dependency-sensitive audit results. The denominator is the detected manifest/lockfile candidate subset, not all 500 PRs.}
+\label{tab:dependency-sensitive-audit}
+\footnotesize
+\begin{tabular}{@{}L{0.56\columnwidth}r@{}}
+\toprule
+Metric & Value \\
+\midrule
+Candidate PRs & 71 / 500 (14.2\%) \\
+Positive dependency evidence & 59 / 71 (83.1\%) \\
+Wilson 95\% CI & 72.7--90.1\% \\
+Missing among candidates & 12 / 71 (16.9\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Within AIDev-pop, review evidence is visible but unevenly distributed.
+Intent, scope, and test evidence are commonly visible, but handoff-critical evidence is often absent: agent trace, explicit regression boundary, rationale, ownership, and risk or rollback discussion.
+This pattern holds under weighted descriptive rates and should be interpreted as a handoff-evidence gap, not as a claim about correctness, mergeability, or reviewer utility.
+
+The weighted descriptive rates are consistent with the same evidence-gap pattern.
+Weighted coverage is 100.0\% for intent, 98.8\% for scope, and 87.5\% for test evidence, but only 13.0\% for risk, 0.0\% for trace, 2.5\% for regression, 5.9\% for rationale, and 13.5\% for ownership.
+Thus, the finding does not depend on treating the sample as unweighted.
+The practical interpretation is that AIDev-pop PRs often provide enough visible text to infer intent and scope, but they rarely provide the evidence a maintainer would need for handoff-critical review: agent trace, explicit regression boundary, rationale, owner or rollout responsibility, and risk or rollback discussion.
+
+Because the study has one operator, repeatability is reported as delayed-repeat self-consistency rather than independent-operator agreement.
+The 50 repeated tasks produced no category-level disagreements across the ten annotation families.
+Across 500 repeated category decisions, the rule-of-three upper bound for self-disagreement is 0.006.
+Cohen's kappa is not reported because there were not two distinct operators.
+These results are population-frame estimates within AIDev-pop; they are not AI-vs-human comparisons, reviewer-utility measurements, or claims about all AI-authored PRs on GitHub.
+
+\begin{table}[t]
+\centering
+\caption{Delayed-repeat self-consistency audit summary.}
+\label{tab:annotation-agreement}
+\footnotesize
+\begin{tabular}{@{}L{0.34\columnwidth}L{0.60\columnwidth}@{}}
+\toprule
+Audit item & Result \\
+\midrule
+Repeat design & 50 delayed repeats over ten evidence families. \\
+Disagreement check & No category-level disagreements were observed. \\
+Stable families & Intent, Requirement, Test, Risk, Scope, Trace, Dependency, Regression, Rationale, Ownership. \\
+Majority pattern & Intent and Scope: present/partial; Dependency: N/A; Trace, Regression, Rationale, Ownership, and Risk mostly missing. \\
+Interpretation & Single-operator self-consistency only; no inter-rater agreement or kappa. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Implications for Coding Agents}
+
+The practical implication is simple: an AI-authored PR should expose handoff evidence, not only submit a diff.
+Agent interfaces and PR-generation workflows should make intent and requirement trace visible, explain test rationale, mark the regression boundary, discuss risk, rollback, migration, or monitoring needs, state the rationale for the chosen change, and identify ownership or follow-up responsibility.
+When an agent uses private planning or tool traces, the public PR should include a safe, concise agent trace that supports review without leaking secrets or irrelevant chain-of-thought.
+These are design implications for evidence production and auditability; whether such dossiers improve reviewer decisions remains a future reviewer-utility study.
+
+\section{Related Work}
+
+\textbf{Pull-request review and maintainer understanding.}
+Modern code review is not only a defect-finding activity.
+Bacchelli and Bird found that reviews also support knowledge transfer, team awareness, alternative-solution discussion, and change understanding~\cite{bacchelliBird2013}.
+Industrial studies similarly characterize code review as a lightweight, tool-mediated practice embedded in daily development work~\cite{sadowski2018GoogleReview}.
+In pull-based development, integrators must decide which external contributions to prioritize, question, and accept under quality and coordination constraints~\cite{gousios2014PullBased,gousios2015Integrator}.
+These findings motivate \tool{}'s evidence-centered view: an AI-authored PR should not merely present a diff, but should expose the evidence a maintainer needs to understand the change and take responsibility for it.
+
+\textbf{Patch benchmarks.}
+SWE-bench evaluates whether language models can resolve real GitHub issues by editing a repository so that issue-specific tests pass~\cite{swebench}.
+This line of work is essential because a dossier without a plausible patch is not useful.
+However, passing tests does not show whether the pull request explains its intent, risk, regression boundary, or human ownership.
+\tool{} therefore treats correctness signals as possible evidence sources rather than as the target construct.
+
+\textbf{Agent PR datasets.}
+AIDev studies agent-authored pull requests at GitHub scale and provides a natural source of real-world agentic PRs~\cite{aidev}.
+Its focus is dataset construction and broad empirical study of agent-authored contributions.
+\tool{} is complementary: it adds an evidence schema, scoring model, and annotation protocol for asking whether those PRs provide enough review-relevant evidence.
+Public pull-request datasets and mining infrastructures, including the pullreqs dataset and World of Code, also provide precedents for larger-scale repository sampling and future same-repository matching~\cite{gousios2014PullRequestsDataset,ma2021WorldOfCode}.
+The current study uses AIDev-pop as a declared sampling frame and limits its estimates to that frame.
+
+\textbf{Code-review-agent benchmarks.}
+c-CRAB and CR-Bench evaluate agents that review pull requests~\cite{ccrab,crbench}.
+These benchmarks ask whether an automated reviewer can identify useful issues, avoid noise, or match human review utility.
+Industrial evaluations of automated code review combine pull-request metrics, developer surveys, and comment-resolution signals~\cite{cihan2024AutomatedCodeReview}.
+\tool{} instead evaluates the evidence contained in a pull request submitted for human review.
+This distinction matters because reviewer utility is a separate outcome requiring a separate workflow study.
+
+\textbf{Mergeability and production-quality benchmarks.}
+FrontierCode evaluates whether agent-produced code would satisfy production mergeability criteria such as behavioral correctness, regression safety, mechanical cleanliness, test correctness, scope, and code quality~\cite{frontiercode}.
+That framing moves beyond unit tests toward maintainer judgment.
+\tool{} asks a neighboring but different question: not whether the code should merge, but whether the PR carries enough evidence for a maintainer to make and defend that decision.
+The intended outcome is therefore not a mergeability score, but a handoff-evidence gap measurement that can expose missing handoff information before review.
+
+\textbf{Pilot and annotation reliability.}
+Pilot-study methodology treats small pilots as checks on feasibility, procedures, measures, and implementation rather than as definitive effectiveness tests~\cite{leon2011Pilot,thabane2010Pilot}.
+For qualitative coding in software engineering, inter-coder agreement statistics such as Krippendorff's alpha are appropriate when multiple coders are available~\cite{gonzalezPrieto2020Reliability}.
+Because the current AIDev-pop audit pass has one operator, \tool{} reports delayed-repeat self-consistency and reserves multi-operator agreement for future audit or replication.
+
+\section{Threats to Validity}
+
+\textbf{Construct validity.}
+The study measures visible review evidence, not the actual correctness, mergeability, or usefulness of a change.
+An unavailable trace, rationale, or risk note may exist in a private tool log, private discussion, or maintainer memory, but it is still unavailable to the public PR handoff that \tool{} measures.
+This boundary is intentional: the estimand is what a maintainer can inspect from public PR artifacts.
+Provenance records and availability intervals make that boundary auditable, but they do not prove that the code is correct or that reviewers would make better decisions.
+
+\textbf{Internal validity.}
+Audit codes can be affected by ambiguous PR text, incomplete public artifacts, or conservative reconstruction rules.
+We mitigate this with schema validation, explicit provenance status, perturbation fixtures, deterministic scripts, and a tipping-point analysis that asks how many handoff-critical codes would need to change before the result pattern weakens.
+Dependency evidence is handled as a focused manifest/lockfile candidate audit rather than mixed into the main denominator, so it should not be compared directly with full-sample families.
+
+\textbf{External validity.}
+The population frame is AIDev-pop, not all GitHub pull requests and not all AI-authored pull requests.
+The sample is deterministic and stratified within that declared frame, but the estimates should be written only as AIDev-pop frame estimates.
+Public GitHub artifacts may also be deleted, private, rate-limited, or unavailable through REST endpoints.
+The artifact logs partial fetches and unavailable sources, but it cannot recover evidence that was never public.
+
+\textbf{Reliability.}
+The completed audit uses one operator and 50 delayed repeats.
+This supports delayed-repeat self-consistency under the same protocol, not inter-rater reliability.
+The release now includes a deterministic 50-task external-audit packet so a second operator can audit a 10\% slice without changing the current estimand, but no multi-operator agreement is claimed until that packet is completed and analyzed.
+
+\textbf{Artifact validity.}
+The anonymous-review package is designed to be functional offline: the smoke workflow exercises the core CLI paths and the tests cover schema, corpus, provenance, population, and release-table behavior.
+The package excludes the full normalized population frame CSV because public PR text can contain token-like or private-key-like strings copied from upstream repositories.
+The anonymous release includes the sample manifest, export report, sampling report, generated result tables, single-operator boundary notes, and scripts needed to rebuild the paper-facing outputs, while DOI archival and any expanded raw-text archive remain post-review release work.
+
+\section{Ethics and Data Use}
+
+The AIDev-pop study uses public pull-request artifacts and does not require private repository data.
+The benchmark is designed to evaluate evidence interfaces, not to rank individual developers or infer private intent.
+Authorship metadata are recorded only when public evidence supports them, and ambiguous cases may remain unknown or mixed rather than being forced into binary groups.
+Before any corpus release, the artifact should remove secrets, private contact information, and security-sensitive exploit payloads while preserving enough public metadata for reproducibility.
+AI tools were used as coding, editing, and internal-review assistants during artifact preparation, but they were not treated as operators for the reported audit codes; an anonymous-review disclosure draft is included with the artifact.
+
+\section{Artifact Availability}
+
+The artifact includes schemas, CLI commands, fixtures, tests, seed-corpus outputs, provenance-audit outputs, dossier-card generation, annotation utilities, a dataset card, a release manifest, and a reviewer-facing smoke workflow.
+It can run offline without network access or a GitHub token.
+The smoke workflow exercises schema validation, scoring, corpus summaries, fixture-backed seed-corpus construction, AIDev-style frame sampling, provenance audit, perturbation checks, dossier-card generation, pilot-analysis tables, annotation-task export, delayed-repeat sampling, annotation-statistics parsing, and the test suite.
+The artifact is packaged as an anonymous review release for the ICSE artifact-evaluation process, which follows the ACM Artifact Review and Badging v1.1 standard~\cite{icse2027Artifacts,acmArtifactBadging}.
+The current appropriate target is a functional offline artifact for review; DOI archival and any badge-specific availability claim are deferred until double-anonymous constraints are lifted or the venue explicitly permits anonymous archival.
+We do not claim reproduced, replicated, or reusable status.
+The live fetcher is optional and uses \texttt{GITHUB\_TOKEN} only when explicitly requested.
+
+\section{Next Work}
+
+The next work has three parts.
+First, archive the anonymous-review package with a stable DOI after double-anonymous constraints are lifted, and decide whether any raw-text frame should remain excluded, scrubbed, or restricted.
+Second, complete and analyze the prepared 10\% external-audit slice, or add a second operator, before reporting inter-coder reliability.
+Third, add same-repository, same-period human PR candidates only as a separate matched descriptive extension with covariate balance diagnostics; it should not be folded into the current AI/AI-assisted population estimate.
+Finally, evaluate reviewer acceptability and human-review utility in a separate study rather than treating provenance auditability as evidence that those outcomes have improved.
+
+\IEEEtriggeratref{10}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,8 @@
+{
+  "generated_at": "2026-06-18T08:56:31.988850+00:00",
+  "target_path": "release/download_verify_paper_synced_single_operator/MergeDossier-Bench-anonymous-artifact.zip",
+  "status": "pass",
+  "finding_count": 0,
+  "findings": [],
+  "claim_boundary": "This check scans release text/PDF metadata and leak-prone paths for local path, identity, token, or hidden-directory leaks. It does not validate empirical claims or publication metadata."
+}

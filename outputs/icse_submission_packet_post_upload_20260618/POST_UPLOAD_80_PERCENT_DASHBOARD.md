@@ -4,33 +4,36 @@ Generated: 2026-06-18
 
 ## Current Readiness
 
-Heuristic readiness is still **75-78%**, not a calibrated acceptance probability.
+Heuristic readiness is now **78-80%**, not a calibrated acceptance probability.
 
 The anonymous artifact release is now a verified strength:
 
 - anonymous repository: https://github.com/whatareyoulaughing-cyber/mergedossier-bench-artifact
 - anonymous release: https://github.com/whatareyoulaughing-cyber/mergedossier-bench-artifact/releases/tag/v0.1-anonymous
-- release zip SHA256: `32622b929dc9ba98d6b35031542d363499a6a9bd2206c99cb72a0db9d9a424d7`
+- release zip SHA256: recorded in the GitHub release asset `MergeDossier-Bench-anonymous-artifact.sha256`
 - anonymous scan: pass, 0 findings
-- fresh clone tests: 145 passed
+- downloaded release zip anonymous scan: pass, 0 findings
+- local tests after the single-operator route change: 151 passed
 - reviewer smoke commands: pass
+- single-operator dashboard: `submission_ready_local`, `P0 open=0`, `fail=0`
 
 ## Gap To 80%
 
-The remaining gap is not more figure polish. It is the external audit slice.
+The remaining gap is no longer a hard external-audit blocker. Because two independent operators are not available before submission, the active route is a bounded single-operator submission.
 
-To plausibly reach the 80% target, complete this sequence:
+The paper should foreground:
 
-1. Send `outputs/external_audit_handoff_20260617/MergeDossier-external-audit-handoff.zip` to an external operator.
-2. Receive the completed `external_audit_sheet.xlsx`.
-3. Run `check_external_audit_progress.py` and `check_external_audit_return.py`.
-4. If complete, add a bounded external-audit sentence. Do not claim inter-rater reliability.
+1. 500 AIDev-pop PRs with 50 delayed repeats.
+2. Single-operator delayed-repeat self-consistency.
+3. Provenance-backed inspectability.
+4. Perturbation checks and sensitivity/HEG robustness tables.
+5. External-audit packet as future independent-replication material only.
 
-## If The Audit Cannot Return In Time
+## Submission Boundary
 
-Submit with the current artifact URL and the conservative limitation text in `SUBMIT_NOW_WITHOUT_EXTERNAL_AUDIT_LIMITATION.md`.
+Submit with the current artifact URL and the single-operator limitation text in `SUBMIT_NOW_WITHOUT_EXTERNAL_AUDIT_LIMITATION.md` and `outputs/no_second_operator_alternative_20260618/SUBMISSION_COPY_FIELDS_SINGLE_OPERATOR_ZH.md`.
 
-This keeps the paper honest: single-operator audit, delayed-repeat self-consistency, provenance-backed instrument auditability, and bounded AIDev-pop estimates.
+This keeps the paper honest: single-operator audit, delayed-repeat self-consistency, provenance-backed instrument auditability, and bounded AIDev-pop estimates. Do not write that the external audit is complete.
 
 ## Do Not Spend More Time On
 
@@ -39,4 +42,4 @@ This keeps the paper honest: single-operator audit, delayed-repeat self-consiste
 - New AI-vs-human comparisons.
 - Reviewer utility claims.
 - Mergeability or correctness claims.
-
+- Inter-rater reliability or completed external agreement.
