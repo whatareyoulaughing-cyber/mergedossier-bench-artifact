@@ -27,3 +27,13 @@ The anonymous artifact package is available for review at https://github.com/wha
 ## Boundary Note
 
 This submission reports a single-operator AIDev-pop audit with 50 delayed repeats, provenance-backed inspectability, perturbation checks, and sensitivity analyses. It does not claim patch correctness, mergeability, reviewer utility, AI-vs-human causal effects, all-GitHub rates, completed external agreement, inter-rater reliability, or DOI archival during double-anonymous review.
+
+## Verification Snapshot
+
+- `pytest -q`: 151 passed
+- ICSE format: pass, 0 fail, 0 warn
+- Paper readiness: pass
+- Double-anonymous check: pass
+- Anonymous release zip scan: pass, 0 findings
+- Downloaded release zip scan: pass, 0 findings
+- Anonymous repo main commit: 97e8a9d
